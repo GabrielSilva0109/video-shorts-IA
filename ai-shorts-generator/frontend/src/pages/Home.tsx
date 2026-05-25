@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Wand2,
   TrendingUp,
@@ -44,6 +44,12 @@ const STAT_CARDS = [
 
 export default function Home() {
   const { setProjects, projects, setActiveProject, removeProject } = useAppStore();
+  const navigate = useNavigate();
+
+  const handleSelectProject = (id: string) => {
+    setActiveProject(id);
+    navigate('/generator');
+  };
 
   const { data, isLoading } = useQuery({
     queryKey: ['projects'],
@@ -159,7 +165,7 @@ export default function Home() {
                 <ProjectCard
                   key={p.id}
                   project={p}
-                  onSelect={setActiveProject}
+                  onSelect={handleSelectProject}
                   onDelete={removeProject}
                 />
               ))}

@@ -1,0 +1,234 @@
+{
+  "projects": {
+    "5d996328-492b-43af-bff1-eaeb47c9556f": {
+      "id": "5d996328-492b-43af-bff1-eaeb47c9556f",
+      "title": "I almost gave up on academia motivacional until this happened...",
+      "prompt": "academia motivacional",
+      "style": "tiktok_story",
+      "platform": "youtube_shorts",
+      "script": {
+        "hook": "I almost gave up on academia motivacional until this happened...",
+        "body": "Three months ago I was completely stuck with academia motivacional and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected.",
+        "cta": "Comment 'MORE' if you want me to break down exactly what I did.",
+        "full_text": "I almost gave up on academia motivacional until this happened... Three months ago I was completely stuck with academia motivacional and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected. Comment 'MORE' if you want me to break down exactly what I did.",
+        "segments": [
+          {
+            "id": "234362d0-65a9-4cfe-8222-20aba2d60a6b",
+            "text": "I almost gave up on academia motivacional until this happened.",
+            "start_time": 0.0,
+            "end_time": 4.0,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "aacad186-2572-4845-a50b-66c9fdec123f",
+            "text": "Three months ago I was completely stuck with academia motivacional and nothing was working.",
+            "start_time": 4.0,
+            "end_time": 9.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "07703add-387c-4b13-84ea-7d01ce714ec0",
+            "text": "I tried every tutorial, every guide \u2014 zero results.",
+            "start_time": 9.6,
+            "end_time": 13.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "50716bc2-acee-4e00-831e-a9b727ef4e5e",
+            "text": "Then one day I noticed something that changed everything.",
+            "start_time": 13.2,
+            "end_time": 16.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "bb751c27-0d68-4d05-be5f-6094f1d38ec3",
+            "text": "I stopped doing what everyone else was doing and found my own system.",
+            "start_time": 16.8,
+            "end_time": 22.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "5143193e-c2cc-4054-adf2-2018a8399f6f",
+            "text": "Within weeks the results started coming in faster than I ever expected.",
+            "start_time": 22.0,
+            "end_time": 26.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "c4eaf470-ae00-4633-889d-19eab52ba621",
+            "text": "Comment 'MORE' if you want me to break down exactly what I did.",
+            "start_time": 26.8,
+            "end_time": 32.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 32.0,
+        "word_count": 80
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "status": "error",
+      "progress": 10,
+      "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=17fdeb6034fc4dc19da79ed8602cc814'",
+      "output_path": null,
+      "thumbnail_path": null,
+      "created_at": "2026-05-25T14:29:42.498197",
+      "updated_at": "2026-05-25T14:29:42.498197"
+    },
+    "db9e5c51-689d-4ce0-a31d-bdd52d6b829e": {
+      "id": "db9e5c51-689d-4ce0-a31d-bdd52d6b829e",
+      "title": "I almost gave up on academia motivacional until this happened...",
+      "prompt": "academia motivacional",
+      "style": "tiktok_story",
+      "platform": "youtube_shorts",
+      "script": {
+        "hook": "I almost gave up on academia motivacional until this happened...",
+        "body": "Three months ago I was completely stuck with academia motivacional and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected.",
+        "cta": "Comment 'MORE' if you want me to break down exactly what I did.",
+        "full_text": "I almost gave up on academia motivacional until this happened... Three months ago I was completely stuck with academia motivacional and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected. Comment 'MORE' if you want me to break down exactly what I did.",
+        "segments": [
+          {
+            "id": "27ff2055-f230-4054-b90d-fe41852b1eb9",
+            "text": "I almost gave up on academia motivacional until this happened.",
+            "start_time": 0.0,
+            "end_time": 4.0,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "9da6dc2f-5b2e-4ee1-8e8e-69b5721e9cd7",
+            "text": "Three months ago I was completely stuck with academia motivacional and nothing was working.",
+            "start_time": 4.0,
+            "end_time": 9.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "7fa0963c-e4b6-4bc2-aec5-1164ac29610b",
+            "text": "I tried every tutorial, every guide \u2014 zero results.",
+            "start_time": 9.6,
+            "end_time": 13.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "8dabf891-df77-4dbc-9eef-c7f843954d2d",
+            "text": "Then one day I noticed something that changed everything.",
+            "start_time": 13.2,
+            "end_time": 16.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "2ad438f2-c766-4efb-829e-bb7fd8779fcd",
+            "text": "I stopped doing what everyone else was doing and found my own system.",
+            "start_time": 16.8,
+            "end_time": 22.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "a3bd4b49-efb7-4a2f-9dfc-1d0b5107d80e",
+            "text": "Within weeks the results started coming in faster than I ever expected.",
+            "start_time": 22.0,
+            "end_time": 26.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "53332b72-e078-4dca-9e59-f6b281b09485",
+            "text": "Comment 'MORE' if you want me to break down exactly what I did.",
+            "start_time": 26.8,
+            "end_time": 32.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 32.0,
+        "word_count": 80
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "status": "error",
+      "progress": 10,
+      "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=cd8ffbd659b84694be9752d041be9e0a'",
+      "output_path": null,
+      "thumbnail_path": null,
+      "created_at": "2026-05-25T14:29:45.568430",
+      "updated_at": "2026-05-25T14:29:45.568430"
+    }
+  },
+  "jobs": {
+    "6a324e85-a7ac-4ae9-b41f-dd7372423e02": {
+      "job_id": "6a324e85-a7ac-4ae9-b41f-dd7372423e02",
+      "project_id": "db9e5c51-689d-4ce0-a31d-bdd52d6b829e",
+      "status": "error",
+      "progress": 10,
+      "current_step": "Generating voice narration\u2026",
+      "started_at": "2026-05-25T14:29:46.567682",
+      "completed_at": "2026-05-25T14:29:47.773897",
+      "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=cd8ffbd659b84694be9752d041be9e0a'"
+    },
+    "0e8cb1c4-a155-48fa-b263-72c5c0fba1ab": {
+      "job_id": "0e8cb1c4-a155-48fa-b263-72c5c0fba1ab",
+      "project_id": "5d996328-492b-43af-bff1-eaeb47c9556f",
+      "status": "error",
+      "progress": 10,
+      "current_step": "Generating voice narration\u2026",
+      "started_at": "2026-05-25T14:33:00.840118",
+      "completed_at": "2026-05-25T14:33:01.766934",
+      "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=3f01135fe7574c5a8a6155bc0c1af417'"
+    },
+    "2b552536-b085-42e1-a546-0705c96821de": {
+      "job_id": "2b552536-b085-42e1-a546-0705c96821de",
+      "project_id": "5d996328-492b-43af-bff1-eaeb47c9556f",
+      "status": "error",
+      "progress": 10,
+      "current_step": "Generating voice narration\u2026",
+      "started_at": "2026-05-25T14:33:38.583351",
+      "completed_at": "2026-05-25T14:33:39.526411",
+      "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=17fdeb6034fc4dc19da79ed8602cc814'"
+    }
+  }
+}

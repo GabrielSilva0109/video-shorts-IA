@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { Wand2, FileText, Play } from 'lucide-react';
@@ -10,9 +9,21 @@ import { useAppStore } from '@/store';
 import type { VideoProject } from '@/types';
 
 export default function Generator() {
-  const { draftRequest, addProject, addRenderJob, updateProject } = useAppStore();
+  const { draftRequest, addProject, addRenderJob, updateProject, projects, activeProjectId, setActiveProject } = useAppStore();
   const [currentProject, setCurrentProject] = useState<VideoProject | null>(null);
   const [step, setStep] = useState<'form' | 'preview'>('form');
+
+  // Restore project if navigated from Home
+  useEffect(() => {
+    if (activeProjectId && !currentProject) {
+      const found = projects.find((p) => p.id === activeProjectId);
+      if (found) {
+        setCurrentProject(found);
+        setStep('preview');
+        setActiveProject(null);
+      }
+    }
+  }, [activeProjectId, projects, currentProject, setActiveProject]);
 
   // 1. Create project (generates script)
   const createMutation = useMutation({

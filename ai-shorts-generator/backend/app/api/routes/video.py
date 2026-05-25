@@ -53,7 +53,7 @@ async def delete_project(project_id: str) -> dict:
 
 
 # ── Render ────────────────────────────────────
-@router.post("/video/render/{project_id}", response_model=RenderJob, tags=["Render"])
+@router.post("/render/{project_id}", response_model=RenderJob, tags=["Render"])
 async def start_render(
     project_id: str, background_tasks: BackgroundTasks
 ) -> RenderJob:
@@ -73,7 +73,7 @@ async def start_render(
     return job
 
 
-@router.get("/video/status/{job_id}", response_model=RenderJob, tags=["Render"])
+@router.get("/status/{job_id}", response_model=RenderJob, tags=["Render"])
 async def get_render_status(job_id: str) -> RenderJob:
     job = store.get_job(job_id)
     if not job:
@@ -81,7 +81,7 @@ async def get_render_status(job_id: str) -> RenderJob:
     return job
 
 
-@router.delete("/video/render/{job_id}", tags=["Render"])
+@router.delete("/render/{job_id}", tags=["Render"])
 async def cancel_render(job_id: str) -> dict:
     job = store.get_job(job_id)
     if not job:
