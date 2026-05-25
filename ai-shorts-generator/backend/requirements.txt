@@ -8,7 +8,8 @@ aiofiles==23.2.1
 
 # ── AI ──────────────────────────────────────
 openai==1.35.7
-openai-whisper==20231117
+faster-whisper==1.0.3
+edge-tts==6.1.9
 
 # ── Video processing ────────────────────────
 moviepy==1.0.3

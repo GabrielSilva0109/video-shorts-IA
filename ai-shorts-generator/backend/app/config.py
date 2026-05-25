@@ -54,6 +54,14 @@ class Settings(BaseSettings):
     ollama_base_url: str = "http://localhost:11434"
     ollama_model: str = "llama3"
 
+    @field_validator("openai_api_key", mode="after")
+    @classmethod
+    def reject_placeholder_key(cls, v: str) -> str:
+        """Treat common placeholder values as unset."""
+        if v in ("", "sk-...", "your_openai_key_here", "sk-your-key-here"):
+            return ""
+        return v
+
     @field_validator("exports_dir", "assets_dir", "temp_dir", mode="after")
     @classmethod
     def ensure_dir(cls, v: str) -> str:

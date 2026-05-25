@@ -30,15 +30,15 @@ export const generateDescription = (
 
 // ── Projects ─────────────────────────────────
 export const getProjects = (): Promise<VideoProject[]> =>
-  api.get('/projects').then((r) => r.data);
+  api.get('/video/projects').then((r) => r.data);
 
 export const createProject = (
   req: GenerationRequest
 ): Promise<VideoProject> =>
-  api.post('/projects', req).then((r) => r.data);
+  api.post('/video/projects', req).then((r) => r.data);
 
 export const deleteProject = (id: string): Promise<void> =>
-  api.delete(`/projects/${id}`).then((r) => r.data);
+  api.delete(`/video/projects/${id}`).then((r) => r.data);
 
 // ── Render ────────────────────────────────────
 export const startRender = (projectId: string): Promise<RenderJob> =>

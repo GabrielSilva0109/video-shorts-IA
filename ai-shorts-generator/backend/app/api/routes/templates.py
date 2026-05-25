@@ -1,6 +1,5 @@
 from fastapi import APIRouter
 from app.services.template_service import TemplateService
-from app.models.schemas import VideoTemplate  # type: ignore[attr-defined]
 
 router = APIRouter()
 template_service = TemplateService()

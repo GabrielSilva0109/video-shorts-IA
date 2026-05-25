@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 from typing import Optional
 from openai import AsyncOpenAI
+from fastapi import HTTPException
 from loguru import logger
 from app.config import settings
 from app.models.schemas import (
@@ -79,8 +80,10 @@ Output ONLY valid JSON matching this schema:
 
         logger.info(f"Generating script | style={style_key} | lang={language}")
 
-        if settings.enable_local_ai or not self._client:
+        if settings.enable_local_ai:
             raw = await self._local_generate(system_prompt, user_prompt)
+        elif not self._client:
+            raw = json.dumps(self._template_script(prompt, style_key))
         else:
             response = await self._client.chat.completions.create(
                 model=settings.openai_model,
@@ -139,8 +142,10 @@ Output ONLY valid JSON:
 
     # ── Helpers ──────────────────────────────
     async def _complete(self, system: str, user: str) -> str:
-        if settings.enable_local_ai or not self._client:
+        if settings.enable_local_ai:
             return await self._local_generate(system, user)
+        if not self._client:
+            return self._template_complete_json(system, user)
         response = await self._client.chat.completions.create(
             model=settings.openai_model,
             messages=[
@@ -151,6 +156,129 @@ Output ONLY valid JSON:
             response_format={"type": "json_object"},
         )
         return response.choices[0].message.content or "{}"
+
+    # ── Offline / Template generation ────────
+    @staticmethod
+    def _template_script(prompt: str, style_key: str) -> dict:
+        """Generate a script from templates — no API key required."""
+        topic = prompt.strip().rstrip(".!?")
+        SCRIPTS: dict[str, dict] = {
+            "hormozi": {
+                "hook": f"Most people fail at {topic} for one simple reason.",
+                "body": (
+                    f"They skip the fundamentals and jump straight to advanced tactics. "
+                    f"I've studied {topic} closely and the pattern is always the same. "
+                    f"The people who succeed master the basics first, then build repeatable systems. "
+                    f"It's not complicated — it just requires the right focus and consistent execution."
+                ),
+                "cta": "Follow for more no-BS content that actually moves the needle.",
+            },
+            "tiktok_story": {
+                "hook": f"I almost gave up on {topic} until this happened...",
+                "body": (
+                    f"Three months ago I was completely stuck with {topic} and nothing was working. "
+                    f"I tried every tutorial, every guide — zero results. "
+                    f"Then one day I noticed something that changed everything. "
+                    f"I stopped doing what everyone else was doing and found my own system. "
+                    f"Within weeks the results started coming in faster than I ever expected."
+                ),
+                "cta": "Comment 'MORE' if you want me to break down exactly what I did.",
+            },
+            "finance": {
+                "hook": f"The real cost of ignoring {topic} will shock you.",
+                "body": (
+                    f"Most people don't realize how much money they're leaving on the table with {topic}. "
+                    f"The math is simple: small consistent actions compound over time. "
+                    f"Whether you're just starting or already deep into {topic}, "
+                    f"understanding the fundamentals can completely change your financial trajectory."
+                ),
+                "cta": "Follow for daily money tips that actually build wealth.",
+            },
+            "motivation": {
+                "hook": f"Your potential with {topic} is unlimited — here's proof.",
+                "body": (
+                    f"Stop letting fear hold you back from {topic}. "
+                    f"Every expert was once a beginner. Every success story started with a single decision. "
+                    f"The only difference between where you are and where you want to be is action. "
+                    f"Take one step toward {topic} today. Then another tomorrow. "
+                    f"Consistency beats talent every single time."
+                ),
+                "cta": "Follow for daily motivation to keep pushing forward.",
+            },
+            "gaming": {
+                "hook": f"This {topic} strategy is absolutely broken right now.",
+                "body": (
+                    f"I've been grinding {topic} for weeks and found something insane. "
+                    f"Most players are completely sleeping on this. "
+                    f"Once you understand how {topic} actually works at a high level, "
+                    f"you'll never go back to your old approach. "
+                    f"This is game-changing info that top players don't want you to know."
+                ),
+                "cta": "Drop a follow for more broken strats and gaming secrets.",
+            },
+            "luxury": {
+                "hook": f"This is how the elite approach {topic}.",
+                "body": (
+                    f"There's a reason the top 1% see {topic} differently than everyone else. "
+                    f"While most people settle for average, those who operate at the highest level "
+                    f"understand that {topic} is an investment, not an expense. "
+                    f"The details, the quality, the experience — everything matters at this level."
+                ),
+                "cta": "Follow to elevate your standards and live at a higher level.",
+            },
+            "documentary": {
+                "hook": f"The untold story of {topic} is more fascinating than you think.",
+                "body": (
+                    f"For decades, {topic} has been shaping our world in ways most people never notice. "
+                    f"Researchers who study {topic} have discovered that what we think we know "
+                    f"barely scratches the surface. "
+                    f"The deeper you look, the more complex and beautiful the picture becomes."
+                ),
+                "cta": "Follow for more fascinating stories about the world around us.",
+            },
+        }
+        data = SCRIPTS.get(style_key, SCRIPTS["hormozi"])
+        full_text = f"{data['hook']} {data['body']} {data['cta']}"
+        return {**data, "full_text": full_text}
+
+    @staticmethod
+    def _template_complete_json(system: str, user: str) -> str:
+        """Return template-based JSON for titles/descriptions without any API."""
+        script_text = user.replace("Script:\n", "").strip()
+        first_sentence = (script_text.split(".")[0] + ".")[:80]
+        words = [
+            w.lower().strip(".,!?\"'")
+            for w in script_text.split()
+            if len(w) > 4 and w.isalpha()
+        ][:12]
+
+        if '"titles"' in system:
+            return json.dumps({
+                "titles": [
+                    "Nobody talks about this",
+                    "This changed everything for me",
+                    "Watch this before you do anything else",
+                    "The truth nobody tells you",
+                    "Stop wasting time, do this instead",
+                ],
+                "hooks": [
+                    first_sentence,
+                    "Wait until you hear what happens next...",
+                    "This is the most important thing you'll see today.",
+                ],
+            })
+
+        if '"hashtags"' in system:
+            hashtags = [f"#{w}" for w in words[:5]] + [
+                "#shorts", "#viral", "#fyp", "#trending", "#reels"
+            ]
+            return json.dumps({
+                "description": script_text[:200] + ("..." if len(script_text) > 200 else ""),
+                "hashtags": hashtags[:10],
+                "keywords": words[:8],
+            })
+
+        return "{}"
 
     async def _local_generate(self, system: str, user: str) -> str:
         """Fallback: use Ollama local inference."""

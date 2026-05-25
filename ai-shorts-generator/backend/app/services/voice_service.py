@@ -1,7 +1,5 @@
-"""
-Voice Service — generates narration audio using OpenAI TTS, ElevenLabs,
-or a local Coqui TTS model.
-"""
+"""Voice Service — generates narration audio using OpenAI TTS, ElevenLabs,
+edge-tts (free, no key required), or a local TTS model."""
 from __future__ import annotations
 from pathlib import Path
 import aiofiles
@@ -9,6 +7,16 @@ from loguru import logger
 from openai import AsyncOpenAI
 from app.config import settings
 from app.models.schemas import VoiceModel
+
+# edge-tts voice options (free, no API key)
+EDGE_TTS_VOICES = {
+    "en": "en-US-ChristopherNeural",
+    "pt": "pt-BR-AntonioNeural",
+    "es": "es-ES-AlvaroNeural",
+    "fr": "fr-FR-HenriNeural",
+    "de": "de-DE-ConradNeural",
+    "ja": "ja-JP-KeitaNeural",
+}
 
 
 class VoiceService:
@@ -28,12 +36,13 @@ class VoiceService:
 
         logger.info(f"Generating voice with {model_key}")
 
-        if model_key == "openai":
+        if model_key == "openai" and self._openai:
             await self._openai_tts(text, output_path)
-        elif model_key == "elevenlabs":
+        elif model_key == "elevenlabs" and settings.elevenlabs_api_key:
             await self._elevenlabs_tts(text, output_path)
         else:
-            await self._local_tts(text, output_path)
+            # Default: free edge-tts — works without any API key
+            await self._edge_tts(text, output_path)
 
         return output_path
 
@@ -48,6 +57,20 @@ class VoiceService:
         )
         async with aiofiles.open(output_path, "wb") as f:
             await f.write(response.content)
+
+    async def _edge_tts(self, text: str, output_path: Path, language: str = "en") -> None:
+        """Free TTS using Microsoft Edge voices — no API key needed."""
+        try:
+            import edge_tts
+        except ImportError as exc:
+            raise RuntimeError(
+                "edge-tts is not installed. Run: pip install edge-tts"
+            ) from exc
+
+        voice = EDGE_TTS_VOICES.get(language[:2], EDGE_TTS_VOICES["en"])
+        communicate = edge_tts.Communicate(text, voice)
+        await communicate.save(str(output_path))
+        logger.info(f"edge-tts saved to {output_path} (voice={voice})")
 
     async def _elevenlabs_tts(self, text: str, output_path: Path) -> None:
         if not settings.elevenlabs_api_key:

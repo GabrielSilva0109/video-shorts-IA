@@ -50,6 +50,7 @@ class SubtitleStyle(str, Enum):
 class VoiceModel(str, Enum):
     openai = "openai"
     elevenlabs = "elevenlabs"
+    edge_tts = "edge_tts"
     local = "local"
 
 

@@ -21,23 +21,26 @@ class BRollService:
         count: int = 5,
         output_dir: Path = Path("./tmp"),
     ) -> List[Path]:
-        """Download stock video clips matching the keywords."""
+        """Download stock video clips or generate local backgrounds."""
         query = " ".join(keywords[:3])
         logger.info(f"Fetching B-roll: query='{query}' count={count}")
 
-        video_urls = await self._search_pexels(query, count)
+        video_urls: List[str] = []
+        if settings.pexels_api_key:
+            video_urls = await self._search_pexels(query, count)
         if not video_urls and settings.pixabay_api_key:
             video_urls = await self._search_pixabay(query, count)
 
-        if not video_urls:
-            logger.warning("No B-roll found — using blank clip fallback")
-            return []
+        if video_urls:
+            paths = await asyncio.gather(
+                *[self._download(url, output_dir / f"broll_{i}.mp4")
+                  for i, url in enumerate(video_urls[:count])]
+            )
+            return [p for p in paths if p is not None]
 
-        paths = await asyncio.gather(
-            *[self._download(url, output_dir / f"broll_{i}.mp4")
-              for i, url in enumerate(video_urls[:count])]
-        )
-        return [p for p in paths if p is not None]
+        # No API keys available — generate gradient backgrounds with FFmpeg
+        logger.info("No B-roll API keys configured — generating gradient backgrounds")
+        return await self._generate_local_clips(count, output_dir)
 
     async def _search_pexels(self, query: str, count: int) -> List[str]:
         if not settings.pexels_api_key:
@@ -90,6 +93,37 @@ class BRollService:
             except Exception as exc:
                 logger.warning(f"Pixabay search failed: {exc}")
                 return []
+
+    async def _generate_local_clips(self, count: int, output_dir: Path) -> List[Path]:
+        """Create animated gradient background clips using FFmpeg (no API key needed)."""
+        # Dark neon palette matching the app's design system
+        colors = ["0x1a0533", "0x0f1a2e", "0x0d1f0d", "0x1a0d0d", "0x1a1a0d", "0x0d1a1a"]
+        paths: List[Path] = []
+        for i in range(count):
+            color = colors[i % len(colors)]
+            dest = output_dir / f"broll_{i}.mp4"
+            cmd = [
+                "ffmpeg", "-y",
+                "-f", "lavfi",
+                "-i", f"color=c={color}:s=1080x1920:r=30",
+                "-t", "6",
+                "-c:v", "libx264",
+                "-pix_fmt", "yuv420p",
+                "-tune", "stillimage",
+                str(dest),
+            ]
+            try:
+                proc = await asyncio.create_subprocess_exec(
+                    *cmd,
+                    stdout=asyncio.subprocess.DEVNULL,
+                    stderr=asyncio.subprocess.DEVNULL,
+                )
+                await proc.wait()
+                if dest.exists():
+                    paths.append(dest)
+            except Exception as exc:
+                logger.warning(f"FFmpeg background generation failed: {exc}")
+        return paths
 
     @staticmethod
     async def _download(url: str, dest: Path) -> Path | None:

@@ -15,29 +15,23 @@ def generate_srt(
 ) -> Path:
     """Generate SRT subtitles from audio using Whisper."""
     try:
-        import whisper  # type: ignore[import]
+        from faster_whisper import WhisperModel  # type: ignore[import]
 
-        model = whisper.load_model("base")
-        result = model.transcribe(
-            str(audio_path),
-            language=language,
-            word_timestamps=True,
-        )
+        model = WhisperModel("base", device="cpu", compute_type="int8")
+        segments, _ = model.transcribe(str(audio_path), language=language)
 
         lines = []
-        idx = 1
-        for segment in result["segments"]:
-            start = _sec_to_srt(segment["start"])
-            end = _sec_to_srt(segment["end"])
-            text = segment["text"].strip().upper()
+        for idx, segment in enumerate(segments, 1):
+            start = _sec_to_srt(segment.start)
+            end = _sec_to_srt(segment.end)
+            text = segment.text.strip().upper()
             lines.append(f"{idx}\n{start} --> {end}\n{text}\n")
-            idx += 1
 
         output_path.write_text("\n".join(lines), encoding="utf-8")
         return output_path
 
     except ImportError:
-        raise RuntimeError("OpenAI Whisper not installed. Run: pip install openai-whisper")
+        raise RuntimeError("faster-whisper not installed. Run: pip install faster-whisper")
 
 
 def generate_word_srt(
@@ -48,22 +42,22 @@ def generate_word_srt(
 ) -> Path:
     """Generate word-level SRT for animated subtitle cards."""
     try:
-        import whisper
+        from faster_whisper import WhisperModel
 
-        model = whisper.load_model("base")
-        result = model.transcribe(
+        model = WhisperModel("base", device="cpu", compute_type="int8")
+        segments_iter, _ = model.transcribe(
             str(audio_path),
             language=language,
             word_timestamps=True,
         )
 
         all_words: List[dict] = []
-        for segment in result["segments"]:
-            for word in segment.get("words", []):
+        for segment in segments_iter:
+            for word in (segment.words or []):
                 all_words.append({
-                    "word": word["word"].strip().upper(),
-                    "start": word["start"],
-                    "end": word["end"],
+                    "word": word.word.strip().upper(),
+                    "start": word.start,
+                    "end": word.end,
                 })
 
         # Group into cards of N words
@@ -81,7 +75,7 @@ def generate_word_srt(
         return output_path
 
     except ImportError:
-        raise RuntimeError("OpenAI Whisper not installed")
+        raise RuntimeError("faster-whisper not installed")
 
 
 def _sec_to_srt(seconds: float) -> str:
