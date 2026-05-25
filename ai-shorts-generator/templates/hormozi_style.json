@@ -1,0 +1,23 @@
+{
+  "id": "hormozi",
+  "name": "Hormozi Style",
+  "description": "Bold, punchy captions in Alex Hormozi's iconic black-and-white style. Perfect for business, money, and self-improvement content.",
+  "style": "hormozi",
+  "thumbnail": "/templates/hormozi_thumb.jpg",
+  "default_effects": {
+    "auto_zoom": true,
+    "punch_in_out": true,
+    "cinematic_transitions": false,
+    "sound_effects": true,
+    "background_blur": false,
+    "beat_sync": false,
+    "motion_graphics": false
+  },
+  "default_subtitle_style": "hormozi",
+  "prompt_examples": [
+    "The truth about why 95% of people stay broke forever",
+    "How I made $1M in 12 months doing this ONE thing",
+    "Stop wasting your 20s — do this instead"
+  ],
+  "tags": ["business", "money", "self-improvement", "motivation"]
+}

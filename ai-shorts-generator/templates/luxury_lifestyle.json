@@ -1,0 +1,23 @@
+{
+  "id": "luxury_lifestyle",
+  "name": "Luxury Lifestyle",
+  "description": "Aspirational luxury content. Premium aesthetic with smooth transitions and cinematic shots.",
+  "style": "luxury",
+  "thumbnail": "/templates/luxury_lifestyle_thumb.jpg",
+  "default_effects": {
+    "auto_zoom": true,
+    "punch_in_out": false,
+    "cinematic_transitions": true,
+    "sound_effects": false,
+    "background_blur": true,
+    "beat_sync": false,
+    "motion_graphics": false
+  },
+  "default_subtitle_style": "minimal",
+  "prompt_examples": [
+    "The morning routine of the world's top billionaires",
+    "Why rich people think about money completely differently",
+    "The $50,000 watch that actually saves billionaires money"
+  ],
+  "tags": ["luxury", "lifestyle", "aspirational", "wealth"]
+}

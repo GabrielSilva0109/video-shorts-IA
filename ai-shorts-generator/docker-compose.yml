@@ -1,0 +1,67 @@
+version: "3.9"
+
+services:
+  # ── Backend API ─────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-shorts-backend
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./exports:/app/exports
+      - ./assets:/app/assets
+      - ./templates:/app/templates
+      - ./tmp:/app/tmp
+      - ./logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - ai-shorts-net
+
+  # ── Redis (queue) ────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: ai-shorts-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - ai-shorts-net
+
+  # ── Celery worker (optional async queue) ─────
+  worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-shorts-worker
+    command: celery -A app.queue.worker worker --loglevel=info --concurrency=2
+    env_file: .env
+    volumes:
+      - ./exports:/app/exports
+      - ./assets:/app/assets
+      - ./tmp:/app/tmp
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - ai-shorts-net
+
+volumes:
+  redis_data:
+
+networks:
+  ai-shorts-net:
+    driver: bridge

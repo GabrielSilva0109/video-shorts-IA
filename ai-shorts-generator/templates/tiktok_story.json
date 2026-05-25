@@ -1,0 +1,23 @@
+{
+  "id": "tiktok_story",
+  "name": "TikTok Storytelling",
+  "description": "Engaging first-person story format. Grabs attention in the first 2 seconds with a cliffhanger hook.",
+  "style": "tiktok_story",
+  "thumbnail": "/templates/tiktok_story_thumb.jpg",
+  "default_effects": {
+    "auto_zoom": true,
+    "punch_in_out": true,
+    "cinematic_transitions": true,
+    "sound_effects": true,
+    "background_blur": false,
+    "beat_sync": true,
+    "motion_graphics": false
+  },
+  "default_subtitle_style": "tiktok",
+  "prompt_examples": [
+    "The day I accidentally went viral with 50M views",
+    "I quit my $200k job to do this — here's what happened",
+    "This stranger's advice changed my entire life"
+  ],
+  "tags": ["story", "viral", "personal", "tiktok"]
+}

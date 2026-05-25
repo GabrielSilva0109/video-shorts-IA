@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, #a855f715, transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, #3b82f610, transparent);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background-secondary;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-light rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neon-purple;
+  }
+}
+
+@layer components {
+  /* ── Cards ─────────────────────────────── */
+  .card {
+    @apply bg-background-card border border-border rounded-2xl shadow-card;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-border-light hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  /* ── Buttons ────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+      bg-gradient-to-r from-neon-purple to-neon-blue text-white
+      hover:opacity-90 active:scale-95 transition-all duration-150
+      shadow-neon-purple disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+      bg-background-tertiary border border-border text-text-primary
+      hover:border-border-light active:scale-95 transition-all duration-150
+      disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm
+      text-text-secondary hover:text-text-primary hover:bg-background-hover
+      active:scale-95 transition-all duration-150;
+  }
+
+  /* ── Inputs ─────────────────────────────── */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-xl bg-background-secondary border border-border
+      text-text-primary placeholder:text-text-muted text-sm
+      focus:outline-none focus:border-neon-purple focus:ring-2 focus:ring-neon-purple/20
+      transition-all duration-150;
+  }
+  .textarea {
+    @apply input resize-none;
+  }
+
+  /* ── Neon text ──────────────────────────── */
+  .neon-text-purple {
+    @apply text-neon-purple drop-shadow-[0_0_12px_#a855f760];
+  }
+  .neon-text-blue {
+    @apply text-neon-blue drop-shadow-[0_0_12px_#3b82f660];
+  }
+  .neon-text-cyan {
+    @apply text-neon-cyan drop-shadow-[0_0_12px_#06b6d460];
+  }
+
+  /* ── Gradient text ──────────────────────── */
+  .gradient-text {
+    @apply bg-gradient-to-r from-neon-purple via-neon-blue to-neon-cyan bg-clip-text text-transparent;
+  }
+
+  /* ── Skeleton loader ────────────────────── */
+  .skeleton {
+    @apply bg-background-tertiary rounded-lg animate-pulse;
+    background: linear-gradient(90deg, #1a1a2e 25%, #252540 50%, #1a1a2e 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* ── Badge ──────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-purple {
+    @apply badge bg-neon-purple/15 text-neon-purple border border-neon-purple/30;
+  }
+  .badge-blue {
+    @apply badge bg-neon-blue/15 text-neon-blue border border-neon-blue/30;
+  }
+  .badge-green {
+    @apply badge bg-neon-green/15 text-neon-green border border-neon-green/30;
+  }
+  .badge-pink {
+    @apply badge bg-neon-pink/15 text-neon-pink border border-neon-pink/30;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

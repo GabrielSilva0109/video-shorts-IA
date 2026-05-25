@@ -1,0 +1,23 @@
+{
+  "id": "documentary_short",
+  "name": "Documentary Short",
+  "description": "Authoritative documentary-style narration with educational content and cinematic pacing.",
+  "style": "documentary",
+  "thumbnail": "/templates/documentary_short_thumb.jpg",
+  "default_effects": {
+    "auto_zoom": false,
+    "punch_in_out": false,
+    "cinematic_transitions": true,
+    "sound_effects": false,
+    "background_blur": false,
+    "beat_sync": false,
+    "motion_graphics": false
+  },
+  "default_subtitle_style": "clean",
+  "prompt_examples": [
+    "The dark history of how Coca-Cola conquered the world",
+    "How Rome built the most advanced empire in human history",
+    "The forgotten inventor that built the modern world"
+  ],
+  "tags": ["documentary", "history", "education", "facts"]
+}

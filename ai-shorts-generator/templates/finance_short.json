@@ -1,0 +1,23 @@
+{
+  "id": "finance_short",
+  "name": "Finance Short",
+  "description": "Data-driven finance content. Shocking money facts with actionable advice. Popular on all platforms.",
+  "style": "finance",
+  "thumbnail": "/templates/finance_short_thumb.jpg",
+  "default_effects": {
+    "auto_zoom": false,
+    "punch_in_out": false,
+    "cinematic_transitions": true,
+    "sound_effects": false,
+    "background_blur": false,
+    "beat_sync": false,
+    "motion_graphics": true
+  },
+  "default_subtitle_style": "clean",
+  "prompt_examples": [
+    "How the S&P 500 could turn $500/month into $1.2 million",
+    "The compound interest trick Warren Buffett used to get rich",
+    "Why your savings account is secretly losing you money"
+  ],
+  "tags": ["finance", "investing", "money", "education"]
+}

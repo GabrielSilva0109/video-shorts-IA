@@ -1,0 +1,53 @@
+# ── Python ──────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+.venv/
+venv/
+env/
+ENV/
+.env
+*.log
+
+# ── Node / Frontend ─────────────────────────
+node_modules/
+dist/
+.next/
+out/
+*.tsbuildinfo
+.eslintcache
+
+# ── Electron ────────────────────────────────
+release/
+out/
+
+# ── Temp & generated ────────────────────────
+tmp/
+temp/
+exports/
+*.mp4
+*.mp3
+*.wav
+*.srt
+*.vtt
+
+# ── OS ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ─────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ── Docker ──────────────────────────────────
+.dockerignore

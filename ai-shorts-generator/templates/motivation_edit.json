@@ -1,0 +1,23 @@
+{
+  "id": "motivation_edit",
+  "name": "Motivation Edit",
+  "description": "High-energy motivational content with powerful quotes and cinematic B-roll. Perfect for fitness, mindset, and hustle culture.",
+  "style": "motivation",
+  "thumbnail": "/templates/motivation_edit_thumb.jpg",
+  "default_effects": {
+    "auto_zoom": true,
+    "punch_in_out": true,
+    "cinematic_transitions": true,
+    "sound_effects": true,
+    "background_blur": false,
+    "beat_sync": true,
+    "motion_graphics": true
+  },
+  "default_subtitle_style": "fire",
+  "prompt_examples": [
+    "You are one decision away from a completely different life",
+    "The most successful people do this every single morning",
+    "Stop waiting for motivation — do this instead"
+  ],
+  "tags": ["motivation", "fitness", "mindset", "hustle"]
+}
