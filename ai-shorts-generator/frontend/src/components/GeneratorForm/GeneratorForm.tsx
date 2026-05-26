@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   RiMagicLine,
@@ -10,19 +10,26 @@ import {
   RiToggleLine,
   RiToggleFill,
   RiLoader4Line,
+  RiFireLine,
+  RiSmartphoneLine,
+  RiLineChartLine,
+  RiFlashlightLine,
+  RiGamepadLine,
+  RiVipCrownLine,
+  RiFilmLine,
 } from 'react-icons/ri';
 import { useAppStore } from '@/store';
 import type { VideoStyle, ExportPlatform, SubtitleStyle, VoiceModel } from '@/types';
 import clsx from 'clsx';
 
-const STYLES: { value: VideoStyle; label: string; emoji: string }[] = [
-  { value: 'hormozi', label: 'Hormozi', emoji: '??' },
-  { value: 'tiktok_story', label: 'TikTok Story', emoji: '??' },
-  { value: 'finance', label: 'Finance', emoji: '??' },
-  { value: 'motivation', label: 'Motivação', emoji: '??' },
-  { value: 'gaming', label: 'Gaming', emoji: '??' },
-  { value: 'luxury', label: 'Luxury', emoji: '?' },
-  { value: 'documentary', label: 'Documentário', emoji: '??' },
+const STYLES: { value: VideoStyle; label: string; icon: React.ElementType }[] = [
+  { value: 'hormozi', label: 'Hormozi', icon: RiFireLine },
+  { value: 'tiktok_story', label: 'TikTok Story', icon: RiSmartphoneLine },
+  { value: 'finance', label: 'Finance', icon: RiLineChartLine },
+  { value: 'motivation', label: 'MotivaÃ§Ã£o', icon: RiFlashlightLine },
+  { value: 'gaming', label: 'Gaming', icon: RiGamepadLine },
+  { value: 'luxury', label: 'Luxury', icon: RiVipCrownLine },
+  { value: 'documentary', label: 'DocumentÃ¡rio', icon: RiFilmLine },
 ];
 
 const PLATFORMS: { value: ExportPlatform; label: string }[] = [
@@ -35,7 +42,7 @@ const SUBTITLE_STYLES: { value: SubtitleStyle; label: string }[] = [
   { value: 'hormozi', label: 'Hormozi Bold' },
   { value: 'tiktok', label: 'TikTok Classic' },
   { value: 'clean', label: 'Clean White' },
-  { value: 'fire', label: 'Fire ??' },
+  { value: 'fire', label: 'Fire' },
   { value: 'minimal', label: 'Minimal' },
   { value: 'emoji', label: 'Emoji Style' },
 ];
@@ -47,8 +54,8 @@ const VOICES: { value: VoiceModel; label: string }[] = [
 ];
 
 const LANGUAGES = [
-  { value: 'pt', label: 'Português', flag: '????' },
-  { value: 'en', label: 'English', flag: '????' },
+  { value: 'pt', label: 'PortuguÃªs', flag: 'ðŸ‡§ðŸ‡·' },
+  { value: 'en', label: 'English', flag: 'ðŸ‡ºðŸ‡¸' },
 ];
 
 export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => void; loading: boolean }) {
@@ -60,10 +67,10 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
     <div className="flex flex-col gap-5">
       {/* Prompt */}
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-text-primary">Tópico / Prompt</label>
+        <label className="text-sm font-medium text-text-primary">TÃ³pico / Prompt</label>
         <textarea
           className="textarea h-24"
-          placeholder="Ex: A verdade sombria sobre juros compostos que os bancos não querem que você saiba…"
+          placeholder="Ex: A verdade sombria sobre juros compostos que os bancos nÃ£o querem que vocÃª saiba"
           value={draftRequest.prompt ?? ''}
           onChange={(e) => setDraftRequest({ prompt: e.target.value })}
         />
@@ -71,7 +78,7 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
 
       {/* Style */}
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-text-primary">Estilo do Vídeo</label>
+        <label className="text-sm font-medium text-text-primary">Estilo do VÃ­deo</label>
         <div className="grid grid-cols-4 gap-1.5">
           {STYLES.map((s) => (
             <button
@@ -84,7 +91,7 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
                   : 'bg-background-secondary border-border text-text-secondary hover:border-border-light hover:text-text-primary'
               )}
             >
-              <span className="text-base">{s.emoji}</span>
+              <s.icon className="w-4 h-4" />
               {s.label}
             </button>
           ))}
@@ -143,7 +150,7 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
         onClick={() => setAdvancedOpen((v) => !v)}
       >
         {advancedOpen ? <RiArrowUpSLine className="w-3.5 h-3.5" /> : <RiArrowDownSLine className="w-3.5 h-3.5" />}
-        Configurações avançadas
+        ConfiguraÃ§Ãµes avanÃ§adas
       </button>
 
       {advancedOpen && (
@@ -183,11 +190,11 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
 
           <div className="flex flex-col gap-1">
             <label className="text-xs font-medium text-text-muted flex items-center gap-1">
-              <RiMusicLine className="w-3 h-3" /> Música de Fundo
+              <RiMusicLine className="w-3 h-3" /> MÃºsica de Fundo
             </label>
             <input
               className="input text-xs"
-              placeholder="auto — ou cole URL / nome do arquivo"
+              placeholder="auto â€” ou cole URL / nome do arquivo"
               value={draftRequest.background_music ?? ''}
               onChange={(e) => setDraftRequest({ background_music: e.target.value })}
             />
@@ -225,7 +232,7 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
         {loading ? (
           <>
             <RiLoader4Line className="w-4 h-4 animate-spin" />
-            Gerando…
+            Gerando...
           </>
         ) : (
           <>

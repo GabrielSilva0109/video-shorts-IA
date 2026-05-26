@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   RiVideoAddLine,
-  RiTrendingUpLine,
+  RiLineChartLine,
   RiCheckboxCircleLine,
   RiErrorWarningLine,
   RiTimeLine,
@@ -18,7 +18,7 @@ const STAT_CARDS = [
   { label: 'Criados', icon: RiCheckboxCircleLine, color: 'text-success', key: 'done' },
   { label: 'Em andamento', icon: RiTimeLine, color: 'text-accent', key: 'rendering' },
   { label: 'Com erro', icon: RiErrorWarningLine, color: 'text-danger', key: 'error' },
-  { label: 'Total', icon: RiTrendingUpLine, color: 'text-text-secondary', key: 'total' },
+  { label: 'Total', icon: RiLineChartLine, color: 'text-text-secondary', key: 'total' },
 ];
 
 export default function Home() {
@@ -63,15 +63,15 @@ export default function Home() {
           <span className="text-xs font-medium text-text-muted tracking-wide uppercase">AI Shorts Generator</span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight">
-          Crie vídeos curtos com IA
+          Crie vÃ­deos curtos com IA
         </h1>
         <p className="text-text-secondary text-sm max-w-xl leading-relaxed">
-          Transforme qualquer tópico em um short profissional em menos de 2 minutos.
-          Script, voz, imagens, legendas e música — totalmente automatizado.
+          Transforme qualquer tÃ³pico em um short profissional em menos de 2 minutos.
+          Script, voz, imagens, legendas e mÃºsica Ã© totalmente automatizado.
         </p>
         <div className="flex gap-2 mt-1">
           <Link to="/generator" className="btn-primary">
-            <RiVideoAddLine className="w-4 h-4" /> Novo Vídeo
+            <RiVideoAddLine className="w-4 h-4" /> Novo VÃ­deo
           </Link>
           <Link to="/templates" className="btn-secondary">
             Ver Templates
@@ -107,7 +107,7 @@ export default function Home() {
           <h2 className="text-base font-semibold text-text-primary">Projetos recentes</h2>
           {projects.length > 0 && (
             <Link to="/generator" className="btn-ghost text-xs">
-              + Novo Vídeo
+              + Novo VÃ­deo
             </Link>
           )}
         </div>
@@ -124,13 +124,13 @@ export default function Home() {
               <RiVideoAddLine className="w-6 h-6 text-accent" />
             </div>
             <div>
-              <p className="font-semibold text-text-primary mb-1">Nenhum vídeo ainda</p>
+              <p className="font-semibold text-text-primary mb-1">Nenhum vÃ­deo ainda</p>
               <p className="text-sm text-text-muted">
-                Gere seu primeiro short com IA para começar.
+                Gere seu primeiro short com IA para comeÃ§ar.
               </p>
             </div>
             <Link to="/generator" className="btn-primary">
-              <RiVideoAddLine className="w-4 h-4" /> Criar Primeiro Vídeo
+              <RiVideoAddLine className="w-4 h-4" /> Criar Primeiro VÃ­deo
             </Link>
           </div>
         ) : (

@@ -9,15 +9,15 @@ import { useAppStore, useRenderingJobs } from '@/store';
 import clsx from 'clsx';
 
 const STEP_LABELS: Record<string, string> = {
-  generating_script: 'Escrevendo script…',
-  generating_voice: 'Gerando voz…',
-  fetching_broll: 'Buscando imagens…',
-  compositing: 'Montando vídeo…',
-  adding_subtitles: 'Adicionando legendas…',
-  adding_music: 'Adicionando música…',
-  applying_effects: 'Aplicando efeitos…',
-  exporting: 'Exportando…',
-  done: 'Concluído!',
+  generating_script: 'Escrevendo script',
+  generating_voice: 'Gerando voz',
+  fetching_broll: 'Buscando imagens',
+  compositing: 'Montando vÃ­deo',
+  adding_subtitles: 'Adicionando legendas',
+  adding_music: 'Adicionando mÃºsica',
+  applying_effects: 'Aplicando efeitos',
+  exporting: 'Exportando',
+  done: 'ConcluÃ­do!',
   error: 'Erro',
 };
 

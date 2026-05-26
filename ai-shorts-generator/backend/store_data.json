@@ -990,6 +990,161 @@
       "thumbnail_path": "exports\\Voc\u00ea est\u00e1 pronto para transformar seu corpo em uma m\u00e1quina__thumb.jpg",
       "created_at": "2026-05-26T12:58:39.303899",
       "updated_at": "2026-05-26T13:02:39.051551"
+    },
+    "887fd90d-c0c8-4c7d-9e51-088240166ad2": {
+      "id": "887fd90d-c0c8-4c7d-9e51-088240166ad2",
+      "title": "Voc\u00ea sabe que 90% dos brasileiros investem em fundos imobili\u00e1rios pela seguran\u00e7a",
+      "prompt": "fundo imobiliarios",
+      "style": "finance",
+      "platform": "instagram_reels",
+      "script": {
+        "hook": "Voc\u00ea sabe que 90% dos brasileiros investem em fundos imobili\u00e1rios pela seguran\u00e7a!",
+        "body": "Esses fundos oferecem retornos mais est\u00e1veis do que investir em a\u00e7\u00f5es ou t\u00edtulos de d\u00edvida. Eles atuam como um portf\u00f3lio diversificado de im\u00f3veis, como pr\u00e9dios, apartamentos e escrit\u00f3rios. Al\u00e9m disso, os fundos imobili\u00e1rios tamb\u00e9m t\u00eam a vantagem de serem taxativos, ou seja, voc\u00ea recebe uma renda garantida ao final do m\u00eas. Alguns fundos s\u00e3o indexados, ou seja, sua renda \u00e9 calculada com base no desempenho de um \u00edndice de mercado.",
+        "cta": "Investir em fundos imobili\u00e1rios? Descubra o que \u00e9 melhor para voc\u00ea!",
+        "full_text": "Voc\u00ea sabe que 90% dos brasileiros investem em fundos imobili\u00e1rios pela seguran\u00e7a! Esses fundos oferecem retornos mais est\u00e1veis do que investir em a\u00e7\u00f5es ou t\u00edtulos de d\u00edvida. Eles atuam como um portf\u00f3lio diversificado de im\u00f3veis, como pr\u00e9dios, apartamentos e escrit\u00f3rios. Al\u00e9m disso, os fundos imobili\u00e1rios tamb\u00e9m t\u00eam a vantagem de serem taxativos, ou seja, voc\u00ea recebe uma renda garantida ao final do m\u00eas. Alguns fundos s\u00e3o indexados, ou seja, sua renda \u00e9 calculada com base no desempenho de um \u00edndice de mercado. Investir em fundos imobili\u00e1rios? Descubra o que \u00e9 melhor para voc\u00ea!",
+        "segments": [
+          {
+            "id": "649c30d3-e2df-4b6f-84b6-2b41e86454a2",
+            "text": "Voc\u00ea sabe que 90% dos brasileiros investem em fundos imobili\u00e1rios pela seguran\u00e7a! Esses fundos oferecem retornos mais est\u00e1veis do que investir em a\u00e7\u00f5es ou t\u00edtulos de d\u00edvida.",
+            "start_time": 0.0,
+            "end_time": 10.8,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "5024eb4b-9214-42a0-a73e-7ce965f8f0da",
+            "text": "Eles atuam como um portf\u00f3lio diversificado de im\u00f3veis, como pr\u00e9dios, apartamentos e escrit\u00f3rios.",
+            "start_time": 10.8,
+            "end_time": 16.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "8b58a4ae-0e3a-4bf8-ac74-df9aba04924c",
+            "text": "Al\u00e9m disso, os fundos imobili\u00e1rios tamb\u00e9m t\u00eam a vantagem de serem taxativos, ou seja, voc\u00ea recebe uma renda garantida ao final do m\u00eas.",
+            "start_time": 16.0,
+            "end_time": 25.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "8607ff25-578a-4da1-ad53-f90aa2b86a95",
+            "text": "Alguns fundos s\u00e3o indexados, ou seja, sua renda \u00e9 calculada com base no desempenho de um \u00edndice de mercado.",
+            "start_time": 25.2,
+            "end_time": 32.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "17c11957-a913-48fb-b182-9ebebb08be4c",
+            "text": "Investir em fundos imobili\u00e1rios? Descubra o que \u00e9 melhor para voc\u00ea!.",
+            "start_time": 32.8,
+            "end_time": 37.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 37.0,
+        "word_count": 93
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "idle",
+      "progress": 0,
+      "error": null,
+      "output_path": null,
+      "thumbnail_path": null,
+      "created_at": "2026-05-26T14:08:10.466139",
+      "updated_at": "2026-05-26T14:08:10.466139"
+    },
+    "7ed7f5e5-fbfb-431e-8657-27e3a979f7f3": {
+      "id": "7ed7f5e5-fbfb-431e-8657-27e3a979f7f3",
+      "title": "Voc\u00ea sabia que R$ 1.000 em fundos imobili\u00e1rios pode render mais do que o sal\u00e1rio",
+      "prompt": "fundos imobiliarios",
+      "style": "finance",
+      "platform": "instagram_reels",
+      "script": {
+        "hook": "Voc\u00ea sabia que R$ 1.000 em fundos imobili\u00e1rios pode render mais do que o sal\u00e1rio m\u00ednimo todo m\u00eas?",
+        "body": "Especialmente se voc\u00ea investir h\u00e1 mais de 5 anos! Isso acontece devido \u00e0 renda gerada pela rentabilidade dos fundos imobili\u00e1rios, que s\u00e3o compostos por im\u00f3veis e outros ativos de valor agregado, proporcionando uma melhor rentabilidade a longo prazo, com taxas de retorno de at\u00e9 8% ao ano. Al\u00e9m disso, com a compra de fundos imobili\u00e1rios, voc\u00ea n\u00e3o precisa lidar com a gest\u00e3o do dia a dia e os riscos que os im\u00f3veis trazem consigo, j\u00e1 que a gest\u00e3o \u00e9 feita por especialistas.",
+        "cta": "Conhe\u00e7a os fundos imobili\u00e1rios de alta rentabilidade!",
+        "full_text": "Voc\u00ea sabia que R$ 1.000 em fundos imobili\u00e1rios pode render mais do que o sal\u00e1rio m\u00ednimo todo m\u00eas? E especialmente se voc\u00ea investir h\u00e1 mais de 5 anos! Isso acontece devido \u00e0 renda gerada pela rentabilidade dos fundos imobili\u00e1rios, que s\u00e3o compostos por im\u00f3veis e outros ativos de valor agregado, proporcionando uma melhor rentabilidade a longo prazo, com taxas de retorno de at\u00e9 8% ao ano. Al\u00e9m disso, com a compra de fundos imobili\u00e1rios, voc\u00ea n\u00e3o precisa lidar com a gest\u00e3o do dia a dia e os riscos que os im\u00f3veis trazem consigo, j\u00e1 que a gest\u00e3o \u00e9 feita por especialistas. Conhe\u00e7a os fundos imobili\u00e1rios de alta rentabilidade!",
+        "segments": [
+          {
+            "id": "2313c31b-fb23-4aa2-bac8-e5c8c6d9e648",
+            "text": "Voc\u00ea sabia que R$ 1.",
+            "start_time": 0.0,
+            "end_time": 2.0,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "4d34f8a1-317e-4b6a-8087-5e59f9de864c",
+            "text": "000 em fundos imobili\u00e1rios pode render mais do que o sal\u00e1rio m\u00ednimo todo m\u00eas? E especialmente se voc\u00ea investir h\u00e1 mais de 5 anos! Isso acontece devido \u00e0 renda gerada pela rentabilidade dos fundos imobili\u00e1rios, que s\u00e3o compostos por im\u00f3veis e outros ativos de valor agregado, proporcionando uma melhor rentabilidade a longo prazo, com taxas de retorno de at\u00e9 8% ao ano.",
+            "start_time": 2.0,
+            "end_time": 26.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "f2f6f605-c691-4a67-98ed-eae8bc8a2b6d",
+            "text": "Al\u00e9m disso, com a compra de fundos imobili\u00e1rios, voc\u00ea n\u00e3o precisa lidar com a gest\u00e3o do dia a dia e os riscos que os im\u00f3veis trazem consigo, j\u00e1 que a gest\u00e3o \u00e9 feita por especialistas.",
+            "start_time": 26.8,
+            "end_time": 40.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "1a7ceefa-6a45-4b5f-94ed-67471cd8a1eb",
+            "text": "Conhe\u00e7a os fundos imobili\u00e1rios de alta rentabilidade!.",
+            "start_time": 40.8,
+            "end_time": 43.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 43.0,
+        "word_count": 108
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea sabia que R_ 1_000 em fundos imobili\u00e1rios pode render m.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabia que R_ 1_000 em fundos imobili\u00e1rios pode render m_thumb.jpg",
+      "created_at": "2026-05-26T14:28:21.395625",
+      "updated_at": "2026-05-26T14:29:06.218999"
     }
   },
   "jobs": {
@@ -1071,6 +1226,16 @@
       "current_step": "Done!",
       "started_at": "2026-05-26T13:01:57.472850",
       "completed_at": "2026-05-26T13:02:39.054037",
+      "error": null
+    },
+    "732ab8d9-f66f-4129-87ce-b85a06d5b5d7": {
+      "job_id": "732ab8d9-f66f-4129-87ce-b85a06d5b5d7",
+      "project_id": "7ed7f5e5-fbfb-431e-8657-27e3a979f7f3",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T14:28:24.451555",
+      "completed_at": "2026-05-26T14:29:06.221504",
       "error": null
     }
   }
