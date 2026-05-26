@@ -81,6 +81,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -181,6 +182,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -263,6 +265,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -363,6 +366,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -463,6 +467,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -545,6 +550,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -663,6 +669,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -781,6 +788,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -899,6 +907,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -972,6 +981,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -1054,6 +1064,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -1127,6 +1138,7 @@
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -1145,6 +1157,311 @@
       "thumbnail_path": "exports\\Voc\u00ea sabia que R_ 1_000 em fundos imobili\u00e1rios pode render m_thumb.jpg",
       "created_at": "2026-05-26T14:28:21.395625",
       "updated_at": "2026-05-26T14:29:06.218999"
+    },
+    "dfff5e42-7b72-4126-a1cf-2fc9ce23964f": {
+      "id": "dfff5e42-7b72-4126-a1cf-2fc9ce23964f",
+      "title": "Quer dobrar suas vendas em 30 dias?",
+      "prompt": "vendas com marketing digita\u00e7",
+      "style": "motivation",
+      "platform": "instagram_reels",
+      "script": {
+        "hook": "Quer dobrar suas vendas em 30 dias?",
+        "body": "O marketing digital \u00e9 a chave! Com o uso de redes sociais, e-mail marketing e SEO, voc\u00ea pode alcan\u00e7ar milh\u00f5es de pessoas e aumentar suas vendas. Al\u00e9m disso, voc\u00ea pode medir e otimizar seus resultados em tempo real.",
+        "cta": "Aprenda o segredo do marketing digital eficaz agora!",
+        "full_text": "Quer dobrar suas vendas em 30 dias? O marketing digital \u00e9 a chave! Com o uso de redes sociais, e-mail marketing e SEO, voc\u00ea pode alcan\u00e7ar milh\u00f5es de pessoas e aumentar suas vendas. Al\u00e9m disso, voc\u00ea pode medir e otimizar seus resultados em tempo real. Aprenda o segredo do marketing digital eficaz agora!",
+        "segments": [
+          {
+            "id": "54dcc990-69f8-4a40-8d86-dd0e26744620",
+            "text": "Quer dobrar suas vendas em 30 dias? O marketing digital \u00e9 a chave! Com o uso de redes sociais, e-mail marketing e SEO, voc\u00ea pode alcan\u00e7ar milh\u00f5es de pessoas e aumentar suas vendas.",
+            "start_time": 0.0,
+            "end_time": 13.2,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "103692a3-6629-4037-912f-11047ff77f1b",
+            "text": "Al\u00e9m disso, voc\u00ea pode medir e otimizar seus resultados em tempo real.",
+            "start_time": 13.2,
+            "end_time": 18.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "5bc94140-7b28-4231-b0fb-7a48cff59a95",
+            "text": "Aprenda o segredo do marketing digital eficaz agora!.",
+            "start_time": 18.0,
+            "end_time": 21.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 21.0,
+        "word_count": 53
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Quer dobrar suas vendas em 30 dias_.mp4",
+      "thumbnail_path": "exports\\Quer dobrar suas vendas em 30 dias__thumb.jpg",
+      "created_at": "2026-05-26T14:41:13.551011",
+      "updated_at": "2026-05-26T14:48:07.477976"
+    },
+    "3521a0c2-8a2d-49b2-8ab3-f489db01150d": {
+      "id": "3521a0c2-8a2d-49b2-8ab3-f489db01150d",
+      "title": "Voc\u00ea j\u00e1 se perguntou por que faz as coisas?",
+      "prompt": "psicologia",
+      "style": "motivation",
+      "platform": "instagram_reels",
+      "script": {
+        "hook": "Voc\u00ea j\u00e1 se perguntou por que faz as coisas?",
+        "body": "A psicologia explica que nossas a\u00e7\u00f5es s\u00e3o influenciadas por pensamentos, sentimentos e experi\u00eancias do passado e presente. A teoria do condicionamento operante, desenvolvida por B.F. Skinner, mostra que nossas a\u00e7\u00f5es s\u00e3o refor\u00e7adas por consequ\u00eancias, como prazer ou recompensa. Isso \u00e9 um dos motivos pelos quais seguimos tend\u00eancias e padr\u00f5es.",
+        "cta": "Entenda melhor a si mesmo, comece a conhecer a psicologia!",
+        "full_text": "Voc\u00ea j\u00e1 se perguntou por que faz as coisas? A psicologia explica que nossas a\u00e7\u00f5es s\u00e3o influenciadas por pensamentos, sentimentos e experi\u00eancias do passado e presente. A teoria do condicionamento operante, desenvolvida por B.F. Skinner, mostra que nossas a\u00e7\u00f5es s\u00e3o refor\u00e7adas por consequ\u00eancias, como prazer ou recompensa. Isso \u00e9 um dos motivos pelos quais seguimos tend\u00eancias e padr\u00f5es. Entenda melhor a si mesmo, comece a conhecer a psicologia!",
+        "segments": [
+          {
+            "id": "e7ace77b-5a19-4456-ae26-7ce6e4701322",
+            "text": "Voc\u00ea j\u00e1 se perguntou por que faz as coisas? A psicologia explica que nossas a\u00e7\u00f5es s\u00e3o influenciadas por pensamentos, sentimentos e experi\u00eancias do passado e presente.",
+            "start_time": 0.0,
+            "end_time": 10.4,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "f74a9b88-6a18-4996-841b-df7650aae91f",
+            "text": "A teoria do condicionamento operante, desenvolvida por B.",
+            "start_time": 10.4,
+            "end_time": 13.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "f5b74415-3f9b-4672-9e0c-e71c1568308c",
+            "text": "F.",
+            "start_time": 13.6,
+            "end_time": 14.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "89ed89df-0ce9-4b16-8a4a-155542fba188",
+            "text": "Skinner, mostra que nossas a\u00e7\u00f5es s\u00e3o refor\u00e7adas por consequ\u00eancias, como prazer ou recompensa.",
+            "start_time": 14.0,
+            "end_time": 19.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "bd44cb23-1a11-4ee3-9f6c-3531ba1345eb",
+            "text": "Isso \u00e9 um dos motivos pelos quais seguimos tend\u00eancias e padr\u00f5es.",
+            "start_time": 19.2,
+            "end_time": 23.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "af0a4787-c261-4a3c-8e28-9799168f7917",
+            "text": "Entenda melhor a si mesmo, comece a conhecer a psicologia!.",
+            "start_time": 23.6,
+            "end_time": 27.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 27.0,
+        "word_count": 68
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea j\u00e1 se perguntou por que faz as coisas_.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea j\u00e1 se perguntou por que faz as coisas__thumb.jpg",
+      "created_at": "2026-05-26T14:51:07.281590",
+      "updated_at": "2026-05-26T14:51:29.227031"
+    },
+    "bd4ec589-440a-422f-860c-a8065c359626": {
+      "id": "bd4ec589-440a-422f-860c-a8065c359626",
+      "title": "Seu sistema de ar est\u00e1 condenado a quebrar se voc\u00ea n\u00e3o tomar medidas agora!",
+      "prompt": "manuten\u00e7\u00e3o de ar",
+      "style": "hormozi",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Seu sistema de ar est\u00e1 condenado a quebrar se voc\u00ea n\u00e3o tomar medidas agora!",
+        "body": "A manuten\u00e7\u00e3o de ar \u00e9 essencial para evitar danos caros e desligamentos inesperados. Conhe\u00e7a os 5 erros mais comuns: falta de filtro, desbalanceio de press\u00e3o, vazamentos em tubula\u00e7\u00f5es, falta de limpeza e uso de produtos de baixa qualidade. Isso pode custar voc\u00ea at\u00e9 R$ 5.000,00 em reparos!",
+        "cta": "Conhe\u00e7a os truques para manter seu sistema de ar funcionando como novo!",
+        "full_text": "Seu sistema de ar est\u00e1 condenado a quebrar se voc\u00ea n\u00e3o tomar medidas agora! A manuten\u00e7\u00e3o de ar \u00e9 essencial para evitar danos caros e desligamentos inesperados. Conhe\u00e7a os 5 erros mais comuns: falta de filtro, desbalanceio de press\u00e3o, vazamentos em tubula\u00e7\u00f5es, falta de limpeza e uso de produtos de baixa qualidade. Isso pode custar voc\u00ea at\u00e9 R$ 5.000,00 em reparos! Conhe\u00e7a os truques para manter seu sistema de ar funcionando como novo!",
+        "segments": [
+          {
+            "id": "d6c3ac86-f698-48a1-916f-d2fc2bf21294",
+            "text": "Seu sistema de ar est\u00e1 condenado a quebrar se voc\u00ea n\u00e3o tomar medidas agora! A manuten\u00e7\u00e3o de ar \u00e9 essencial para evitar danos caros e desligamentos inesperados.",
+            "start_time": 0.0,
+            "end_time": 10.8,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "ce220d9c-fd45-4c56-a872-ab88b46efc79",
+            "text": "Conhe\u00e7a os 5 erros mais comuns: falta de filtro, desbalanceio de press\u00e3o, vazamentos em tubula\u00e7\u00f5es, falta de limpeza e uso de produtos de baixa qualidade.",
+            "start_time": 10.8,
+            "end_time": 20.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "91102841-5aee-4da9-8492-ac03cdf6a273",
+            "text": "Isso pode custar voc\u00ea at\u00e9 R$ 5.",
+            "start_time": 20.8,
+            "end_time": 23.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "389b1de4-026f-4536-bc95-b52b2a53cef8",
+            "text": "000,00 em reparos! Conhe\u00e7a os truques para manter seu sistema de ar funcionando como novo!.",
+            "start_time": 23.6,
+            "end_time": 29.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 29.0,
+        "word_count": 73
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": false,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Seu sistema de ar est\u00e1 condenado a quebrar se voc\u00ea n\u00e3o tomar.mp4",
+      "thumbnail_path": "exports\\Seu sistema de ar est\u00e1 condenado a quebrar se voc\u00ea n\u00e3o tomar_thumb.jpg",
+      "created_at": "2026-05-26T14:58:11.121300",
+      "updated_at": "2026-05-26T15:02:04.297448"
+    },
+    "6018734e-5333-4ddc-9c5c-a420570c65a2": {
+      "id": "6018734e-5333-4ddc-9c5c-a420570c65a2",
+      "title": "Voc\u00ea sabe que at\u00e9 40% do valor do seu cart\u00e3o de cr\u00e9dito est\u00e1 sendo cobrado em ta",
+      "prompt": "cartao de credito",
+      "style": "finance",
+      "platform": "youtube_shorts",
+      "script": {
+        "hook": "Voc\u00ea sabe que at\u00e9 40% do valor do seu cart\u00e3o de cr\u00e9dito est\u00e1 sendo cobrado em taxas? ",
+        "body": "Isso \u00e9 o que acontece quando voc\u00ea n\u00e3o paga no prazo. Al\u00e9m disso, a d\u00edvida pode ser transferida para o cr\u00e9dito, agravando a situa\u00e7\u00e3o. \u00c9 importante estar atento \u00e0s taxas e juros para evitar problemas financeiros. Muitas pessoas n\u00e3o percebem que o cart\u00e3o de cr\u00e9dito \u00e9 uma linha de cr\u00e9dito que precisa ser paga",
+        "cta": "Verifique suas contas e planeje sua sa\u00fade financeira hoje mesmo!",
+        "full_text": "Voc\u00ea sabe que at\u00e9 40% do valor do seu cart\u00e3o de cr\u00e9dito est\u00e1 sendo cobrado em taxas? Isso \u00e9 o que acontece quando voc\u00ea n\u00e3o paga no prazo. Al\u00e9m disso, a d\u00edvida pode ser transferida para o cr\u00e9dito, agravando a situa\u00e7\u00e3o. \u00c9 importante estar atento \u00e0s taxas e juros para evitar problemas financeiros. Muitas pessoas n\u00e3o percebem que o cart\u00e3o de cr\u00e9dito \u00e9 uma linha de cr\u00e9dito que precisa ser paga Verifique suas contas e planeje sua sa\u00fade financeira hoje mesmo!",
+        "segments": [
+          {
+            "id": "a85d4a4d-b669-45b3-9cef-67048e895c3d",
+            "text": "Voc\u00ea sabe que at\u00e9 40% do valor do seu cart\u00e3o de cr\u00e9dito est\u00e1 sendo cobrado em taxas? Isso \u00e9 o que acontece quando voc\u00ea n\u00e3o paga no prazo.",
+            "start_time": 0.0,
+            "end_time": 11.2,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "51eda409-409d-4b5a-ad74-fbeb727c17b4",
+            "text": "Al\u00e9m disso, a d\u00edvida pode ser transferida para o cr\u00e9dito, agravando a situa\u00e7\u00e3o.",
+            "start_time": 11.2,
+            "end_time": 16.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "25e5891c-bd69-424d-9687-7a4e3a4d4e22",
+            "text": "\u00c9 importante estar atento \u00e0s taxas e juros para evitar problemas financeiros.",
+            "start_time": 16.4,
+            "end_time": 21.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "e1ba0a99-eb4d-4eac-8520-0014d1aa3ab3",
+            "text": "Muitas pessoas n\u00e3o percebem que o cart\u00e3o de cr\u00e9dito \u00e9 uma linha de cr\u00e9dito que precisa ser paga Verifique suas contas e planeje sua sa\u00fade financeira hoje mesmo!.",
+            "start_time": 21.2,
+            "end_time": 32.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 32.0,
+        "word_count": 81
+      },
+      "voice_model": "openai",
+      "subtitle_style": "fire",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": false,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea sabe que at\u00e9 40_ do valor do seu cart\u00e3o de cr\u00e9dito est\u00e1.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabe que at\u00e9 40_ do valor do seu cart\u00e3o de cr\u00e9dito est\u00e1_thumb.jpg",
+      "created_at": "2026-05-26T15:00:53.274152",
+      "updated_at": "2026-05-26T15:01:11.700269"
     }
   },
   "jobs": {
@@ -1236,6 +1553,66 @@
       "current_step": "Done!",
       "started_at": "2026-05-26T14:28:24.451555",
       "completed_at": "2026-05-26T14:29:06.221504",
+      "error": null
+    },
+    "80096c2d-2059-4476-bfe1-2ac114ddf340": {
+      "job_id": "80096c2d-2059-4476-bfe1-2ac114ddf340",
+      "project_id": "dfff5e42-7b72-4126-a1cf-2fc9ce23964f",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T14:41:16.526041",
+      "completed_at": "2026-05-26T14:41:38.537166",
+      "error": null
+    },
+    "59950db6-64ab-4fc4-b4b4-59cd943adbab": {
+      "job_id": "59950db6-64ab-4fc4-b4b4-59cd943adbab",
+      "project_id": "dfff5e42-7b72-4126-a1cf-2fc9ce23964f",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T14:47:47.177364",
+      "completed_at": "2026-05-26T14:48:07.479976",
+      "error": null
+    },
+    "d1eb3587-9dbc-44bc-a31c-7d650f4b9738": {
+      "job_id": "d1eb3587-9dbc-44bc-a31c-7d650f4b9738",
+      "project_id": "3521a0c2-8a2d-49b2-8ab3-f489db01150d",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T14:51:08.416409",
+      "completed_at": "2026-05-26T14:51:29.229420",
+      "error": null
+    },
+    "1d9d8450-71a8-4a7d-9e52-f95880be6ab4": {
+      "job_id": "1d9d8450-71a8-4a7d-9e52-f95880be6ab4",
+      "project_id": "bd4ec589-440a-422f-860c-a8065c359626",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T14:58:13.222967",
+      "completed_at": "2026-05-26T14:58:31.925930",
+      "error": null
+    },
+    "69563cca-a4ee-4cef-9fc9-7daeb86966b3": {
+      "job_id": "69563cca-a4ee-4cef-9fc9-7daeb86966b3",
+      "project_id": "6018734e-5333-4ddc-9c5c-a420570c65a2",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T15:00:54.479682",
+      "completed_at": "2026-05-26T15:01:11.702773",
+      "error": null
+    },
+    "8ff08c01-fc56-4979-915b-389db6a5f5c5": {
+      "job_id": "8ff08c01-fc56-4979-915b-389db6a5f5c5",
+      "project_id": "bd4ec589-440a-422f-860c-a8065c359626",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T15:01:46.749841",
+      "completed_at": "2026-05-26T15:02:04.301962",
       "error": null
     }
   }

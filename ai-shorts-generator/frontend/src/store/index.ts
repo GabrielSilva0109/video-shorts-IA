@@ -53,6 +53,7 @@ const DEFAULT_DRAFT: Partial<GenerationRequest> = {
   platform: 'tiktok',
   voice_model: 'openai',
   subtitle_style: 'hormozi',
+  subtitle_position: 'center',
   language: 'pt',
   effects: DEFAULT_EFFECTS,
 };

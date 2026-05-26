@@ -47,6 +47,12 @@ class SubtitleStyle(str, Enum):
     emoji = "emoji"
 
 
+class SubtitlePosition(str, Enum):
+    top = "top"
+    center = "center"
+    bottom = "bottom"
+
+
 class VoiceModel(str, Enum):
     openai = "openai"
     elevenlabs = "elevenlabs"
@@ -94,6 +100,7 @@ class VideoProject(BaseModel):
     script: Optional[GeneratedScript] = None
     voice_model: VoiceModel = VoiceModel.openai
     subtitle_style: SubtitleStyle = SubtitleStyle.hormozi
+    subtitle_position: SubtitlePosition = SubtitlePosition.center
     background_music: Optional[str] = None
     effects: VideoEffects = Field(default_factory=VideoEffects)
     language: str = "pt"
@@ -124,6 +131,7 @@ class GenerationRequest(BaseModel):
     platform: ExportPlatform = ExportPlatform.tiktok
     voice_model: VoiceModel = VoiceModel.openai
     subtitle_style: SubtitleStyle = SubtitleStyle.hormozi
+    subtitle_position: SubtitlePosition = SubtitlePosition.center
     background_music: Optional[str] = None
     language: str = "pt"
     effects: VideoEffects = Field(default_factory=VideoEffects)

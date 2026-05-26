@@ -45,6 +45,7 @@ async def create_project(req: GenerationRequest) -> VideoProject:
             script=script,
             voice_model=req.voice_model,
             subtitle_style=req.subtitle_style,
+            subtitle_position=req.subtitle_position,
             background_music=req.background_music,
             effects=req.effects,
             language=req.language,

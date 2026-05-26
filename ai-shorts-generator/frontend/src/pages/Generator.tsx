@@ -36,6 +36,7 @@ export default function Generator() {
         platform: draftRequest.platform ?? 'tiktok',
         voice_model: draftRequest.voice_model ?? 'openai',
         subtitle_style: draftRequest.subtitle_style ?? 'hormozi',
+        subtitle_position: draftRequest.subtitle_position ?? 'center',
         background_music: draftRequest.background_music,
         language: draftRequest.language ?? 'pt',
         effects: draftRequest.effects!,

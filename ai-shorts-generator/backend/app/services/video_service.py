@@ -49,7 +49,7 @@ class VideoService:
             # 2. B-roll footage
             step(RenderStatus.fetching_broll, 25, "Fetching B-roll footage…")
             broll_clips = await self.broll.fetch(
-                keywords=self._extract_keywords(project.prompt),
+                keywords=self._extract_keywords(project.prompt, project.script),
                 count=5,
                 output_dir=tmp,
             )
@@ -73,6 +73,7 @@ class VideoService:
                 style=project.subtitle_style,
                 segments=project.script.segments,  # type: ignore[union-attr]
                 output_dir=tmp,
+                position=getattr(project, "subtitle_position", "center"),
             )
 
             # 5. Background music
@@ -131,6 +132,27 @@ class VideoService:
             )
 
     @staticmethod
-    def _extract_keywords(prompt: str) -> list[str]:
-        stop = {"the", "a", "an", "in", "on", "at", "of", "and", "or", "is", "are", "to", "for"}
-        return [w for w in prompt.lower().split() if w not in stop][:6]
+    def _extract_keywords(prompt: str, script=None) -> list[str]:
+        stop = {
+            "the", "a", "an", "in", "on", "at", "of", "and", "or", "is", "are", "to", "for",
+            "it", "its", "this", "that", "with", "from", "was", "has", "have", "had",
+            "but", "not", "you", "your", "we", "our", "they", "their",
+            # Portuguese
+            "que", "em", "de", "do", "da", "no", "na", "os", "as", "um", "uma",
+            "se", "por", "ao", "dos", "das", "me", "te", "lhe", "sua", "seu",
+            "mais", "mas", "como", "para", "com", "ele", "ela", "isso", "ser",
+        }
+
+        def _clean(text: str) -> list[str]:
+            return [
+                w.strip(".,!?;:\"'()[]")
+                for w in text.lower().split()
+                if len(w) > 3 and w.strip(".,!?;:\"'()[]").lower() not in stop
+            ]
+
+        keywords = list(dict.fromkeys(_clean(prompt)))[:4]
+        if script and getattr(script, "segments", None):
+            seg_text = " ".join(s.text for s in script.segments[:10])
+            extras = [w for w in _clean(seg_text) if w not in keywords]
+            keywords += list(dict.fromkeys(extras))[:4]
+        return keywords[:8]

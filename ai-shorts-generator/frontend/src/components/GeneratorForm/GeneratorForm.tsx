@@ -19,7 +19,7 @@ import {
   RiFilmLine,
 } from 'react-icons/ri';
 import { useAppStore } from '@/store';
-import type { VideoStyle, ExportPlatform, SubtitleStyle, VoiceModel } from '@/types';
+import type { VideoStyle, ExportPlatform, SubtitleStyle, SubtitlePosition, VoiceModel } from '@/types';
 import clsx from 'clsx';
 
 const STYLES: { value: VideoStyle; label: string; icon: React.ElementType }[] = [
@@ -51,6 +51,12 @@ const VOICES: { value: VoiceModel; label: string }[] = [
   { value: 'openai', label: 'OpenAI TTS' },
   { value: 'elevenlabs', label: 'ElevenLabs' },
   { value: 'local', label: 'Local (Coqui)' },
+];
+
+const POSITIONS: { value: SubtitlePosition; label: string; barY: string }[] = [
+  { value: 'top',    label: 'Topo',   barY: 'top-[3px]' },
+  { value: 'center', label: 'Centro', barY: 'top-1/2 -translate-y-1/2' },
+  { value: 'bottom', label: 'Base',   barY: 'bottom-[3px]' },
 ];
 
 const LANGUAGES = [
@@ -175,7 +181,7 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
               </select>
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-xs font-medium text-text-muted">Legendas</label>
+              <label className="text-xs font-medium text-text-muted">Estilo da Legenda</label>
               <select
                 className="input text-xs"
                 value={draftRequest.subtitle_style}
@@ -185,6 +191,31 @@ export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => v
                   <option key={s.value} value={s.value}>{s.label}</option>
                 ))}
               </select>
+            </div>
+          </div>
+
+          {/* Subtitle position picker */}
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-medium text-text-muted">Posição da Legenda</label>
+            <div className="grid grid-cols-3 gap-2">
+              {POSITIONS.map((p) => (
+                <button
+                  key={p.value}
+                  onClick={() => setDraftRequest({ subtitle_position: p.value })}
+                  className={clsx(
+                    'flex flex-col items-center gap-1.5 py-2 px-1 rounded-lg border text-xs font-medium transition-all duration-150',
+                    draftRequest.subtitle_position === p.value
+                      ? 'bg-accent/10 border-accent/40 text-accent'
+                      : 'bg-background-secondary border-border text-text-secondary hover:border-border-light'
+                  )}
+                >
+                  {/* Mini video-frame preview */}
+                  <div className="relative w-7 h-9 rounded border border-current opacity-60">
+                    <div className={clsx('absolute inset-x-1 h-[3px] rounded-sm bg-current', p.barY)} />
+                  </div>
+                  {p.label}
+                </button>
+              ))}
             </div>
           </div>
 

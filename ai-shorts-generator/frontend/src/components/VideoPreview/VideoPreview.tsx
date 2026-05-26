@@ -48,7 +48,7 @@ export default function VideoPreview({ projectId, videoUrl, thumbnailUrl }: Prop
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-text-muted text-sm">
-            Sem preview disponível
+            Sem preview disponÃ­vel
           </div>
         )}
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />

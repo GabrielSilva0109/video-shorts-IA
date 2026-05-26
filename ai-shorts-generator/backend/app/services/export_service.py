@@ -25,7 +25,6 @@ class ExportService:
         w, h = settings.resolution_tuple  # 1080x1920
 
         if not clips:
-            # Generate blank black video
             cmd = [
                 settings.ffmpeg_path, "-y",
                 "-f", "lavfi", "-i", f"color=c=black:s={w}x{h}:r={settings.default_fps}",
@@ -36,36 +35,120 @@ class ExportService:
             subprocess.run(cmd, capture_output=True, check=True)
             return output_path
 
-        # Build concat input list
+        # Calculate per-clip duration from voice audio
+        total_duration = self._get_duration(voice_path)
+        per_clip = max(2.0, total_duration / len(clips))
+
+        # Pre-process each clip: scale to 9:16 + Ken Burns pan + fade in/out
+        processed: list[Path] = []
+        for i, clip in enumerate(clips):
+            out = output_dir / f"clip_kb_{i}.mp4"
+            ok = self._preprocess_clip(
+                clip_path=clip,
+                output_path=out,
+                index=i,
+                duration=per_clip,
+                apply_zoom=project.effects.auto_zoom,
+            )
+            processed.append(out if ok else clip)
+
+        # Concat pre-processed clips and mix voice
         concat_list = output_dir / "concat.txt"
         with concat_list.open("w") as f:
-            for clip in clips:
+            for clip in processed:
                 f.write(f"file '{clip.as_posix()}'\n")
-
-        # Scale + pad each clip to 9:16 then concat
-        scale_filter = (
-            f"scale={w}:{h}:force_original_aspect_ratio=increase,"
-            f"crop={w}:{h},setsar=1"
-        )
 
         cmd = [
             settings.ffmpeg_path, "-y",
             "-f", "concat", "-safe", "0", "-i", str(concat_list),
             "-i", str(voice_path),
-            "-vf", scale_filter,
-            "-c:v", "libx264", "-preset", "fast", "-crf", "22",
+            "-map", "0:v:0", "-map", "1:a:0",
+            "-c:v", "copy",
             "-c:a", "aac", "-b:a", "192k",
             "-shortest",
             str(output_path),
         ]
 
-        logger.info("Compositing b-roll clips")
+        logger.info("Compositing pre-processed clips")
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode != 0:
-            logger.error(f"Composite error: {result.stderr[-500:]}")
-            raise RuntimeError("Video composite failed")
+            # Fallback: re-encode to resolve timestamp/codec mismatches
+            cmd_reenc = [
+                settings.ffmpeg_path, "-y",
+                "-f", "concat", "-safe", "0", "-i", str(concat_list),
+                "-i", str(voice_path),
+                "-map", "0:v:0", "-map", "1:a:0",
+                "-c:v", "libx264", "-preset", "fast", "-crf", "22",
+                "-c:a", "aac", "-b:a", "192k",
+                "-shortest",
+                str(output_path),
+            ]
+            result = subprocess.run(cmd_reenc, capture_output=True, text=True)
+            if result.returncode != 0:
+                logger.error(f"Composite error: {result.stderr[-500:]}")
+                raise RuntimeError("Video composite failed")
 
         return output_path
+
+    def _preprocess_clip(
+        self,
+        clip_path: Path,
+        output_path: Path,
+        index: int,
+        duration: float,
+        apply_zoom: bool = True,
+    ) -> bool:
+        """Scale clip to 9:16, apply a subtle horizontal pan (Ken Burns) and fade in/out."""
+        w, h = settings.resolution_tuple
+        fps = settings.default_fps
+        fade_d = min(0.30, duration * 0.08)
+        fade_out_start = max(0.0, duration - fade_d)
+
+        if apply_zoom:
+            # Scale 10% larger than target to create horizontal panning room
+            sw, sh = int(w * 1.10), int(h * 1.10)   # 1188 × 2112
+            margin_w = sw - w                          # 108 px
+            y_center = (sh - h) // 2                  # 96 px
+            dur_s = f"{duration:.3f}"
+            if index % 2 == 0:
+                x_expr = f"'{margin_w}*t/{dur_s}'"        # pan left → right
+            else:
+                x_expr = f"'{margin_w}*(1-t/{dur_s})'"    # pan right → left
+            scale_crop = (
+                f"scale={sw}:{sh}:force_original_aspect_ratio=increase,"
+                f"crop={w}:{h}:x={x_expr}:y='{y_center}',setsar=1,fps={fps}"
+            )
+        else:
+            scale_crop = (
+                f"scale={w}:{h}:force_original_aspect_ratio=increase,"
+                f"crop={w}:{h},setsar=1,fps={fps}"
+            )
+
+        vf = (
+            f"{scale_crop}"
+            f",fade=t=in:st=0:d={fade_d:.3f}"
+            f",fade=t=out:st={fade_out_start:.3f}:d={fade_d:.3f}"
+        )
+
+        cmd = [
+            settings.ffmpeg_path, "-y",
+            "-i", str(clip_path),
+            "-t", f"{duration:.3f}",
+            "-vf", vf,
+            "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+            "-an",
+            str(output_path),
+        ]
+
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+            if result.returncode != 0:
+                logger.warning(f"Preprocess clip {index} failed: {result.stderr[-200:]}")
+                return False
+            return True
+        except subprocess.TimeoutExpired:
+            logger.warning(f"Preprocess clip {index} timed out — using original")
+            return False
 
     # ── 2. Apply effects ─────────────────────
     def apply_effects(

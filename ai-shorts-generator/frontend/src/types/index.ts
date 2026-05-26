@@ -35,6 +35,8 @@ export type SubtitleStyle =
   | 'minimal'
   | 'emoji';
 
+export type SubtitlePosition = 'top' | 'center' | 'bottom';
+
 export type VoiceModel = 'openai' | 'elevenlabs' | 'local';
 
 // ── Script ──────────────────────────────────
@@ -68,6 +70,7 @@ export interface VideoProject {
   script?: GeneratedScript;
   voice_model: VoiceModel;
   subtitle_style: SubtitleStyle;
+  subtitle_position: SubtitlePosition;
   background_music?: string;
   effects: VideoEffects;
   status: RenderStatus;
@@ -96,6 +99,7 @@ export interface GenerationRequest {
   platform: ExportPlatform;
   voice_model: VoiceModel;
   subtitle_style: SubtitleStyle;
+  subtitle_position: SubtitlePosition;
   background_music?: string;
   language: string;
   effects: VideoEffects;
