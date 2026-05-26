@@ -19,6 +19,10 @@ class Settings(BaseSettings):
     openai_tts_voice: str = "alloy"
     openai_whisper_model: str = "whisper-1"
 
+    # ── Groq (free AI — https://console.groq.com) ─────────
+    groq_api_key: str = ""
+    groq_model: str = "llama-3.1-8b-instant"
+
     # ── Stock video ─────────────────────────
     pexels_api_key: str = ""
     pixabay_api_key: str = ""

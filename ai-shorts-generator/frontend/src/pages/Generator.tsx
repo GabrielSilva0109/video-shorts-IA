@@ -37,7 +37,7 @@ export default function Generator() {
         voice_model: draftRequest.voice_model ?? 'openai',
         subtitle_style: draftRequest.subtitle_style ?? 'hormozi',
         background_music: draftRequest.background_music,
-        language: draftRequest.language ?? 'en',
+        language: draftRequest.language ?? 'pt',
         effects: draftRequest.effects!,
       }),
     onSuccess: (project) => {

@@ -381,6 +381,615 @@
       "thumbnail_path": "exports\\I almost gave up on day trade para iniciante until this happ_thumb.jpg",
       "created_at": "2026-05-25T14:59:07.926700",
       "updated_at": "2026-05-25T14:59:44.010799"
+    },
+    "e850f9bd-5f89-4164-bf4b-c889a9601611": {
+      "id": "e850f9bd-5f89-4164-bf4b-c889a9601611",
+      "title": "I almost gave up on afasdsd until this happened...",
+      "prompt": "afasdsd",
+      "style": "tiktok_story",
+      "platform": "tiktok",
+      "script": {
+        "hook": "I almost gave up on afasdsd until this happened...",
+        "body": "Three months ago I was completely stuck with afasdsd and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected.",
+        "cta": "Comment 'MORE' if you want me to break down exactly what I did.",
+        "full_text": "I almost gave up on afasdsd until this happened... Three months ago I was completely stuck with afasdsd and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected. Comment 'MORE' if you want me to break down exactly what I did.",
+        "segments": [
+          {
+            "id": "54861a99-381e-494f-a7f8-619c6adea57f",
+            "text": "I almost gave up on afasdsd until this happened.",
+            "start_time": 0.0,
+            "end_time": 3.6,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "2526d3cb-d360-4005-9e9c-0e2c49ffce8d",
+            "text": "Three months ago I was completely stuck with afasdsd and nothing was working.",
+            "start_time": 3.6,
+            "end_time": 8.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "2703abb4-3616-49ba-a5d0-4b784392220c",
+            "text": "I tried every tutorial, every guide \u2014 zero results.",
+            "start_time": 8.8,
+            "end_time": 12.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "f5884989-6ad3-439b-9b3b-a9670f59a9f5",
+            "text": "Then one day I noticed something that changed everything.",
+            "start_time": 12.4,
+            "end_time": 16.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "72afe6f8-174e-4de5-b8ca-b6015e43c0ca",
+            "text": "I stopped doing what everyone else was doing and found my own system.",
+            "start_time": 16.0,
+            "end_time": 21.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "7b919dd7-45eb-48b0-8589-a41a6b82bc65",
+            "text": "Within weeks the results started coming in faster than I ever expected.",
+            "start_time": 21.2,
+            "end_time": 26.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "20fcb0f7-fd1a-430b-ace2-bbc1242108e8",
+            "text": "Comment 'MORE' if you want me to break down exactly what I did.",
+            "start_time": 26.0,
+            "end_time": 31.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 31.0,
+        "word_count": 78
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "en",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\I almost gave up on afasdsd until this happened___.mp4",
+      "thumbnail_path": "exports\\I almost gave up on afasdsd until this happened____thumb.jpg",
+      "created_at": "2026-05-26T12:37:29.091211",
+      "updated_at": "2026-05-26T12:38:11.011748"
+    },
+    "ec557681-b0ec-4808-b85f-61a7ecf2819a": {
+      "id": "ec557681-b0ec-4808-b85f-61a7ecf2819a",
+      "title": "O custo real de ignorar trabalho vai te chocar.",
+      "prompt": "trabalho ",
+      "style": "finance",
+      "platform": "tiktok",
+      "script": {
+        "hook": "O custo real de ignorar trabalho vai te chocar.",
+        "body": "A maioria das pessoas n\u00e3o percebe quanto dinheiro est\u00e1 deixando na mesa com trabalho. A matem\u00e1tica \u00e9 simples: pequenas a\u00e7\u00f5es consistentes se comp\u00f5em ao longo do tempo. Seja iniciante ou avan\u00e7ado em trabalho, entender os fundamentos pode mudar completamente sua trajet\u00f3ria financeira.",
+        "cta": "Siga para dicas di\u00e1rias de dinheiro que realmente constroem riqueza.",
+        "full_text": "O custo real de ignorar trabalho vai te chocar. A maioria das pessoas n\u00e3o percebe quanto dinheiro est\u00e1 deixando na mesa com trabalho. A matem\u00e1tica \u00e9 simples: pequenas a\u00e7\u00f5es consistentes se comp\u00f5em ao longo do tempo. Seja iniciante ou avan\u00e7ado em trabalho, entender os fundamentos pode mudar completamente sua trajet\u00f3ria financeira. Siga para dicas di\u00e1rias de dinheiro que realmente constroem riqueza.",
+        "segments": [
+          {
+            "id": "3961158c-57d8-422e-ad4a-a585e19d9a19",
+            "text": "O custo real de ignorar trabalho vai te chocar.",
+            "start_time": 0.0,
+            "end_time": 3.6,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "a846ec2c-66a1-48a7-bfb2-621d262dc740",
+            "text": "A maioria das pessoas n\u00e3o percebe quanto dinheiro est\u00e1 deixando na mesa com trabalho.",
+            "start_time": 3.6,
+            "end_time": 9.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "53111664-a893-4253-989e-4b19cb06eaa3",
+            "text": "A matem\u00e1tica \u00e9 simples: pequenas a\u00e7\u00f5es consistentes se comp\u00f5em ao longo do tempo.",
+            "start_time": 9.2,
+            "end_time": 14.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "9324ccc2-9b85-4f13-a989-61f08e5773c0",
+            "text": "Seja iniciante ou avan\u00e7ado em trabalho, entender os fundamentos pode mudar completamente sua trajet\u00f3ria financeira.",
+            "start_time": 14.4,
+            "end_time": 20.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "c1c00983-576b-4893-9495-d5b750853b24",
+            "text": "Siga para dicas di\u00e1rias de dinheiro que realmente constroem riqueza.",
+            "start_time": 20.4,
+            "end_time": 24.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 24.0,
+        "word_count": 61
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "idle",
+      "progress": 0,
+      "error": null,
+      "output_path": null,
+      "thumbnail_path": null,
+      "created_at": "2026-05-26T12:40:39.362466",
+      "updated_at": "2026-05-26T12:40:39.362466"
+    },
+    "d2034f36-a5c0-4138-9130-6174c7736bf2": {
+      "id": "d2034f36-a5c0-4138-9130-6174c7736bf2",
+      "title": "Seu potencial com investimentos \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+      "prompt": "investimentos",
+      "style": "motivation",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Seu potencial com investimentos \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+        "body": "Pare de deixar o medo te impedir de avan\u00e7ar em investimentos. Todo especialista j\u00e1 foi iniciante. Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o. A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o. D\u00ea um passo em dire\u00e7\u00e3o a investimentos hoje. Depois outro amanh\u00e3. Consist\u00eancia bate talento toda vez.",
+        "cta": "Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+        "full_text": "Seu potencial com investimentos \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova. Pare de deixar o medo te impedir de avan\u00e7ar em investimentos. Todo especialista j\u00e1 foi iniciante. Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o. A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o. D\u00ea um passo em dire\u00e7\u00e3o a investimentos hoje. Depois outro amanh\u00e3. Consist\u00eancia bate talento toda vez. Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+        "segments": [
+          {
+            "id": "80b5d732-89b1-48e3-82f1-623dfdc33cb9",
+            "text": "Seu potencial com investimentos \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+            "start_time": 0.0,
+            "end_time": 4.8,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "e1d01d45-5530-460f-b63f-e4758787b158",
+            "text": "Pare de deixar o medo te impedir de avan\u00e7ar em investimentos.",
+            "start_time": 4.8,
+            "end_time": 9.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "ab5ae3bf-74f0-481b-a5da-9434388b4609",
+            "text": "Todo especialista j\u00e1 foi iniciante.",
+            "start_time": 9.2,
+            "end_time": 11.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "bd168e27-f608-464b-a19e-5e9cdb33dd75",
+            "text": "Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o.",
+            "start_time": 11.2,
+            "end_time": 14.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "f2619e67-0fed-44ca-9910-1a9b761933bb",
+            "text": "A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o.",
+            "start_time": 14.8,
+            "end_time": 20.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "0717df02-92b3-4b28-b936-f2d6634011c1",
+            "text": "D\u00ea um passo em dire\u00e7\u00e3o a investimentos hoje.",
+            "start_time": 20.0,
+            "end_time": 23.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "86ba997d-c36a-48fc-9b14-1bb2dc0d38fb",
+            "text": "Depois outro amanh\u00e3.",
+            "start_time": 23.2,
+            "end_time": 24.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "1f819d23-c2fc-46f1-984d-9a0232310626",
+            "text": "Consist\u00eancia bate talento toda vez.",
+            "start_time": 24.4,
+            "end_time": 26.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "c3e344cb-c727-4bdf-899c-5bf11b2af202",
+            "text": "Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+            "start_time": 26.4,
+            "end_time": 29.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 29.0,
+        "word_count": 73
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "idle",
+      "progress": 0,
+      "error": null,
+      "output_path": null,
+      "thumbnail_path": null,
+      "created_at": "2026-05-26T12:40:56.736114",
+      "updated_at": "2026-05-26T12:40:56.736114"
+    },
+    "1fcf6d95-09b1-4902-ad21-de769f749992": {
+      "id": "1fcf6d95-09b1-4902-ad21-de769f749992",
+      "title": "Seu potencial com academia \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+      "prompt": "academia",
+      "style": "motivation",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Seu potencial com academia \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+        "body": "Pare de deixar o medo te impedir de avan\u00e7ar em academia. Todo especialista j\u00e1 foi iniciante. Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o. A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o. D\u00ea um passo em dire\u00e7\u00e3o a academia hoje. Depois outro amanh\u00e3. Consist\u00eancia bate talento toda vez.",
+        "cta": "Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+        "full_text": "Seu potencial com academia \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova. Pare de deixar o medo te impedir de avan\u00e7ar em academia. Todo especialista j\u00e1 foi iniciante. Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o. A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o. D\u00ea um passo em dire\u00e7\u00e3o a academia hoje. Depois outro amanh\u00e3. Consist\u00eancia bate talento toda vez. Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+        "segments": [
+          {
+            "id": "ba1d477c-ede2-4f54-9226-2f738aff0e2d",
+            "text": "Seu potencial com academia \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+            "start_time": 0.0,
+            "end_time": 4.8,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "f4eb6e36-9be9-40a3-a92a-b97fd24f3bfd",
+            "text": "Pare de deixar o medo te impedir de avan\u00e7ar em academia.",
+            "start_time": 4.8,
+            "end_time": 9.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "7dcc533c-f629-4ac7-b0ec-f2037924e8eb",
+            "text": "Todo especialista j\u00e1 foi iniciante.",
+            "start_time": 9.2,
+            "end_time": 11.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "480d04b9-2696-4b4a-89da-c2c0cef5a88e",
+            "text": "Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o.",
+            "start_time": 11.2,
+            "end_time": 14.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "1d797a49-e41d-4d4e-91a0-79145296d323",
+            "text": "A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o.",
+            "start_time": 14.8,
+            "end_time": 20.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "b79e2bc2-9b0f-4463-adfc-25bb25cea1cd",
+            "text": "D\u00ea um passo em dire\u00e7\u00e3o a academia hoje.",
+            "start_time": 20.0,
+            "end_time": 23.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "cbf58156-dbad-44fc-b1e3-eb629cca249e",
+            "text": "Depois outro amanh\u00e3.",
+            "start_time": 23.2,
+            "end_time": 24.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "98f7f537-b2de-426f-8dc4-0fcb6349254d",
+            "text": "Consist\u00eancia bate talento toda vez.",
+            "start_time": 24.4,
+            "end_time": 26.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "e1bfdb3c-2620-4312-a698-3dd80e171dbe",
+            "text": "Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+            "start_time": 26.4,
+            "end_time": 29.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 29.0,
+        "word_count": 73
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "idle",
+      "progress": 0,
+      "error": null,
+      "output_path": null,
+      "thumbnail_path": null,
+      "created_at": "2026-05-26T12:41:14.871383",
+      "updated_at": "2026-05-26T12:41:14.871383"
+    },
+    "4f97a8a8-b64f-4bb6-a804-e1aaaabc11d3": {
+      "id": "4f97a8a8-b64f-4bb6-a804-e1aaaabc11d3",
+      "title": "Seu potencial com seila \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+      "prompt": "seila",
+      "style": "motivation",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Seu potencial com seila \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+        "body": "Pare de deixar o medo te impedir de avan\u00e7ar em seila. Todo especialista j\u00e1 foi iniciante. Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o. A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o. D\u00ea um passo em dire\u00e7\u00e3o a seila hoje. Depois outro amanh\u00e3. Consist\u00eancia bate talento toda vez.",
+        "cta": "Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+        "full_text": "Seu potencial com seila \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova. Pare de deixar o medo te impedir de avan\u00e7ar em seila. Todo especialista j\u00e1 foi iniciante. Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o. A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o. D\u00ea um passo em dire\u00e7\u00e3o a seila hoje. Depois outro amanh\u00e3. Consist\u00eancia bate talento toda vez. Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+        "segments": [
+          {
+            "id": "c9a81069-a387-42d1-84a8-1d8220c3060d",
+            "text": "Seu potencial com seila \u00e9 ilimitado \u2014 e aqui est\u00e1 a prova.",
+            "start_time": 0.0,
+            "end_time": 4.8,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "fab941f5-de73-48e4-ad77-5ebc963dd89a",
+            "text": "Pare de deixar o medo te impedir de avan\u00e7ar em seila.",
+            "start_time": 4.8,
+            "end_time": 9.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "2fb32b3a-cc7a-48b3-a57c-9ae5f207b879",
+            "text": "Todo especialista j\u00e1 foi iniciante.",
+            "start_time": 9.2,
+            "end_time": 11.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "16b36d1f-363e-4910-9d4c-e3ddba08fef1",
+            "text": "Toda hist\u00f3ria de sucesso come\u00e7ou com uma \u00fanica decis\u00e3o.",
+            "start_time": 11.2,
+            "end_time": 14.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "c236189d-b326-455d-9cd8-1a5f38b042e4",
+            "text": "A \u00fanica diferen\u00e7a entre onde voc\u00ea est\u00e1 e onde quer estar \u00e9 a\u00e7\u00e3o.",
+            "start_time": 14.8,
+            "end_time": 20.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "d1c6073b-5dae-45e4-9f23-0449374d9041",
+            "text": "D\u00ea um passo em dire\u00e7\u00e3o a seila hoje.",
+            "start_time": 20.0,
+            "end_time": 23.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "066a21d1-4f89-469e-81bd-be9c58792621",
+            "text": "Depois outro amanh\u00e3.",
+            "start_time": 23.2,
+            "end_time": 24.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "9b1d787b-e62e-40c9-88b5-8d5ee6afb220",
+            "text": "Consist\u00eancia bate talento toda vez.",
+            "start_time": 24.4,
+            "end_time": 26.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "4e46c038-3d58-40c4-8b67-3e623962ae21",
+            "text": "Siga para motiva\u00e7\u00e3o di\u00e1ria para continuar avan\u00e7ando.",
+            "start_time": 26.4,
+            "end_time": 29.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 29.0,
+        "word_count": 73
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "idle",
+      "progress": 0,
+      "error": null,
+      "output_path": null,
+      "thumbnail_path": null,
+      "created_at": "2026-05-26T12:41:24.958619",
+      "updated_at": "2026-05-26T12:41:24.958619"
+    },
+    "c342fe74-37e6-4be6-9b97-ecd0bc51a183": {
+      "id": "c342fe74-37e6-4be6-9b97-ecd0bc51a183",
+      "title": "Voc\u00ea est\u00e1 pronto para transformar seu corpo em uma m\u00e1quina?",
+      "prompt": "academia",
+      "style": "motivation",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Voc\u00ea est\u00e1 pronto para transformar seu corpo em uma m\u00e1quina?",
+        "body": "A academia \u00e9 o local perfeito para alcan\u00e7ar seus objetivos de emagrecimento e ganho de massa muscular. Com equipamentos adequados e profissionais qualificados para orienta\u00e7\u00e3o, voc\u00ea pode criar um plano de treino personalizado para atingir seus resultados desejados. Al\u00e9m disso, realizar exerc\u00edcios em uma academia ajuda a evitar les\u00f5es, pois os profissionais oferecem orienta\u00e7\u00f5es para movimentos corretos.",
+        "cta": "V\u00e1 para a academia hoje mesmo e comece sua jornada de transforma\u00e7\u00e3o!",
+        "full_text": "Voc\u00ea est\u00e1 pronto para transformar seu corpo em uma m\u00e1quina? A academia \u00e9 o local perfeito para alcan\u00e7ar seus objetivos de emagrecimento e ganho de massa muscular. Com equipamentos adequados e profissionais qualificados para orienta\u00e7\u00e3o, voc\u00ea pode criar um plano de treino personalizado para atingir seus resultados desejados. Al\u00e9m disso, realizar exerc\u00edcios em uma academia ajuda a evitar les\u00f5es, pois os profissionais oferecem orienta\u00e7\u00f5es para movimentos corretos. V\u00e1 para a academia hoje mesmo e comece sua jornada de transforma\u00e7\u00e3o!",
+        "segments": [
+          {
+            "id": "508769aa-000d-4165-92de-6613fd7f3e96",
+            "text": "Voc\u00ea est\u00e1 pronto para transformar seu corpo em uma m\u00e1quina? A academia \u00e9 o local perfeito para alcan\u00e7ar seus objetivos de emagrecimento e ganho de massa muscular.",
+            "start_time": 0.0,
+            "end_time": 10.8,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "e0607bb4-6e49-4ef0-8512-4458bba17209",
+            "text": "Com equipamentos adequados e profissionais qualificados para orienta\u00e7\u00e3o, voc\u00ea pode criar um plano de treino personalizado para atingir seus resultados desejados.",
+            "start_time": 10.8,
+            "end_time": 19.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "5baa727f-bc36-4596-8c9a-e528041a7ae1",
+            "text": "Al\u00e9m disso, realizar exerc\u00edcios em uma academia ajuda a evitar les\u00f5es, pois os profissionais oferecem orienta\u00e7\u00f5es para movimentos corretos.",
+            "start_time": 19.2,
+            "end_time": 26.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "f4b0aa5b-b8e2-4d3a-8944-08029c4f2afb",
+            "text": "V\u00e1 para a academia hoje mesmo e comece sua jornada de transforma\u00e7\u00e3o!.",
+            "start_time": 26.8,
+            "end_time": 31.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 32.0,
+        "word_count": 79
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea est\u00e1 pronto para transformar seu corpo em uma m\u00e1quina_.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea est\u00e1 pronto para transformar seu corpo em uma m\u00e1quina__thumb.jpg",
+      "created_at": "2026-05-26T12:58:39.303899",
+      "updated_at": "2026-05-26T13:02:39.051551"
     }
   },
   "jobs": {
@@ -442,6 +1051,26 @@
       "current_step": "Done!",
       "started_at": "2026-05-25T14:59:14.194070",
       "completed_at": "2026-05-25T14:59:44.012803",
+      "error": null
+    },
+    "0adc51c8-7fa0-4077-95fa-937d06174338": {
+      "job_id": "0adc51c8-7fa0-4077-95fa-937d06174338",
+      "project_id": "e850f9bd-5f89-4164-bf4b-c889a9601611",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T12:37:31.864143",
+      "completed_at": "2026-05-26T12:38:11.013749",
+      "error": null
+    },
+    "352a252f-3498-4ff6-8aaf-50e5dd58d173": {
+      "job_id": "352a252f-3498-4ff6-8aaf-50e5dd58d173",
+      "project_id": "c342fe74-37e6-4be6-9b97-ecd0bc51a183",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T13:01:57.472850",
+      "completed_at": "2026-05-26T13:02:39.054037",
       "error": null
     }
   }

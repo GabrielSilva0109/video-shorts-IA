@@ -47,13 +47,8 @@ const VOICES: { value: VoiceModel; label: string }[] = [
 ];
 
 const LANGUAGES = [
-  { value: 'en', label: 'English' },
-  { value: 'pt', label: 'Portuguese' },
-  { value: 'es', label: 'Spanish' },
-  { value: 'fr', label: 'French' },
-  { value: 'de', label: 'German' },
-  { value: 'ja', label: 'Japanese' },
-  { value: 'zh', label: 'Chinese' },
+  { value: 'pt', label: 'Português', flag: '🇧🇷' },
+  { value: 'en', label: 'English', flag: '🇺🇸' },
 ];
 
 export default function GeneratorForm({
@@ -107,24 +102,49 @@ export default function GeneratorForm({
         </div>
       </div>
 
-      {/* ── Platform ────────────────────────── */}
-      <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-text-primary">Platform</label>
-        <div className="flex gap-2">
-          {PLATFORMS.map((p) => (
-            <button
-              key={p.value}
-              onClick={() => setDraftRequest({ platform: p.value })}
-              className={clsx(
-                'flex-1 py-2 rounded-xl border text-sm font-medium transition-all duration-150',
-                draftRequest.platform === p.value
-                  ? 'bg-neon-blue/15 border-neon-blue/50 text-neon-blue'
-                  : 'bg-background-secondary border-border text-text-secondary hover:border-border-light'
-              )}
-            >
-              {p.label}
-            </button>
-          ))}
+      {/* ── Platform + Language ──────────────── */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="flex flex-col gap-2">
+          <label className="text-sm font-semibold text-text-primary">Platform</label>
+          <div className="flex flex-col gap-1.5">
+            {PLATFORMS.map((p) => (
+              <button
+                key={p.value}
+                onClick={() => setDraftRequest({ platform: p.value })}
+                className={clsx(
+                  'py-2 rounded-xl border text-sm font-medium transition-all duration-150',
+                  draftRequest.platform === p.value
+                    ? 'bg-neon-blue/15 border-neon-blue/50 text-neon-blue'
+                    : 'bg-background-secondary border-border text-text-secondary hover:border-border-light'
+                )}
+              >
+                {p.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label className="text-sm font-semibold text-text-primary flex items-center gap-1.5">
+            <Globe className="w-4 h-4" /> Language
+          </label>
+          <div className="flex flex-col gap-1.5">
+            {LANGUAGES.map((l) => (
+              <button
+                key={l.value}
+                onClick={() => setDraftRequest({ language: l.value })}
+                className={clsx(
+                  'py-2 rounded-xl border text-sm font-medium transition-all duration-150 flex items-center justify-center gap-2',
+                  draftRequest.language === l.value
+                    ? 'bg-neon-purple/15 border-neon-purple/50 text-neon-purple'
+                    : 'bg-background-secondary border-border text-text-secondary hover:border-border-light'
+                )}
+              >
+                <span>{l.flag}</span>
+                {l.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -147,8 +167,8 @@ export default function GeneratorForm({
           animate={{ opacity: 1, height: 'auto' }}
           className="flex flex-col gap-4 overflow-hidden"
         >
-          {/* Voice + Subtitle + Language row */}
-          <div className="grid grid-cols-3 gap-3">
+          {/* Voice + Subtitle row */}
+          <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-1.5">
               <label className="text-xs font-semibold text-text-secondary flex items-center gap-1">
                 <Mic className="w-3 h-3" /> Voice
@@ -184,23 +204,6 @@ export default function GeneratorForm({
                 {SUBTITLE_STYLES.map((s) => (
                   <option key={s.value} value={s.value}>
                     {s.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-text-secondary flex items-center gap-1">
-                <Globe className="w-3 h-3" /> Language
-              </label>
-              <select
-                className="input text-sm"
-                value={draftRequest.language}
-                onChange={(e) => setDraftRequest({ language: e.target.value })}
-              >
-                {LANGUAGES.map((l) => (
-                  <option key={l.value} value={l.value}>
-                    {l.label}
                   </option>
                 ))}
               </select>
