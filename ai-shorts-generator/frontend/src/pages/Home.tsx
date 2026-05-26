@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   RiVideoAddLine,
@@ -9,8 +9,9 @@ import {
   RiErrorWarningLine,
   RiTimeLine,
   RiFlashlightLine,
+  RiDeleteBinLine,
 } from 'react-icons/ri';
-import { getProjects } from '@/services/videoService';
+import { getProjects, deleteProject, deleteAllProjects } from '@/services/videoService';
 import { useAppStore } from '@/store';
 import ProjectCard from '@components/ProjectCard/ProjectCard';
 
@@ -24,10 +25,35 @@ const STAT_CARDS = [
 export default function Home() {
   const { setProjects, projects, setActiveProject, removeProject } = useAppStore();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const handleSelectProject = (id: string) => {
     setActiveProject(id);
     navigate('/generator');
+  };
+
+  const deleteMutation = useMutation({
+    mutationFn: deleteProject,
+    onSuccess: (_: void, id: string) => {
+      removeProject(id);
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+    },
+  });
+
+  const deleteAllMutation = useMutation({
+    mutationFn: deleteAllProjects,
+    onSuccess: () => {
+      setProjects([]);
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+    },
+  });
+
+  const handleDelete = (id: string) => deleteMutation.mutate(id);
+
+  const handleDeleteAll = () => {
+    if (window.confirm('Excluir todos os projetos? Esta ação não pode ser desfeita.')) {
+      deleteAllMutation.mutate();
+    }
   };
 
   const { data, isLoading } = useQuery({
@@ -106,9 +132,19 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text-primary">Projetos recentes</h2>
           {projects.length > 0 && (
-            <Link to="/generator" className="btn-ghost text-xs">
-              + Novo Vídeo
-            </Link>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleDeleteAll}
+                disabled={deleteAllMutation.isPending}
+                className="btn-ghost text-xs text-danger hover:bg-danger/10 flex items-center gap-1"
+              >
+                <RiDeleteBinLine className="w-3.5 h-3.5" />
+                {deleteAllMutation.isPending ? 'Excluindo...' : 'Excluir todos'}
+              </button>
+              <Link to="/generator" className="btn-ghost text-xs">
+                + Novo Vídeo
+              </Link>
+            </div>
           )}
         </div>
 
@@ -141,7 +177,7 @@ export default function Home() {
                   key={p.id}
                   project={p}
                   onSelect={handleSelectProject}
-                  onDelete={removeProject}
+                  onDelete={handleDelete}
                 />
               ))}
             </div>

@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { RiMagicLine, RiFileTextLine, RiPlayLine, RiLoader4Line } from 'react-icons/ri';
 import GeneratorForm from '@components/GeneratorForm/GeneratorForm';
 import VideoPreview from '@components/VideoPreview/VideoPreview';
+import SubtitleStylePreview from '@components/VideoPreview/SubtitleStylePreview';
 import { createProject, startRender } from '@/services/videoService';
 import { useAppStore } from '@/store';
 
@@ -119,12 +120,7 @@ export default function Generator() {
               }
             />
           ) : (
-            <div
-              className="flex items-center justify-center rounded-xl bg-background-secondary text-text-muted text-xs"
-              style={{ aspectRatio: '9/16', maxHeight: 480 }}
-            >
-              Preview aparecerá aqui
-            </div>
+            <SubtitleStylePreview />
           )}
         </div>
       </div>

@@ -62,6 +62,12 @@ async def delete_project(project_id: str) -> dict:
     return {"deleted": project_id}
 
 
+@router.delete("/projects", tags=["Projects"])
+async def delete_all_projects() -> dict:
+    count = store.delete_all_projects()
+    return {"deleted": count}
+
+
 # ── Render ────────────────────────────────────
 @router.post("/render/{project_id}", response_model=RenderJob, tags=["Render"])
 async def start_render(

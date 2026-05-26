@@ -65,6 +65,13 @@ class ProjectStore:
             self._save()
         return removed
 
+    def delete_all_projects(self) -> int:
+        count = len(self._projects)
+        self._projects.clear()
+        if count > 0:
+            self._save()
+        return count
+
     def update_project(self, project_id: str, **kwargs) -> Optional[VideoProject]:
         project = self._projects.get(project_id)
         if not project:

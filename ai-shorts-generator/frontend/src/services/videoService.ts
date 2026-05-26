@@ -43,6 +43,9 @@ export const getProject = (id: string): Promise<VideoProject> =>
 export const deleteProject = (id: string): Promise<void> =>
   api.delete(`/video/projects/${id}`).then((r) => r.data);
 
+export const deleteAllProjects = (): Promise<{ deleted: number }> =>
+  api.delete('/video/projects').then((r) => r.data);
+
 // ── Render ────────────────────────────────────
 export const startRender = (projectId: string): Promise<RenderJob> =>
   api.post(`/video/render/${projectId}`).then((r) => r.data);

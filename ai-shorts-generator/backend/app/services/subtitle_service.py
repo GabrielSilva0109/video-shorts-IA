@@ -164,9 +164,9 @@ class SubtitleService:
 
         # Alignment and vertical margin based on position
         pos_map = {
-            "top":    (8, 40),   # top-center
-            "center": (5, 0),    # middle-center
-            "bottom": (2, 80),   # bottom-center
+            "top":    (8, 384),   # top-center, 20% of 1920
+            "center": (5, 0),     # middle-center
+            "bottom": (2, 384),   # bottom-center, 20% of 1920
         }
         alignment, margin_v = pos_map.get(position, (5, 0))
 
