@@ -9,10 +9,21 @@ from openai import AsyncOpenAI
 from app.config import settings
 from app.models.schemas import VoiceModel
 
-# Language codes for gTTS
+# Language codes for gTTS (fallback)
 GTTS_LANG_MAP = {
     "en": "en", "pt": "pt", "es": "es",
     "fr": "fr", "de": "de", "ja": "ja", "it": "it",
+}
+
+# edge-tts neural voices (Microsoft, free, very natural)
+EDGE_VOICE_MAP = {
+    "pt": "pt-BR-FranciscaNeural",
+    "en": "en-US-JennyNeural",
+    "es": "es-ES-ElviraNeural",
+    "fr": "fr-FR-DeniseNeural",
+    "de": "de-DE-KatjaNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "it": "it-IT-ElsaNeural",
 }
 
 
@@ -39,8 +50,8 @@ class VoiceService:
         elif model_key == "elevenlabs" and settings.elevenlabs_api_key:
             await self._elevenlabs_tts(text, output_path)
         else:
-            # Default: free gTTS — no API key needed
-            await self._gtts_tts(text, output_path, language)
+            # Default: edge-tts (Microsoft neural voices, free) → fallback gTTS
+            await self._edge_tts(text, output_path, language)
 
         return output_path
 
@@ -72,9 +83,23 @@ class VoiceService:
         await asyncio.to_thread(_synthesize)
         logger.info(f"gTTS saved to {output_path} (lang={lang})")
 
-    async def _edge_tts(self, text: str, output_path: Path, language: str = "en") -> None:
-        """(Deprecated) edge-tts — kept for reference, use _gtts_tts instead."""
-        raise RuntimeError("edge-tts is no longer supported; using gTTS instead")
+    async def _edge_tts(self, text: str, output_path: Path, language: str = "pt") -> None:
+        """Microsoft neural TTS via edge-tts — free, very natural voices."""
+        try:
+            import edge_tts
+        except ImportError:
+            logger.warning("edge-tts not installed, falling back to gTTS")
+            await self._gtts_tts(text, output_path, language)
+            return
+
+        voice = EDGE_VOICE_MAP.get(language[:2], "pt-BR-FranciscaNeural")
+        try:
+            communicate = edge_tts.Communicate(text, voice)
+            await communicate.save(str(output_path))
+            logger.info(f"edge-tts saved to {output_path} (voice={voice})")
+        except Exception as exc:
+            logger.warning(f"edge-tts failed ({exc}), falling back to gTTS")
+            await self._gtts_tts(text, output_path, language)
 
     async def _elevenlabs_tts(self, text: str, output_path: Path) -> None:
         if not settings.elevenlabs_api_key:
