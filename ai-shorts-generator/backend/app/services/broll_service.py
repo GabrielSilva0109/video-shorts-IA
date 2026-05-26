@@ -96,20 +96,28 @@ class BRollService:
 
     async def _generate_local_clips(self, count: int, output_dir: Path) -> List[Path]:
         """Create animated gradient background clips using FFmpeg (no API key needed)."""
-        # Dark neon palette matching the app's design system
-        colors = ["0x1a0533", "0x0f1a2e", "0x0d1f0d", "0x1a0d0d", "0x1a1a0d", "0x0d1a1a"]
+        # Base colors + hue rotation speed for each slot (dark neon palette)
+        configs = [
+            ("4B006E", 8),   # deep purple
+            ("001a4d", 12),  # navy blue
+            ("0d2600", 7),   # deep green
+            ("4d0000", 10),  # deep crimson
+            ("1a1400", 9),   # deep gold
+            ("001a1a", 11),  # deep teal
+        ]
         paths: List[Path] = []
         for i in range(count):
-            color = colors[i % len(colors)]
+            color, hue_speed = configs[i % len(configs)]
             dest = output_dir / f"broll_{i}.mp4"
             cmd = [
                 "ffmpeg", "-y",
                 "-f", "lavfi",
-                "-i", f"color=c={color}:s=1080x1920:r=30",
+                "-i", f"color=c=0x{color}:s=1080x1920:r=30",
                 "-t", "6",
+                "-vf", f"hue=h='t*{hue_speed}',eq=saturation=2.2:brightness=0.12:contrast=1.1",
                 "-c:v", "libx264",
+                "-preset", "fast",
                 "-pix_fmt", "yuv420p",
-                "-tune", "stillimage",
                 str(dest),
             ]
             try:
@@ -118,7 +126,7 @@ class BRollService:
                     stdout=asyncio.subprocess.DEVNULL,
                     stderr=asyncio.subprocess.DEVNULL,
                 )
-                await proc.wait()
+                await asyncio.wait_for(proc.wait(), timeout=30)
                 if dest.exists():
                     paths.append(dest)
             except Exception as exc:

@@ -6,24 +6,26 @@ import GeneratorForm from '@components/GeneratorForm/GeneratorForm';
 import VideoPreview from '@components/VideoPreview/VideoPreview';
 import { createProject, startRender } from '@/services/videoService';
 import { useAppStore } from '@/store';
-import type { VideoProject } from '@/types';
 
 export default function Generator() {
   const { draftRequest, addProject, addRenderJob, updateProject, projects, activeProjectId, setActiveProject } = useAppStore();
-  const [currentProject, setCurrentProject] = useState<VideoProject | null>(null);
+  // Track only the ID — derive the project from the store so it stays reactive
+  const [currentProjectId, setCurrentProjectId] = useState<string | null>(null);
   const [step, setStep] = useState<'form' | 'preview'>('form');
+
+  // currentProject is always fresh from the store (auto-updates on polling)
+  const currentProject = currentProjectId
+    ? (projects.find((p) => p.id === currentProjectId) ?? null)
+    : null;
 
   // Restore project if navigated from Home
   useEffect(() => {
-    if (activeProjectId && !currentProject) {
-      const found = projects.find((p) => p.id === activeProjectId);
-      if (found) {
-        setCurrentProject(found);
-        setStep('preview');
-        setActiveProject(null);
-      }
+    if (activeProjectId && !currentProjectId) {
+      setCurrentProjectId(activeProjectId);
+      setStep('preview');
+      setActiveProject(null);
     }
-  }, [activeProjectId, projects, currentProject, setActiveProject]);
+  }, [activeProjectId, currentProjectId, setActiveProject]);
 
   // 1. Create project (generates script)
   const createMutation = useMutation({
@@ -40,7 +42,7 @@ export default function Generator() {
       }),
     onSuccess: (project) => {
       addProject(project);
-      setCurrentProject(project);
+      setCurrentProjectId(project.id);
       setStep('preview');
       toast.success('Project created — ready to render!');
     },

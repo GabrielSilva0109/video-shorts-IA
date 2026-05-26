@@ -1,6 +1,7 @@
 """Voice Service — generates narration audio using OpenAI TTS, ElevenLabs,
-edge-tts (free, no key required), or a local TTS model."""
+gTTS (free, no key required), or a local TTS model."""
 from __future__ import annotations
+import asyncio
 from pathlib import Path
 import aiofiles
 from loguru import logger
@@ -8,14 +9,10 @@ from openai import AsyncOpenAI
 from app.config import settings
 from app.models.schemas import VoiceModel
 
-# edge-tts voice options (free, no API key)
-EDGE_TTS_VOICES = {
-    "en": "en-US-ChristopherNeural",
-    "pt": "pt-BR-AntonioNeural",
-    "es": "es-ES-AlvaroNeural",
-    "fr": "fr-FR-HenriNeural",
-    "de": "de-DE-ConradNeural",
-    "ja": "ja-JP-KeitaNeural",
+# Language codes for gTTS
+GTTS_LANG_MAP = {
+    "en": "en", "pt": "pt", "es": "es",
+    "fr": "fr", "de": "de", "ja": "ja", "it": "it",
 }
 
 
@@ -30,6 +27,7 @@ class VoiceService:
         text: str,
         model: VoiceModel | str,
         output_dir: Path,
+        language: str = "en",
     ) -> Path:
         model_key = model.value if hasattr(model, "value") else str(model)
         output_path = output_dir / "narration.mp3"
@@ -41,8 +39,8 @@ class VoiceService:
         elif model_key == "elevenlabs" and settings.elevenlabs_api_key:
             await self._elevenlabs_tts(text, output_path)
         else:
-            # Default: free edge-tts — works without any API key
-            await self._edge_tts(text, output_path)
+            # Default: free gTTS — no API key needed
+            await self._gtts_tts(text, output_path, language)
 
         return output_path
 
@@ -58,19 +56,25 @@ class VoiceService:
         async with aiofiles.open(output_path, "wb") as f:
             await f.write(response.content)
 
-    async def _edge_tts(self, text: str, output_path: Path, language: str = "en") -> None:
-        """Free TTS using Microsoft Edge voices — no API key needed."""
+    async def _gtts_tts(self, text: str, output_path: Path, language: str = "en") -> None:
+        """Free TTS via Google Translate — no API key needed."""
         try:
-            import edge_tts
+            from gtts import gTTS
         except ImportError as exc:
-            raise RuntimeError(
-                "edge-tts is not installed. Run: pip install edge-tts"
-            ) from exc
+            raise RuntimeError("gTTS is not installed. Run: pip install gTTS") from exc
 
-        voice = EDGE_TTS_VOICES.get(language[:2], EDGE_TTS_VOICES["en"])
-        communicate = edge_tts.Communicate(text, voice)
-        await communicate.save(str(output_path))
-        logger.info(f"edge-tts saved to {output_path} (voice={voice})")
+        lang = GTTS_LANG_MAP.get(language[:2], "en")
+
+        def _synthesize() -> None:
+            tts = gTTS(text=text, lang=lang, slow=False)
+            tts.save(str(output_path))
+
+        await asyncio.to_thread(_synthesize)
+        logger.info(f"gTTS saved to {output_path} (lang={lang})")
+
+    async def _edge_tts(self, text: str, output_path: Path, language: str = "en") -> None:
+        """(Deprecated) edge-tts — kept for reference, use _gtts_tts instead."""
+        raise RuntimeError("edge-tts is no longer supported; using gTTS instead")
 
     async def _elevenlabs_tts(self, text: str, output_path: Path) -> None:
         if not settings.elevenlabs_api_key:

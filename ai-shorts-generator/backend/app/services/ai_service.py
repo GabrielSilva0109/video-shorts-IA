@@ -83,7 +83,7 @@ Output ONLY valid JSON matching this schema:
         if settings.enable_local_ai:
             raw = await self._local_generate(system_prompt, user_prompt)
         elif not self._client:
-            raw = json.dumps(self._template_script(prompt, style_key))
+            raw = json.dumps(self._template_script(prompt, style_key, language))
         else:
             response = await self._client.chat.completions.create(
                 model=settings.openai_model,
@@ -159,10 +159,88 @@ Output ONLY valid JSON:
 
     # ── Offline / Template generation ────────
     @staticmethod
-    def _template_script(prompt: str, style_key: str) -> dict:
+    def _template_script(prompt: str, style_key: str, language: str = "pt") -> dict:
         """Generate a script from templates — no API key required."""
         topic = prompt.strip().rstrip(".!?")
-        SCRIPTS: dict[str, dict] = {
+        is_pt = language.lower().startswith("pt")
+
+        SCRIPTS_PT: dict[str, dict] = {
+            "hormozi": {
+                "hook": f"A maioria das pessoas falha em {topic} por uma razão simples.",
+                "body": (
+                    f"Elas pulam os fundamentos e vão direto para táticas avançadas. "
+                    f"Estudei {topic} a fundo e o padrão é sempre o mesmo. "
+                    f"Quem tem sucesso domina o básico primeiro, depois constrói sistemas repetíveis. "
+                    f"Não é complicado — só exige foco certo e execução consistente."
+                ),
+                "cta": "Siga para conteúdo direto ao ponto que gera resultado de verdade.",
+            },
+            "tiktok_story": {
+                "hook": f"Eu quase desisti de {topic} até que isso aconteceu...",
+                "body": (
+                    f"Três meses atrás eu estava completamente travado com {topic} e nada funcionava. "
+                    f"Tentei todo tutorial, todo guia — zero resultado. "
+                    f"Então um dia percebi algo que mudou tudo. "
+                    f"Parei de fazer o que todo mundo fazia e encontrei meu próprio sistema. "
+                    f"Em semanas os resultados começaram a aparecer mais rápido do que eu esperava."
+                ),
+                "cta": "Comenta 'QUERO MAIS' se quiser que eu mostre exatamente o que eu fiz.",
+            },
+            "finance": {
+                "hook": f"O custo real de ignorar {topic} vai te chocar.",
+                "body": (
+                    f"A maioria das pessoas não percebe quanto dinheiro está deixando na mesa com {topic}. "
+                    f"A matemática é simples: pequenas ações consistentes se compõem ao longo do tempo. "
+                    f"Seja iniciante ou avançado em {topic}, "
+                    f"entender os fundamentos pode mudar completamente sua trajetória financeira."
+                ),
+                "cta": "Siga para dicas diárias de dinheiro que realmente constroem riqueza.",
+            },
+            "motivation": {
+                "hook": f"Seu potencial com {topic} é ilimitado — e aqui está a prova.",
+                "body": (
+                    f"Pare de deixar o medo te impedir de avançar em {topic}. "
+                    f"Todo especialista já foi iniciante. Toda história de sucesso começou com uma única decisão. "
+                    f"A única diferença entre onde você está e onde quer estar é ação. "
+                    f"Dê um passo em direção a {topic} hoje. Depois outro amanhã. "
+                    f"Consistência bate talento toda vez."
+                ),
+                "cta": "Siga para motivação diária para continuar avançando.",
+            },
+            "gaming": {
+                "hook": f"Essa estratégia de {topic} está completamente quebrada agora.",
+                "body": (
+                    f"Tenho treinado {topic} por semanas e descobri algo insano. "
+                    f"A maioria dos jogadores tá dormindo nisso. "
+                    f"Quando você entende como {topic} funciona de verdade em alto nível, "
+                    f"nunca mais volta para a abordagem antiga. "
+                    f"Essa é uma informação que os top players não querem que você saiba."
+                ),
+                "cta": "Dá um follow para mais estratégias e segredos de gaming.",
+            },
+            "luxury": {
+                "hook": f"É assim que a elite aborda {topic}.",
+                "body": (
+                    f"Existe uma razão pela qual o top 1% vê {topic} de forma diferente de todos os outros. "
+                    f"Enquanto a maioria se contenta com a média, quem opera no mais alto nível "
+                    f"entende que {topic} é um investimento, não uma despesa. "
+                    f"Os detalhes, a qualidade, a experiência — tudo importa nesse nível."
+                ),
+                "cta": "Siga para elevar seus padrões e viver em um nível mais alto.",
+            },
+            "documentary": {
+                "hook": f"A história não contada de {topic} é mais fascinante do que você imagina.",
+                "body": (
+                    f"Por décadas, {topic} tem moldado nosso mundo de formas que a maioria nunca percebe. "
+                    f"Pesquisadores que estudam {topic} descobriram que o que pensamos saber "
+                    f"mal arranha a superfície. "
+                    f"Quanto mais fundo você olha, mais complexo e bonito o quadro se torna."
+                ),
+                "cta": "Siga para mais histórias fascinantes sobre o mundo ao nosso redor.",
+            },
+        }
+
+        SCRIPTS_EN: dict[str, dict] = {
             "hormozi": {
                 "hook": f"Most people fail at {topic} for one simple reason.",
                 "body": (
@@ -237,6 +315,8 @@ Output ONLY valid JSON:
                 "cta": "Follow for more fascinating stories about the world around us.",
             },
         }
+
+        SCRIPTS = SCRIPTS_PT if is_pt else SCRIPTS_EN
         data = SCRIPTS.get(style_key, SCRIPTS["hormozi"])
         full_text = f"{data['hook']} {data['body']} {data['cta']}"
         return {**data, "full_text": full_text}

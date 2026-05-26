@@ -37,6 +37,9 @@ export const createProject = (
 ): Promise<VideoProject> =>
   api.post('/video/projects', req).then((r) => r.data);
 
+export const getProject = (id: string): Promise<VideoProject> =>
+  api.get(`/video/projects/${id}`).then((r) => r.data);
+
 export const deleteProject = (id: string): Promise<void> =>
   api.delete(`/video/projects/${id}`).then((r) => r.data);
 

@@ -3,6 +3,7 @@ Export Service — composites b-roll clips, applies effects and exports
 the final 9:16 video in H.264.
 """
 from __future__ import annotations
+import re
 import subprocess
 from pathlib import Path
 from typing import List
@@ -77,38 +78,56 @@ class ExportService:
         filters: list[str] = []
 
         if effects.auto_zoom:
-            filters.append(
-                "zoompan=z='if(lte(zoom,1.0),1.05,max(1.001,zoom-0.0015))':"
-                "d=125:s=1080x1920:fps=30"
-            )
+            # Subtle static zoom-in: scale 5% larger then crop back
+            filters.append("scale=1134:2016,crop=1080:1920:27:48")
+
+        # Always apply cinematic color grade
+        filters.append("eq=saturation=1.35:contrast=1.08:brightness=0.03")
+        # Subtle sharpen
+        filters.append("unsharp=5:5:0.5:3:3:0.2")
+        # Fade in from black (first 0.5 s)
+        filters.append("fade=t=in:st=0:d=0.5")
+        # Fade out to black (last 0.7 s)
+        duration = self._get_duration(video_path)
+        if duration > 1.5:
+            fade_start = max(0.0, duration - 0.8)
+            filters.append(f"fade=t=out:st={fade_start:.2f}:d=0.7")
 
         if effects.background_blur:
-            filters.append(
-                "[0:v]split[main][blur];"
-                "[blur]scale=1080:1920,gblur=sigma=20[blurred];"
-                "[blurred][main]overlay=(W-w)/2:(H-h)/2"
-            )
+            # Dark-edge vignette
+            filters.append("vignette=angle=PI/5:mode=backward")
 
-        if not filters:
-            return video_path
-
-        vf = ",".join(f for f in filters if "[" not in f)
+        vf = ",".join(filters)
 
         cmd = [
             settings.ffmpeg_path, "-y",
             "-i", str(video_path),
-            *((["-vf", vf]) if vf else []),
+            "-vf", vf,
             "-c:v", "libx264", "-preset", "fast", "-crf", "20",
             "-c:a", "copy",
             str(output_path),
         ]
 
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            logger.warning(f"Effects error: {result.stderr[-300:]}")
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+            if result.returncode != 0:
+                logger.warning(f"Effects error: {result.stderr[-300:]}")
+                return video_path
+            return output_path
+        except subprocess.TimeoutExpired:
+            logger.warning("Effects step timed out — skipping effects")
             return video_path
 
-        return output_path
+    def _get_duration(self, path: Path) -> float:
+        """Return video duration in seconds using ffmpeg -i."""
+        result = subprocess.run(
+            [settings.ffmpeg_path, "-i", str(path)],
+            capture_output=True, text=True,
+        )
+        m = re.search(r"Duration:\s*(\d+):(\d+):([\d.]+)", result.stderr)
+        if m:
+            return int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3))
+        return 0.0
 
     # ── 3. Final export + thumbnail ──────────
     def finalize(

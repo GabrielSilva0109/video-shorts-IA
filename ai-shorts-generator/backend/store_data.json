@@ -91,6 +91,7 @@
         "beat_sync": true,
         "motion_graphics": false
       },
+      "language": "pt",
       "status": "error",
       "progress": 10,
       "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=17fdeb6034fc4dc19da79ed8602cc814'",
@@ -190,6 +191,7 @@
         "beat_sync": true,
         "motion_graphics": false
       },
+      "language": "pt",
       "status": "error",
       "progress": 10,
       "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=cd8ffbd659b84694be9752d041be9e0a'",
@@ -197,6 +199,188 @@
       "thumbnail_path": null,
       "created_at": "2026-05-25T14:29:45.568430",
       "updated_at": "2026-05-25T14:29:45.568430"
+    },
+    "79abae87-c42e-4db8-928c-c37480eb3628": {
+      "id": "79abae87-c42e-4db8-928c-c37480eb3628",
+      "title": "The real cost of ignoring treino motivacional will shock you.",
+      "prompt": "treino motivacional",
+      "style": "finance",
+      "platform": "tiktok",
+      "script": {
+        "hook": "The real cost of ignoring treino motivacional will shock you.",
+        "body": "Most people don't realize how much money they're leaving on the table with treino motivacional. The math is simple: small consistent actions compound over time. Whether you're just starting or already deep into treino motivacional, understanding the fundamentals can completely change your financial trajectory.",
+        "cta": "Follow for daily money tips that actually build wealth.",
+        "full_text": "The real cost of ignoring treino motivacional will shock you. Most people don't realize how much money they're leaving on the table with treino motivacional. The math is simple: small consistent actions compound over time. Whether you're just starting or already deep into treino motivacional, understanding the fundamentals can completely change your financial trajectory. Follow for daily money tips that actually build wealth.",
+        "segments": [
+          {
+            "id": "b80197d2-1dec-4ca3-8888-40bcad640d4b",
+            "text": "The real cost of ignoring treino motivacional will shock you.",
+            "start_time": 0.0,
+            "end_time": 4.0,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "cd417788-8917-426b-a393-c7b73a26d77b",
+            "text": "Most people don't realize how much money they're leaving on the table with treino motivacional.",
+            "start_time": 4.0,
+            "end_time": 10.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "c7682175-34d8-414f-984e-fbda1f1a1791",
+            "text": "The math is simple: small consistent actions compound over time.",
+            "start_time": 10.0,
+            "end_time": 14.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "26998f9f-1d7c-4839-bf13-061a3e69d5ae",
+            "text": "Whether you're just starting or already deep into treino motivacional, understanding the fundamentals can completely change your financial trajectory.",
+            "start_time": 14.0,
+            "end_time": 21.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "243dd481-9757-4238-96e7-02a3585cd59f",
+            "text": "Follow for daily money tips that actually build wealth.",
+            "start_time": 21.6,
+            "end_time": 25.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 25.0,
+        "word_count": 63
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\The real cost of ignoring treino motivacional will shock you.mp4",
+      "thumbnail_path": "exports\\The real cost of ignoring treino motivacional will shock you_thumb.jpg",
+      "created_at": "2026-05-25T14:39:56.768155",
+      "updated_at": "2026-05-25T14:44:54.573416"
+    },
+    "49eda575-6236-45c7-a536-074060adee1d": {
+      "id": "49eda575-6236-45c7-a536-074060adee1d",
+      "title": "I almost gave up on day trade para iniciante until this happened...",
+      "prompt": "day trade para iniciante",
+      "style": "tiktok_story",
+      "platform": "youtube_shorts",
+      "script": {
+        "hook": "I almost gave up on day trade para iniciante until this happened...",
+        "body": "Three months ago I was completely stuck with day trade para iniciante and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected.",
+        "cta": "Comment 'MORE' if you want me to break down exactly what I did.",
+        "full_text": "I almost gave up on day trade para iniciante until this happened... Three months ago I was completely stuck with day trade para iniciante and nothing was working. I tried every tutorial, every guide \u2014 zero results. Then one day I noticed something that changed everything. I stopped doing what everyone else was doing and found my own system. Within weeks the results started coming in faster than I ever expected. Comment 'MORE' if you want me to break down exactly what I did.",
+        "segments": [
+          {
+            "id": "818aa4f7-b7ad-4802-b4c1-7125094901e3",
+            "text": "I almost gave up on day trade para iniciante until this happened.",
+            "start_time": 0.0,
+            "end_time": 4.8,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "3ba0d302-1651-4719-a20c-890ceca119b2",
+            "text": "Three months ago I was completely stuck with day trade para iniciante and nothing was working.",
+            "start_time": 4.8,
+            "end_time": 11.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "1fd93905-bc65-4fab-aa13-438ed8a558f4",
+            "text": "I tried every tutorial, every guide \u2014 zero results.",
+            "start_time": 11.2,
+            "end_time": 14.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "31a59018-ed5e-49e8-ac72-6b4fabf50346",
+            "text": "Then one day I noticed something that changed everything.",
+            "start_time": 14.8,
+            "end_time": 18.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "089cff67-48ef-491e-ba55-1af67751a587",
+            "text": "I stopped doing what everyone else was doing and found my own system.",
+            "start_time": 18.4,
+            "end_time": 23.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "b0546c4e-9535-4fae-b1b2-edc978a0f9ff",
+            "text": "Within weeks the results started coming in faster than I ever expected.",
+            "start_time": 23.6,
+            "end_time": 28.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "2fe17fbc-6f9c-48c5-9f55-1c1812c4cad3",
+            "text": "Comment 'MORE' if you want me to break down exactly what I did.",
+            "start_time": 28.4,
+            "end_time": 33.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 34.0,
+        "word_count": 84
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "en",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\I almost gave up on day trade para iniciante until this happ.mp4",
+      "thumbnail_path": "exports\\I almost gave up on day trade para iniciante until this happ_thumb.jpg",
+      "created_at": "2026-05-25T14:59:07.926700",
+      "updated_at": "2026-05-25T14:59:44.010799"
     }
   },
   "jobs": {
@@ -229,6 +413,36 @@
       "started_at": "2026-05-25T14:33:38.583351",
       "completed_at": "2026-05-25T14:33:39.526411",
       "error": "403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=17fdeb6034fc4dc19da79ed8602cc814'"
+    },
+    "a002f9b6-8f01-4dae-b487-eac5c71eed5b": {
+      "job_id": "a002f9b6-8f01-4dae-b487-eac5c71eed5b",
+      "project_id": "79abae87-c42e-4db8-928c-c37480eb3628",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-25T14:39:57.631906",
+      "completed_at": "2026-05-25T14:41:51.678587",
+      "error": null
+    },
+    "afbbeafa-f42d-433c-9ddc-7728ab0c359f": {
+      "job_id": "afbbeafa-f42d-433c-9ddc-7728ab0c359f",
+      "project_id": "79abae87-c42e-4db8-928c-c37480eb3628",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-25T14:40:05.264342",
+      "completed_at": "2026-05-25T14:44:54.574417",
+      "error": null
+    },
+    "84299a62-f4da-4dbf-9fa2-0d1f7515c587": {
+      "job_id": "84299a62-f4da-4dbf-9fa2-0d1f7515c587",
+      "project_id": "49eda575-6236-45c7-a536-074060adee1d",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-25T14:59:14.194070",
+      "completed_at": "2026-05-25T14:59:44.012803",
+      "error": null
     }
   }
 }

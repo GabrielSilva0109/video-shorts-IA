@@ -22,6 +22,14 @@ async def list_projects() -> list[VideoProject]:
     return store.list_projects()
 
 
+@router.get("/projects/{project_id}", response_model=VideoProject, tags=["Projects"])
+async def get_project(project_id: str) -> VideoProject:
+    project = store.get_project(project_id)
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+    return project
+
+
 @router.post("/projects", response_model=VideoProject, tags=["Projects"])
 async def create_project(req: GenerationRequest) -> VideoProject:
     """Create a project and immediately generate the AI script."""
@@ -39,6 +47,7 @@ async def create_project(req: GenerationRequest) -> VideoProject:
             subtitle_style=req.subtitle_style,
             background_music=req.background_music,
             effects=req.effects,
+            language=req.language,
         )
         return store.save_project(project)
     except Exception as exc:

@@ -43,6 +43,7 @@ class VideoService:
                 text=project.script.full_text,  # type: ignore[union-attr]
                 model=project.voice_model,
                 output_dir=tmp,
+                language=getattr(project, "language", "pt"),
             )
 
             # 2. B-roll footage

@@ -96,6 +96,7 @@ class VideoProject(BaseModel):
     subtitle_style: SubtitleStyle = SubtitleStyle.hormozi
     background_music: Optional[str] = None
     effects: VideoEffects = Field(default_factory=VideoEffects)
+    language: str = "pt"
     status: RenderStatus = RenderStatus.idle
     progress: int = 0
     error: Optional[str] = None
@@ -124,7 +125,7 @@ class GenerationRequest(BaseModel):
     voice_model: VoiceModel = VoiceModel.openai
     subtitle_style: SubtitleStyle = SubtitleStyle.hormozi
     background_music: Optional[str] = None
-    language: str = "en"
+    language: str = "pt"
     effects: VideoEffects = Field(default_factory=VideoEffects)
     custom_script: Optional[str] = None
 
@@ -132,7 +133,7 @@ class GenerationRequest(BaseModel):
 class ScriptRequest(BaseModel):
     prompt: str = Field(..., min_length=5, max_length=2000)
     style: VideoStyle = VideoStyle.hormozi
-    language: str = "en"
+    language: str = "pt"
 
 
 class TitleRequest(BaseModel):
