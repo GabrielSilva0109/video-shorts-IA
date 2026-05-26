@@ -1,21 +1,16 @@
 import { motion } from 'framer-motion';
 import type { VideoProject } from '@/types';
 import { formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import {
-  CheckCircle2,
-  Loader2,
-  AlertCircle,
-  Clock,
-  Trash2,
-  Play,
-} from 'lucide-react';
+  RiCheckboxCircleLine,
+  RiLoader4Line,
+  RiErrorWarningLine,
+  RiTimeLine,
+  RiDeleteBinLine,
+  RiPlayLine,
+} from 'react-icons/ri';
 import clsx from 'clsx';
-
-const STATUS_COLORS: Record<string, string> = {
-  done: 'badge-green',
-  error: 'bg-red-500/15 text-red-400 border-red-500/30 badge',
-  idle: 'badge-purple',
-};
 
 interface Props {
   project: VideoProject;
@@ -27,48 +22,42 @@ interface Props {
 export default function ProjectCard({ project, onSelect, onDelete, active }: Props) {
   const statusIcon = () => {
     switch (project.status) {
-      case 'done':
-        return <CheckCircle2 className="w-3.5 h-3.5" />;
-      case 'error':
-        return <AlertCircle className="w-3.5 h-3.5" />;
+      case 'done':    return <RiCheckboxCircleLine className="w-3 h-3" />;
+      case 'error':   return <RiErrorWarningLine className="w-3 h-3" />;
       default:
-        if (project.progress > 0)
-          return <Loader2 className="w-3.5 h-3.5 animate-spin" />;
-        return <Clock className="w-3.5 h-3.5" />;
+        if (project.progress > 0) return <RiLoader4Line className="w-3 h-3 animate-spin" />;
+        return <RiTimeLine className="w-3 h-3" />;
     }
   };
+
+  const badgeClass = {
+    done: 'badge-green',
+    error: 'badge-red',
+  }[project.status] ?? 'badge-accent';
 
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.95 }}
+      exit={{ opacity: 0, scale: 0.97 }}
       className={clsx(
         'card-hover p-4 cursor-pointer group relative',
-        active && 'border-neon-purple/50 shadow-neon-purple'
+        active && 'border-accent/50'
       )}
       onClick={() => onSelect(project.id)}
     >
-      {/* Status badge */}
+      {/* Header row */}
       <div className="flex items-center justify-between mb-3">
-        <span
-          className={
-            STATUS_COLORS[project.status] ??
-            'badge bg-neon-blue/15 text-neon-blue border-neon-blue/30'
-          }
-        >
+        <span className={badgeClass}>
           {statusIcon()}
           {project.status.replace(/_/g, ' ')}
         </span>
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onDelete(project.id);
-          }}
-          className="opacity-0 group-hover:opacity-100 transition-opacity btn-ghost p-1.5 text-text-muted hover:text-red-400"
+          onClick={(e) => { e.stopPropagation(); onDelete(project.id); }}
+          className="opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-md text-text-muted hover:text-danger hover:bg-danger/10"
         >
-          <Trash2 className="w-3.5 h-3.5" />
+          <RiDeleteBinLine className="w-3.5 h-3.5" />
         </button>
       </div>
 
@@ -77,16 +66,16 @@ export default function ProjectCard({ project, onSelect, onDelete, active }: Pro
         {project.title || project.prompt}
       </p>
       <p className="text-xs text-text-muted capitalize mb-3">
-        {project.style.replace(/_/g, ' ')} Â· {project.platform.replace(/_/g, ' ')}
+        {project.style.replace(/_/g, ' ')} · {project.platform.replace(/_/g, ' ')}
       </p>
 
-      {/* Progress bar if rendering */}
+      {/* Progress bar */}
       {project.progress > 0 && project.status !== 'done' && project.status !== 'error' && (
-        <div className="h-1 rounded-full bg-background-tertiary overflow-hidden mb-2">
+        <div className="h-0.5 rounded-full bg-background-hover overflow-hidden mb-3">
           <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-neon-purple to-neon-blue"
+            className="h-full rounded-full bg-accent"
             animate={{ width: `${project.progress}%` }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           />
         </div>
       )}
@@ -94,17 +83,14 @@ export default function ProjectCard({ project, onSelect, onDelete, active }: Pro
       {/* Footer */}
       <div className="flex items-center justify-between">
         <span className="text-xs text-text-muted">
-          {formatDistanceToNow(new Date(project.created_at), { addSuffix: true })}
+          {formatDistanceToNow(new Date(project.created_at), { addSuffix: true, locale: ptBR })}
         </span>
         {project.status === 'done' && (
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onSelect(project.id);
-            }}
-            className="btn-ghost p-1.5"
+            onClick={(e) => { e.stopPropagation(); onSelect(project.id); }}
+            className="p-1 rounded-md text-text-muted hover:text-success hover:bg-success/10 transition-colors"
           >
-            <Play className="w-3.5 h-3.5 text-neon-green" />
+            <RiPlayLine className="w-3.5 h-3.5" />
           </button>
         )}
       </div>

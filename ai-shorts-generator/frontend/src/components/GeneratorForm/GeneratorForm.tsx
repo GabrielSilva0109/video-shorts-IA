@@ -1,28 +1,28 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  Wand2,
-  Mic,
-  Music,
-  Zap,
-  ChevronDown,
-  ChevronUp,
-  ToggleLeft,
-  ToggleRight,
-  Globe,
-} from 'lucide-react';
+  RiMagicLine,
+  RiMicLine,
+  RiMusicLine,
+  RiGlobalLine,
+  RiArrowDownSLine,
+  RiArrowUpSLine,
+  RiToggleLine,
+  RiToggleFill,
+  RiLoader4Line,
+} from 'react-icons/ri';
 import { useAppStore } from '@/store';
 import type { VideoStyle, ExportPlatform, SubtitleStyle, VoiceModel } from '@/types';
 import clsx from 'clsx';
 
 const STYLES: { value: VideoStyle; label: string; emoji: string }[] = [
-  { value: 'hormozi', label: 'Hormozi', emoji: '💥' },
-  { value: 'tiktok_story', label: 'TikTok Story', emoji: '📱' },
-  { value: 'finance', label: 'Finance', emoji: '💰' },
-  { value: 'motivation', label: 'Motivation', emoji: '🔥' },
-  { value: 'gaming', label: 'Gaming', emoji: '🎮' },
-  { value: 'luxury', label: 'Luxury', emoji: '✨' },
-  { value: 'documentary', label: 'Documentary', emoji: '🎬' },
+  { value: 'hormozi', label: 'Hormozi', emoji: '??' },
+  { value: 'tiktok_story', label: 'TikTok Story', emoji: '??' },
+  { value: 'finance', label: 'Finance', emoji: '??' },
+  { value: 'motivation', label: 'Motiva��o', emoji: '??' },
+  { value: 'gaming', label: 'Gaming', emoji: '??' },
+  { value: 'luxury', label: 'Luxury', emoji: '?' },
+  { value: 'documentary', label: 'Document�rio', emoji: '??' },
 ];
 
 const PLATFORMS: { value: ExportPlatform; label: string }[] = [
@@ -35,7 +35,7 @@ const SUBTITLE_STYLES: { value: SubtitleStyle; label: string }[] = [
   { value: 'hormozi', label: 'Hormozi Bold' },
   { value: 'tiktok', label: 'TikTok Classic' },
   { value: 'clean', label: 'Clean White' },
-  { value: 'fire', label: 'Fire 🔥' },
+  { value: 'fire', label: 'Fire ??' },
   { value: 'minimal', label: 'Minimal' },
   { value: 'emoji', label: 'Emoji Style' },
 ];
@@ -47,74 +47,63 @@ const VOICES: { value: VoiceModel; label: string }[] = [
 ];
 
 const LANGUAGES = [
-  { value: 'pt', label: 'Português', flag: '🇧🇷' },
-  { value: 'en', label: 'English', flag: '🇺🇸' },
+  { value: 'pt', label: 'Portugu�s', flag: '????' },
+  { value: 'en', label: 'English', flag: '????' },
 ];
 
-export default function GeneratorForm({
-  onSubmit,
-  loading,
-}: {
-  onSubmit: () => void;
-  loading: boolean;
-}) {
+export default function GeneratorForm({ onSubmit, loading }: { onSubmit: () => void; loading: boolean }) {
   const { draftRequest, setDraftRequest, setDraftEffects } = useAppStore();
   const [advancedOpen, setAdvancedOpen] = useState(false);
-
   const effects = draftRequest.effects!;
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* ── Prompt ──────────────────────────── */}
-      <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-text-primary">
-          Topic / Prompt
-        </label>
+    <div className="flex flex-col gap-5">
+      {/* Prompt */}
+      <div className="flex flex-col gap-1.5">
+        <label className="text-sm font-medium text-text-primary">T�pico / Prompt</label>
         <textarea
-          className="textarea h-28"
-          placeholder="e.g. 'The dark truth about compound interest that banks don't want you to know…'"
+          className="textarea h-24"
+          placeholder="Ex: A verdade sombria sobre juros compostos que os bancos n�o querem que voc� saiba�"
           value={draftRequest.prompt ?? ''}
           onChange={(e) => setDraftRequest({ prompt: e.target.value })}
         />
       </div>
 
-      {/* ── Style ───────────────────────────── */}
-      <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-text-primary">
-          Video Style
-        </label>
-        <div className="grid grid-cols-4 gap-2">
+      {/* Style */}
+      <div className="flex flex-col gap-1.5">
+        <label className="text-sm font-medium text-text-primary">Estilo do V�deo</label>
+        <div className="grid grid-cols-4 gap-1.5">
           {STYLES.map((s) => (
             <button
               key={s.value}
               onClick={() => setDraftRequest({ style: s.value })}
               className={clsx(
-                'flex flex-col items-center gap-1 p-3 rounded-xl border text-xs font-medium transition-all duration-150',
+                'flex flex-col items-center gap-1 p-2.5 rounded-lg border text-xs font-medium transition-all duration-150',
                 draftRequest.style === s.value
-                  ? 'bg-neon-purple/15 border-neon-purple/50 text-neon-purple'
+                  ? 'bg-accent/10 border-accent/40 text-accent'
                   : 'bg-background-secondary border-border text-text-secondary hover:border-border-light hover:text-text-primary'
               )}
             >
-              <span className="text-xl">{s.emoji}</span>
+              <span className="text-base">{s.emoji}</span>
               {s.label}
             </button>
           ))}
         </div>
       </div>
 
-      {/* ── Platform + Language ──────────────── */}
+      {/* Platform + Language */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-semibold text-text-primary">Platform</label>
-          <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-medium text-text-primary">Plataforma</label>
+          <div className="flex flex-col gap-1">
             {PLATFORMS.map((p) => (
               <button
                 key={p.value}
                 onClick={() => setDraftRequest({ platform: p.value })}
                 className={clsx(
-                  'py-2 rounded-xl border text-sm font-medium transition-all duration-150',
+                  'py-1.5 rounded-lg border text-xs font-medium transition-all duration-150',
                   draftRequest.platform === p.value
-                    ? 'bg-neon-blue/15 border-neon-blue/50 text-neon-blue'
+                    ? 'bg-accent/10 border-accent/40 text-accent'
                     : 'bg-background-secondary border-border text-text-secondary hover:border-border-light'
                 )}
               >
@@ -124,19 +113,19 @@ export default function GeneratorForm({
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-semibold text-text-primary flex items-center gap-1.5">
-            <Globe className="w-4 h-4" /> Language
+        <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-medium text-text-primary flex items-center gap-1">
+            <RiGlobalLine className="w-3.5 h-3.5" /> Idioma
           </label>
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1">
             {LANGUAGES.map((l) => (
               <button
                 key={l.value}
                 onClick={() => setDraftRequest({ language: l.value })}
                 className={clsx(
-                  'py-2 rounded-xl border text-sm font-medium transition-all duration-150 flex items-center justify-center gap-2',
+                  'py-1.5 rounded-lg border text-xs font-medium transition-all duration-150 flex items-center justify-center gap-1.5',
                   draftRequest.language === l.value
-                    ? 'bg-neon-purple/15 border-neon-purple/50 text-neon-purple'
+                    ? 'bg-accent/10 border-accent/40 text-accent'
                     : 'bg-background-secondary border-border text-text-secondary hover:border-border-light'
                 )}
               >
@@ -148,17 +137,13 @@ export default function GeneratorForm({
         </div>
       </div>
 
-      {/* ── Advanced toggle ──────────────────── */}
+      {/* Advanced toggle */}
       <button
-        className="flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
+        className="flex items-center gap-1.5 text-xs text-text-muted hover:text-text-secondary transition-colors"
         onClick={() => setAdvancedOpen((v) => !v)}
       >
-        {advancedOpen ? (
-          <ChevronUp className="w-4 h-4" />
-        ) : (
-          <ChevronDown className="w-4 h-4" />
-        )}
-        Advanced Settings
+        {advancedOpen ? <RiArrowUpSLine className="w-3.5 h-3.5" /> : <RiArrowDownSLine className="w-3.5 h-3.5" />}
+        Configura��es avan�adas
       </button>
 
       {advancedOpen && (
@@ -167,86 +152,63 @@ export default function GeneratorForm({
           animate={{ opacity: 1, height: 'auto' }}
           className="flex flex-col gap-4 overflow-hidden"
         >
-          {/* Voice + Subtitle row */}
           <div className="grid grid-cols-2 gap-3">
-            <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-text-secondary flex items-center gap-1">
-                <Mic className="w-3 h-3" /> Voice
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-medium text-text-muted flex items-center gap-1">
+                <RiMicLine className="w-3 h-3" /> Voz
               </label>
               <select
-                className="input text-sm"
+                className="input text-xs"
                 value={draftRequest.voice_model}
-                onChange={(e) =>
-                  setDraftRequest({ voice_model: e.target.value as VoiceModel })
-                }
+                onChange={(e) => setDraftRequest({ voice_model: e.target.value as VoiceModel })}
               >
                 {VOICES.map((v) => (
-                  <option key={v.value} value={v.value}>
-                    {v.label}
-                  </option>
+                  <option key={v.value} value={v.value}>{v.label}</option>
                 ))}
               </select>
             </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-text-secondary flex items-center gap-1">
-                <Zap className="w-3 h-3" /> Subtitles
-              </label>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-medium text-text-muted">Legendas</label>
               <select
-                className="input text-sm"
+                className="input text-xs"
                 value={draftRequest.subtitle_style}
-                onChange={(e) =>
-                  setDraftRequest({
-                    subtitle_style: e.target.value as SubtitleStyle,
-                  })
-                }
+                onChange={(e) => setDraftRequest({ subtitle_style: e.target.value as SubtitleStyle })}
               >
                 {SUBTITLE_STYLES.map((s) => (
-                  <option key={s.value} value={s.value}>
-                    {s.label}
-                  </option>
+                  <option key={s.value} value={s.value}>{s.label}</option>
                 ))}
               </select>
             </div>
           </div>
 
-          {/* Background music */}
-          <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-semibold text-text-secondary flex items-center gap-1">
-              <Music className="w-3 h-3" /> Background Music
+          <div className="flex flex-col gap-1">
+            <label className="text-xs font-medium text-text-muted flex items-center gap-1">
+              <RiMusicLine className="w-3 h-3" /> M�sica de Fundo
             </label>
             <input
-              className="input text-sm"
-              placeholder="auto — or paste URL / filename"
+              className="input text-xs"
+              placeholder="auto � ou cole URL / nome do arquivo"
               value={draftRequest.background_music ?? ''}
-              onChange={(e) =>
-                setDraftRequest({ background_music: e.target.value })
-              }
+              onChange={(e) => setDraftRequest({ background_music: e.target.value })}
             />
           </div>
 
-          {/* Effects toggles */}
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-semibold text-text-secondary">
-              Effects
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {(
-                Object.keys(effects) as (keyof typeof effects)[]
-              ).map((key) => (
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-medium text-text-muted">Efeitos</label>
+            <div className="grid grid-cols-2 gap-1.5">
+              {(Object.keys(effects) as (keyof typeof effects)[]).map((key) => (
                 <button
                   key={key}
                   onClick={() => setDraftEffects({ [key]: !effects[key] })}
-                  className="flex items-center justify-between px-3 py-2 rounded-xl bg-background-secondary border border-border hover:border-border-light transition-colors"
+                  className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-background-secondary border border-border hover:border-border-light transition-colors"
                 >
                   <span className="text-xs text-text-secondary capitalize">
                     {key.replace(/_/g, ' ')}
                   </span>
-                  {effects[key] ? (
-                    <ToggleRight className="w-4 h-4 text-neon-purple" />
-                  ) : (
-                    <ToggleLeft className="w-4 h-4 text-text-muted" />
-                  )}
+                  {effects[key]
+                    ? <RiToggleFill className="w-4 h-4 text-accent" />
+                    : <RiToggleLine className="w-4 h-4 text-text-muted" />
+                  }
                 </button>
               ))}
             </div>
@@ -254,21 +216,21 @@ export default function GeneratorForm({
         </motion.div>
       )}
 
-      {/* ── Submit ──────────────────────────── */}
+      {/* Submit */}
       <button
-        className="btn-primary w-full justify-center py-3 text-base"
+        className="btn-primary w-full justify-center py-2.5 text-sm"
         onClick={onSubmit}
         disabled={loading || !draftRequest.prompt?.trim()}
       >
         {loading ? (
           <>
-            <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            Generating…
+            <RiLoader4Line className="w-4 h-4 animate-spin" />
+            Gerando�
           </>
         ) : (
           <>
-            <Wand2 className="w-5 h-5" />
-            Generate Short
+            <RiMagicLine className="w-4 h-4" />
+            Gerar Short
           </>
         )}
       </button>

@@ -1,19 +1,24 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Loader2, CheckCircle2, XCircle, X } from 'lucide-react';
+import {
+  RiLoader4Line,
+  RiCheckboxCircleLine,
+  RiCloseCircleLine,
+  RiCloseLine,
+} from 'react-icons/ri';
 import { useAppStore, useRenderingJobs } from '@/store';
 import clsx from 'clsx';
 
 const STEP_LABELS: Record<string, string> = {
-  generating_script: 'Writing scriptâ€¦',
-  generating_voice: 'Generating voiceâ€¦',
-  fetching_broll: 'Finding B-rollâ€¦',
-  compositing: 'Compositingâ€¦',
-  adding_subtitles: 'Adding subtitlesâ€¦',
-  adding_music: 'Adding musicâ€¦',
-  applying_effects: 'Applying effectsâ€¦',
-  exporting: 'Exportingâ€¦',
-  done: 'Done!',
-  error: 'Error',
+  generating_script: 'Escrevendo script…',
+  generating_voice: 'Gerando voz…',
+  fetching_broll: 'Buscando imagens…',
+  compositing: 'Montando vídeo…',
+  adding_subtitles: 'Adicionando legendas…',
+  adding_music: 'Adicionando música…',
+  applying_effects: 'Aplicando efeitos…',
+  exporting: 'Exportando…',
+  done: 'Concluído!',
+  error: 'Erro',
 };
 
 export default function RenderQueueBar() {
@@ -21,75 +26,66 @@ export default function RenderQueueBar() {
   const allJobs = useAppStore((s) => s.renderQueue);
   const { removeRenderJob } = useAppStore();
 
-  const recentDone = allJobs.filter(
-    (j) => j.status === 'done' || j.status === 'error'
-  );
-
+  const recentDone = allJobs.filter((j) => j.status === 'done' || j.status === 'error');
   const visible = [...jobs, ...recentDone.slice(0, 2)];
 
   if (visible.length === 0) return null;
 
   return (
-    <div className="border-t border-border bg-background-secondary px-6 py-3 flex gap-3 overflow-x-auto shrink-0">
+    <div className="border-t border-border bg-background-secondary px-4 py-2.5 flex gap-2 overflow-x-auto shrink-0">
       <AnimatePresence>
         {visible.map((job) => (
           <motion.div
             key={job.job_id}
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
+            exit={{ opacity: 0, scale: 0.97 }}
             className={clsx(
-              'flex items-center gap-3 px-4 py-2.5 rounded-xl border min-w-[260px] max-w-xs',
+              'flex items-center gap-2.5 px-3 py-2 rounded-lg border min-w-[240px] max-w-xs',
               job.status === 'done'
-                ? 'bg-neon-green/10 border-neon-green/30'
+                ? 'bg-success/5 border-success/20'
                 : job.status === 'error'
-                  ? 'bg-red-500/10 border-red-500/30'
+                  ? 'bg-danger/5 border-danger/20'
                   : 'bg-background-card border-border'
             )}
           >
-            {/* Icon */}
             {job.status === 'done' ? (
-              <CheckCircle2 className="w-4 h-4 text-neon-green shrink-0" />
+              <RiCheckboxCircleLine className="w-4 h-4 text-success shrink-0" />
             ) : job.status === 'error' ? (
-              <XCircle className="w-4 h-4 text-red-400 shrink-0" />
+              <RiCloseCircleLine className="w-4 h-4 text-danger shrink-0" />
             ) : (
-              <Loader2 className="w-4 h-4 text-neon-purple animate-spin shrink-0" />
+              <RiLoader4Line className="w-4 h-4 text-accent animate-spin shrink-0" />
             )}
 
-            {/* Info */}
             <div className="flex flex-col flex-1 min-w-0">
-              <span className="text-xs font-semibold text-text-primary truncate">
+              <span className="text-xs font-medium text-text-primary truncate">
                 {STEP_LABELS[job.status] ?? job.current_step}
               </span>
               {job.status !== 'done' && job.status !== 'error' && (
-                <div className="mt-1 h-1 rounded-full bg-background-tertiary overflow-hidden">
+                <div className="mt-1 h-0.5 rounded-full bg-background-hover overflow-hidden">
                   <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-neon-purple to-neon-blue"
+                    className="h-full rounded-full bg-accent"
                     initial={{ width: 0 }}
                     animate={{ width: `${job.progress}%` }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.4 }}
                   />
                 </div>
               )}
               {job.status === 'error' && (
-                <span className="text-xs text-red-400 truncate">{job.error}</span>
+                <span className="text-xs text-danger/70 truncate">{job.error}</span>
               )}
             </div>
 
-            {/* Progress % */}
             {job.status !== 'done' && job.status !== 'error' && (
-              <span className="text-xs text-text-muted shrink-0">
-                {job.progress}%
-              </span>
+              <span className="text-xs text-text-muted shrink-0 tabular-nums">{job.progress}%</span>
             )}
 
-            {/* Dismiss */}
             {(job.status === 'done' || job.status === 'error') && (
               <button
                 onClick={() => removeRenderJob(job.job_id)}
-                className="ml-1 text-text-muted hover:text-text-secondary transition-colors"
+                className="text-text-muted hover:text-text-secondary transition-colors ml-1"
               >
-                <X className="w-3.5 h-3.5" />
+                <RiCloseLine className="w-3.5 h-3.5" />
               </button>
             )}
           </motion.div>

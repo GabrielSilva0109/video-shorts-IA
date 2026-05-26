@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
-import { Wand2, FileText, Play } from 'lucide-react';
+import { RiMagicLine, RiFileTextLine, RiPlayLine, RiLoader4Line } from 'react-icons/ri';
 import GeneratorForm from '@components/GeneratorForm/GeneratorForm';
 import VideoPreview from '@components/VideoPreview/VideoPreview';
 import { createProject, startRender } from '@/services/videoService';
@@ -44,7 +44,7 @@ export default function Generator() {
       addProject(project);
       setCurrentProjectId(project.id);
       setStep('preview');
-      toast.success('Project created — ready to render!');
+      toast.success('Projeto criado — pronto para renderizar!');
     },
     onError: (err: Error) => {
       toast.error(err.message);
@@ -57,7 +57,7 @@ export default function Generator() {
     onSuccess: (job) => {
       addRenderJob(job);
       updateProject(currentProject!.id, { status: 'queued', progress: 0 });
-      toast.success('Render started!');
+      toast.success('Renderização iniciada!');
     },
     onError: (err: Error) => {
       toast.error(err.message);
@@ -69,17 +69,11 @@ export default function Generator() {
       {/* ── Left panel ──────────────────────── */}
       <div className="col-span-3 flex flex-col gap-6">
         <div className="flex items-center gap-3">
-          <h1 className="text-2xl font-display font-bold">
+          <h1 className="text-xl font-semibold flex items-center gap-2">
             {step === 'form' ? (
-              <>
-                <Wand2 className="inline w-6 h-6 text-neon-purple mr-2" />
-                Create Video
-              </>
+              <><RiMagicLine className="w-5 h-5 text-accent" /> Criar Vídeo</>
             ) : (
-              <>
-                <FileText className="inline w-6 h-6 text-neon-blue mr-2" />
-                Review & Render
-              </>
+              <><RiFileTextLine className="w-5 h-5 text-accent" /> Revisar & Renderizar</>
             )}
           </h1>
           {step === 'preview' && (
@@ -87,7 +81,7 @@ export default function Generator() {
               className="btn-ghost text-xs ml-auto"
               onClick={() => setStep('form')}
             >
-              ← Back
+              ← Voltar
             </button>
           )}
         </div>
@@ -112,7 +106,7 @@ export default function Generator() {
 
       {/* ── Right panel — preview ────────────── */}
       <div className="col-span-2 flex flex-col gap-4">
-        <h2 className="text-lg font-display font-semibold">Preview</h2>
+        <h2 className="text-base font-semibold text-text-primary">Preview</h2>
         <div className="card p-4">
           {currentProject ? (
             <VideoPreview
@@ -125,10 +119,10 @@ export default function Generator() {
             />
           ) : (
             <div
-              className="flex items-center justify-center rounded-2xl bg-background-secondary text-text-muted text-sm"
+              className="flex items-center justify-center rounded-xl bg-background-secondary text-text-muted text-xs"
               style={{ aspectRatio: '9/16', maxHeight: 480 }}
             >
-              Preview will appear here
+              Preview aparecerá aqui
             </div>
           )}
         </div>
@@ -154,13 +148,13 @@ function ScriptReview({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-2">
-        <span className="badge-purple">Hook</span>
+        <span className="badge-accent">Hook</span>
         <p className="text-sm font-semibold text-text-primary">{hook}</p>
       </div>
 
       <div>
-        <label className="text-xs font-semibold text-text-secondary mb-1.5 block">
-          Full Script
+        <label className="text-xs font-medium text-text-muted mb-1.5 block">
+          Script Completo
         </label>
         <textarea
           className="textarea h-48 text-sm font-mono"
@@ -170,21 +164,21 @@ function ScriptReview({
       </div>
 
       <div className="flex items-center gap-4 text-xs text-text-muted">
-        <span>~{duration}s estimated duration</span>
-        <span>{script.split(' ').length} words</span>
+        <span>~{duration}s de duração</span>
+        <span>{script.split(' ').length} palavras</span>
       </div>
 
       <button
-        className="btn-primary w-full justify-center py-3 text-base"
+        className="btn-primary w-full justify-center py-2.5"
         onClick={onRender}
         disabled={loading}
       >
         {loading ? (
-          <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+          <RiLoader4Line className="w-4 h-4 animate-spin" />
         ) : (
-          <Play className="w-5 h-5" />
+          <RiPlayLine className="w-4 h-4" />
         )}
-        {loading ? 'Starting…' : 'Render Video'}
+        {loading ? 'Iniciando…' : 'Renderizar Vídeo'}
       </button>
     </div>
   );

@@ -1,13 +1,13 @@
 import ReactPlayer from 'react-player';
 import { useState } from 'react';
 import {
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
-  Download,
-  Maximize2,
-} from 'lucide-react';
+  RiPlayLine,
+  RiPauseLine,
+  RiVolumeUpLine,
+  RiVolumeMuteLine,
+  RiDownload2Line,
+  RiFullscreenLine,
+} from 'react-icons/ri';
 import { getThumbnail, downloadExport } from '@/services/videoService';
 
 interface Props {
@@ -25,9 +25,9 @@ export default function VideoPreview({ projectId, videoUrl, thumbnailUrl }: Prop
 
   return (
     <div className="flex flex-col gap-3">
-      {/* ── Player ──────────────────────────── */}
+      {/* Player */}
       <div
-        className="relative rounded-2xl overflow-hidden bg-black"
+        className="relative rounded-xl overflow-hidden bg-black"
         style={{ aspectRatio: '9/16', maxHeight: 480 }}
       >
         {videoUrl ? (
@@ -41,63 +41,48 @@ export default function VideoPreview({ projectId, videoUrl, thumbnailUrl }: Prop
             onProgress={({ played }) => setProgress(played * 100)}
             light={thumb}
             playIcon={
-              <button className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
-                <Play className="w-7 h-7 text-white ml-1" />
+              <button className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/15">
+                <RiPlayLine className="w-6 h-6 text-white ml-0.5" />
               </button>
             }
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-text-muted text-sm">
-            No preview available
+            Sem preview dispon�vel
           </div>
         )}
-
-        {/* Gradient overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
       </div>
 
-      {/* ── Progress bar ────────────────────── */}
+      {/* Progress bar */}
       {videoUrl && (
-        <div className="h-1 rounded-full bg-background-tertiary overflow-hidden">
+        <div className="h-0.5 rounded-full bg-background-hover overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-neon-purple to-neon-blue transition-all"
+            className="h-full rounded-full bg-accent transition-all"
             style={{ width: `${progress}%` }}
           />
         </div>
       )}
 
-      {/* ── Controls ────────────────────────── */}
+      {/* Controls */}
       {videoUrl && (
-        <div className="flex items-center gap-2">
-          <button
-            className="btn-ghost"
-            onClick={() => setPlaying((v) => !v)}
-          >
-            {playing ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+        <div className="flex items-center gap-1">
+          <button className="btn-ghost px-2.5 py-1.5" onClick={() => setPlaying((v) => !v)}>
+            {playing ? <RiPauseLine className="w-4 h-4" /> : <RiPlayLine className="w-4 h-4" />}
           </button>
-          <button
-            className="btn-ghost"
-            onClick={() => setMuted((v) => !v)}
-          >
-            {muted ? (
-              <VolumeX className="w-4 h-4" />
-            ) : (
-              <Volume2 className="w-4 h-4" />
-            )}
+          <button className="btn-ghost px-2.5 py-1.5" onClick={() => setMuted((v) => !v)}>
+            {muted
+              ? <RiVolumeMuteLine className="w-4 h-4" />
+              : <RiVolumeUpLine className="w-4 h-4" />
+            }
           </button>
-
           <div className="flex-1" />
-
-          <a
-            href={downloadExport(projectId)}
-            download
-            className="btn-secondary text-xs"
-          >
-            <Download className="w-3.5 h-3.5" />
+          <a href={downloadExport(projectId)} download className="btn-secondary text-xs gap-1.5">
+            <RiDownload2Line className="w-3.5 h-3.5" />
             Download
           </a>
-          <button className="btn-ghost">
-            <Maximize2 className="w-4 h-4" />
+          <button className="btn-ghost px-2.5 py-1.5">
+            <RiFullscreenLine className="w-4 h-4" />
           </button>
         </div>
       )}
