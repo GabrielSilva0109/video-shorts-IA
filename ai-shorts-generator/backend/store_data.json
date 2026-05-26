@@ -91,6 +91,107 @@
       "thumbnail_path": "exports\\Aprenda a multiplicar seu dinheiro com os Juros Compostos__thumb.jpg",
       "created_at": "2026-05-26T15:06:44.682763",
       "updated_at": "2026-05-26T15:07:07.681888"
+    },
+    "2976f740-2290-4487-b7b6-a79a3d63aede": {
+      "id": "2976f740-2290-4487-b7b6-a79a3d63aede",
+      "title": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira?",
+      "prompt": "juros compostos",
+      "style": "motivation",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira?",
+        "body": "O juro composto \u00e9 um mecanismo de investimento que pode multiplicar seu dinheiro sem que voc\u00ea precise fazer mais nada. \u00c9 simples: voc\u00ea p\u00f5e dinheiro \u00e0 parte, e ao longo do tempo, os juros acumulados come\u00e7am a gerar mais juros. Com o tempo, essa quantidade de dinheiro pode crescer exponencialmente. Um exemplo: se voc\u00ea investir R$ 1.000,00 a uma taxa de juros de 5% ao ano, ap\u00f3s cinco anos, voc\u00ea ter\u00e1 mais de R$ 1.600,00. Isso sem que voc\u00ea tenha feito mais nada!",
+        "cta": "Comece a aproveitar o poder dos juros compostos agora!",
+        "full_text": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira? O juro composto \u00e9 um mecanismo de investimento que pode multiplicar seu dinheiro sem que voc\u00ea precise fazer mais nada. \u00c9 simples: voc\u00ea p\u00f5e dinheiro \u00e0 parte, e ao longo do tempo, os juros acumulados come\u00e7am a gerar mais juros. Com o tempo, essa quantidade de dinheiro pode crescer exponencialmente. Um exemplo: se voc\u00ea investir R$ 1.000,00 a uma taxa de juros de 5% ao ano, ap\u00f3s cinco anos, voc\u00ea ter\u00e1 mais de R$ 1.600,00. Isso sem que voc\u00ea tenha feito mais nada! Comece a aproveitar o poder dos juros compostos agora!",
+        "segments": [
+          {
+            "id": "06bc694e-f5e2-45ff-addb-76ae39871864",
+            "text": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira? O juro composto \u00e9 um mecanismo de investimento que pode multiplicar seu dinheiro sem que voc\u00ea precise fazer mais nada.",
+            "start_time": 0.0,
+            "end_time": 13.2,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "91a0cf50-e1ac-4c04-a87a-78c3ce95c490",
+            "text": "\u00c9 simples: voc\u00ea p\u00f5e dinheiro \u00e0 parte, e ao longo do tempo, os juros acumulados come\u00e7am a gerar mais juros.",
+            "start_time": 13.2,
+            "end_time": 21.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "3048583c-953b-4114-a231-1b961c2d3233",
+            "text": "Com o tempo, essa quantidade de dinheiro pode crescer exponencialmente.",
+            "start_time": 21.2,
+            "end_time": 25.2,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "9cd3b0ca-9068-49dc-90a3-e09165ed1f6a",
+            "text": "Um exemplo: se voc\u00ea investir R$ 1.",
+            "start_time": 25.2,
+            "end_time": 28.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "c7cdd562-3da7-4347-a6ed-589250f3e246",
+            "text": "000,00 a uma taxa de juros de 5% ao ano, ap\u00f3s cinco anos, voc\u00ea ter\u00e1 mais de R$ 1.",
+            "start_time": 28.0,
+            "end_time": 35.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "ef445d46-fe6e-49c7-8794-c21261f2acc4",
+            "text": "600,00.",
+            "start_time": 35.6,
+            "end_time": 36.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "74409dcc-0007-4e43-902e-fcca631941e8",
+            "text": "Isso sem que voc\u00ea tenha feito mais nada! Comece a aproveitar o poder dos juros compostos agora!.",
+            "start_time": 36.0,
+            "end_time": 42.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 42.0,
+        "word_count": 105
+      },
+      "voice_model": "openai",
+      "subtitle_style": "tiktok",
+      "subtitle_position": "bottom",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea sabia que o poder dos juros compostos pode transformar .mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabia que o poder dos juros compostos pode transformar _thumb.jpg",
+      "created_at": "2026-05-26T15:26:02.978997",
+      "updated_at": "2026-05-26T15:26:27.168915"
     }
   },
   "jobs": {
@@ -252,6 +353,16 @@
       "current_step": "Done!",
       "started_at": "2026-05-26T15:06:45.848967",
       "completed_at": "2026-05-26T15:07:07.682941",
+      "error": null
+    },
+    "c85b34c7-2e3b-4387-a995-35918d3fae12": {
+      "job_id": "c85b34c7-2e3b-4387-a995-35918d3fae12",
+      "project_id": "2976f740-2290-4487-b7b6-a79a3d63aede",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-26T15:26:04.315859",
+      "completed_at": "2026-05-26T15:26:27.169920",
       "error": null
     }
   }
