@@ -24,6 +24,7 @@ export type RenderStatus =
   | 'adding_music'
   | 'applying_effects'
   | 'exporting'
+  | 'generating_images'
   | 'done'
   | 'error';
 
@@ -78,6 +79,7 @@ export interface VideoProject {
   error?: string;
   output_path?: string;
   thumbnail_path?: string;
+  generated_images?: string[];
   created_at: string;
   updated_at: string;
 }

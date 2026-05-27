@@ -5,6 +5,7 @@ import { RiMagicLine, RiFileTextLine, RiPlayLine, RiLoader4Line } from 'react-ic
 import GeneratorForm from '@components/GeneratorForm/GeneratorForm';
 import VideoPreview from '@components/VideoPreview/VideoPreview';
 import SubtitleStylePreview from '@components/VideoPreview/SubtitleStylePreview';
+import GeneratedImages from '@components/GeneratedImages/GeneratedImages';
 import { createProject, startRender } from '@/services/videoService';
 import { useAppStore } from '@/store';
 
@@ -123,6 +124,15 @@ export default function Generator() {
             <SubtitleStylePreview />
           )}
         </div>
+
+        {/* Generated images — visible after render */}
+        {currentProject && (
+          <GeneratedImages
+            projectId={currentProject.id}
+            images={currentProject.generated_images ?? []}
+            isGenerating={currentProject.status === 'generating_images'}
+          />
+        )}
       </div>
     </div>
   );

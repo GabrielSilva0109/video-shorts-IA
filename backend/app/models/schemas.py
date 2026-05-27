@@ -34,6 +34,7 @@ class RenderStatus(str, Enum):
     adding_music = "adding_music"
     applying_effects = "applying_effects"
     exporting = "exporting"
+    generating_images = "generating_images"
     done = "done"
     error = "error"
 
@@ -109,6 +110,7 @@ class VideoProject(BaseModel):
     error: Optional[str] = None
     output_path: Optional[str] = None
     thumbnail_path: Optional[str] = None
+    generated_images: List[str] = Field(default_factory=list)
     created_at: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
     updated_at: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
 

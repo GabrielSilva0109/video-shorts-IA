@@ -9,11 +9,13 @@ from app.models.schemas import (
 from app.models.store import store
 from app.services.ai_service import AIService
 from app.services.video_service import VideoService
+from app.services.image_service import ImageService
 from datetime import datetime
 
 router = APIRouter()
 ai_service = AIService()
 video_service = VideoService()
+image_service = ImageService()
 
 
 # ── Projects ──────────────────────────────────
@@ -31,11 +33,12 @@ async def get_project(project_id: str) -> VideoProject:
 
 
 @router.post("/projects", response_model=VideoProject, tags=["Projects"])
-async def create_project(req: GenerationRequest) -> VideoProject:
-    """Create a project and immediately generate the AI script."""
+async def create_project(
+    req: GenerationRequest, background_tasks: BackgroundTasks
+) -> VideoProject:
+    """Create a project, generate the AI script, then kick off image generation."""
     try:
         script = await ai_service.generate_script(req.prompt, req.style, req.language)
-        # Derive title from hook
         title = script.hook[:80] if script.hook else req.prompt[:80]
         project = VideoProject(
             title=title,
@@ -50,7 +53,17 @@ async def create_project(req: GenerationRequest) -> VideoProject:
             effects=req.effects,
             language=req.language,
         )
-        return store.save_project(project)
+        saved = store.save_project(project)
+
+        # Generate 5 scene images in background (non-blocking)
+        background_tasks.add_task(
+            image_service.generate_and_save,
+            project_id=saved.id,
+            script=script,
+            style=req.style.value,
+        )
+
+        return saved
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 

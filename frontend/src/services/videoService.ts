@@ -67,6 +67,9 @@ export const downloadExport = (projectId: string): string =>
 export const getThumbnail = (projectId: string): string =>
   `/api/export/thumbnail/${projectId}`;
 
+export const getGeneratedImageUrl = (projectId: string, filename: string): string =>
+  `/api/export/images/${projectId}/${filename}`;
+
 // ── Health ────────────────────────────────────
 export const healthCheck = (): Promise<{ status: string; version: string }> =>
   api.get('/health').then((r) => r.data);

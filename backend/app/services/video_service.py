@@ -103,7 +103,7 @@ class VideoService:
                 output_dir=Path(settings.exports_dir),
             )
 
-            # Done
+            # 7b. Persist video paths + mark done
             store.update_project(
                 project.id,
                 status=RenderStatus.done,
@@ -119,7 +119,7 @@ class VideoService:
                 current_step="Done!",
                 completed_at=datetime.utcnow().isoformat(),
             )
-            logger.success(f"[{project.id}] Render complete → {final_path}")
+            logger.success(f"[{project.id}] Pipeline complete → {final_path}")
 
         except Exception as exc:
             logger.exception(f"[{project.id}] Render failed: {exc}")

@@ -31,6 +31,9 @@ class Settings(BaseSettings):
     elevenlabs_api_key: str = ""
     elevenlabs_voice_id: str = ""
 
+    # ── Pollinations (free AI images) ───────
+    pollinations_api_key: str = ""
+
     # ── Backend ─────────────────────────────
     backend_host: str = "0.0.0.0"
     backend_port: int = 8000

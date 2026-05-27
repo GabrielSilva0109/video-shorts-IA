@@ -1,179 +1,69 @@
 {
   "projects": {
-    "d24fc5b9-e140-4565-ade0-64681c8e54af": {
-      "id": "d24fc5b9-e140-4565-ade0-64681c8e54af",
-      "title": "Aprenda a multiplicar seu dinheiro com os Juros Compostos!",
-      "prompt": "juros compostos",
-      "style": "motivation",
+    "d12c0992-0b93-4b8a-be89-c243ff76411b": {
+      "id": "d12c0992-0b93-4b8a-be89-c243ff76411b",
+      "title": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena?",
+      "prompt": "cart\u00e3o de credito, milhas, cashback",
+      "style": "finance",
       "platform": "tiktok",
       "script": {
-        "hook": "Aprenda a multiplicar seu dinheiro com os Juros Compostos!",
-        "body": "Os juros compostos s\u00e3o a chave para construir riqueza em longo prazo. Ao investir seu dinheiro em contas com juros compostos, voc\u00ea come\u00e7a a ganhar juros sobre os juros anteriores, criando um efeito de bola de neve financeira. Por exemplo, se voc\u00ea investir R$ 1.000 em uma conta com 5% de juros por ano, em 10 anos voc\u00ea ter\u00e1 cerca de R$ 1.609,62. \u00c9 incr\u00edvel o poder do tempo e dos juros compostos!",
-        "cta": "Comece a aplicar seus juros compostos hoje e multiplique seu dinheiro!",
-        "full_text": "Aprenda a multiplicar seu dinheiro com os Juros Compostos! Os juros compostos s\u00e3o a chave para construir riqueza em longo prazo. Ao investir seu dinheiro em contas com juros compostos, voc\u00ea come\u00e7a a ganhar juros sobre os juros anteriores, criando um efeito de bola de neve financeira. Por exemplo, se voc\u00ea investir R$ 1.000 em uma conta com 5% de juros por ano, em 10 anos voc\u00ea ter\u00e1 cerca de R$ 1.609,62. \u00c9 incr\u00edvel o poder do tempo e dos juros compostos! Comece a aplicar seus juros compostos hoje e multiplique seu dinheiro!",
+        "hook": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena?",
+        "body": "Muitos cart\u00f5es de cr\u00e9dito oferecem milhas que podem ser trocadas por passagens a\u00e9reas, hot\u00e9is, ou outros presentes. Al\u00e9m disso, alguns cart\u00f5es oferecem cashback, ou seja, voc\u00ea recebe dinheiro de volta no final de cada m\u00eas. Por exemplo, o cart\u00e3o de cr\u00e9dito de uma das maiores redes oferece at\u00e9 30% de cashback em determinados produtos e servi\u00e7os. Isso pode significar mais dinheiro no seu bolso! Al\u00e9m disso, muitos cart\u00f5es oferecem descontos em compras online, como Amazon ou Mercado Livre.",
+        "cta": "Verifique qual \u00e9 o seu cart\u00e3o de cr\u00e9dito mais ben\u00e9fico! ",
+        "full_text": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena? Muitos cart\u00f5es de cr\u00e9dito oferecem milhas que podem ser trocadas por passagens a\u00e9reas, hot\u00e9is, ou outros presentes. Al\u00e9m disso, alguns cart\u00f5es oferecem cashback, ou seja, voc\u00ea recebe dinheiro de volta no final de cada m\u00eas. Por exemplo, o cart\u00e3o de cr\u00e9dito de uma das maiores redes oferece at\u00e9 30% de cashback em determinados produtos e servi\u00e7os. Isso pode significar mais dinheiro no seu bolso! Al\u00e9m disso, muitos cart\u00f5es oferecem descontos em compras online, como Amazon ou Mercado Livre. Verifique qual \u00e9 o seu cart\u00e3o de cr\u00e9dito mais ben\u00e9fico!",
         "segments": [
           {
-            "id": "c9cd22a9-9336-4312-87e5-505eff67cdcc",
-            "text": "Aprenda a multiplicar seu dinheiro com os Juros Compostos! Os juros compostos s\u00e3o a chave para construir riqueza em longo prazo.",
+            "id": "5e884dce-b397-439e-b432-86045cf78006",
+            "text": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena? Muitos cart\u00f5es de cr\u00e9dito oferecem milhas que podem ser trocadas por passagens a\u00e9reas, hot\u00e9is, ou outros presentes.",
             "start_time": 0.0,
-            "end_time": 8.4,
+            "end_time": 11.2,
             "is_bold": false,
             "is_hook": true,
             "emoji": null
           },
           {
-            "id": "a30abd6c-100c-4f35-9227-7c331285ef86",
-            "text": "Ao investir seu dinheiro em contas com juros compostos, voc\u00ea come\u00e7a a ganhar juros sobre os juros anteriores, criando um efeito de bola de neve financeira.",
-            "start_time": 8.4,
-            "end_time": 18.8,
+            "id": "fd75f5d2-d5eb-45ec-a29f-c2b4643389e3",
+            "text": "Al\u00e9m disso, alguns cart\u00f5es oferecem cashback, ou seja, voc\u00ea recebe dinheiro de volta no final de cada m\u00eas.",
+            "start_time": 11.2,
+            "end_time": 18.4,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "b9e9e330-4264-461b-90f3-34152aeb81ac",
-            "text": "Por exemplo, se voc\u00ea investir R$ 1.",
-            "start_time": 18.8,
-            "end_time": 21.6,
+            "id": "559f7dab-c818-457b-9f6f-399b1899ac7f",
+            "text": "Por exemplo, o cart\u00e3o de cr\u00e9dito de uma das maiores redes oferece at\u00e9 30% de cashback em determinados produtos e servi\u00e7os.",
+            "start_time": 18.4,
+            "end_time": 26.8,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "b851644d-e684-4f99-987f-f95683a30873",
-            "text": "000 em uma conta com 5% de juros por ano, em 10 anos voc\u00ea ter\u00e1 cerca de R$ 1.",
-            "start_time": 21.6,
-            "end_time": 29.2,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "a18c80a2-9fd5-43fd-9139-e97a66754da0",
-            "text": "609,62.",
-            "start_time": 29.2,
-            "end_time": 29.6,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "d2c9460e-3684-42a2-9777-77880678ad3b",
-            "text": "\u00c9 incr\u00edvel o poder do tempo e dos juros compostos! Comece a aplicar seus juros compostos hoje e multiplique seu dinheiro!.",
-            "start_time": 29.6,
-            "end_time": 38.0,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          }
-        ],
-        "estimated_duration": 37.0,
-        "word_count": 93
-      },
-      "voice_model": "openai",
-      "subtitle_style": "emoji",
-      "subtitle_position": "top",
-      "background_music": null,
-      "effects": {
-        "auto_zoom": true,
-        "punch_in_out": true,
-        "cinematic_transitions": true,
-        "sound_effects": true,
-        "background_blur": false,
-        "beat_sync": true,
-        "motion_graphics": false
-      },
-      "language": "pt",
-      "status": "done",
-      "progress": 100,
-      "error": null,
-      "output_path": "exports\\Aprenda a multiplicar seu dinheiro com os Juros Compostos_.mp4",
-      "thumbnail_path": "exports\\Aprenda a multiplicar seu dinheiro com os Juros Compostos__thumb.jpg",
-      "created_at": "2026-05-26T15:06:44.682763",
-      "updated_at": "2026-05-26T15:07:07.681888"
-    },
-    "2976f740-2290-4487-b7b6-a79a3d63aede": {
-      "id": "2976f740-2290-4487-b7b6-a79a3d63aede",
-      "title": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira?",
-      "prompt": "juros compostos",
-      "style": "motivation",
-      "platform": "tiktok",
-      "script": {
-        "hook": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira?",
-        "body": "O juro composto \u00e9 um mecanismo de investimento que pode multiplicar seu dinheiro sem que voc\u00ea precise fazer mais nada. \u00c9 simples: voc\u00ea p\u00f5e dinheiro \u00e0 parte, e ao longo do tempo, os juros acumulados come\u00e7am a gerar mais juros. Com o tempo, essa quantidade de dinheiro pode crescer exponencialmente. Um exemplo: se voc\u00ea investir R$ 1.000,00 a uma taxa de juros de 5% ao ano, ap\u00f3s cinco anos, voc\u00ea ter\u00e1 mais de R$ 1.600,00. Isso sem que voc\u00ea tenha feito mais nada!",
-        "cta": "Comece a aproveitar o poder dos juros compostos agora!",
-        "full_text": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira? O juro composto \u00e9 um mecanismo de investimento que pode multiplicar seu dinheiro sem que voc\u00ea precise fazer mais nada. \u00c9 simples: voc\u00ea p\u00f5e dinheiro \u00e0 parte, e ao longo do tempo, os juros acumulados come\u00e7am a gerar mais juros. Com o tempo, essa quantidade de dinheiro pode crescer exponencialmente. Um exemplo: se voc\u00ea investir R$ 1.000,00 a uma taxa de juros de 5% ao ano, ap\u00f3s cinco anos, voc\u00ea ter\u00e1 mais de R$ 1.600,00. Isso sem que voc\u00ea tenha feito mais nada! Comece a aproveitar o poder dos juros compostos agora!",
-        "segments": [
-          {
-            "id": "06bc694e-f5e2-45ff-addb-76ae39871864",
-            "text": "Voc\u00ea sabia que o poder dos juros compostos pode transformar sua vida financeira? O juro composto \u00e9 um mecanismo de investimento que pode multiplicar seu dinheiro sem que voc\u00ea precise fazer mais nada.",
-            "start_time": 0.0,
-            "end_time": 13.2,
-            "is_bold": false,
-            "is_hook": true,
-            "emoji": null
-          },
-          {
-            "id": "91a0cf50-e1ac-4c04-a87a-78c3ce95c490",
-            "text": "\u00c9 simples: voc\u00ea p\u00f5e dinheiro \u00e0 parte, e ao longo do tempo, os juros acumulados come\u00e7am a gerar mais juros.",
-            "start_time": 13.2,
-            "end_time": 21.2,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "3048583c-953b-4114-a231-1b961c2d3233",
-            "text": "Com o tempo, essa quantidade de dinheiro pode crescer exponencialmente.",
-            "start_time": 21.2,
-            "end_time": 25.2,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "9cd3b0ca-9068-49dc-90a3-e09165ed1f6a",
-            "text": "Um exemplo: se voc\u00ea investir R$ 1.",
-            "start_time": 25.2,
-            "end_time": 28.0,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "c7cdd562-3da7-4347-a6ed-589250f3e246",
-            "text": "000,00 a uma taxa de juros de 5% ao ano, ap\u00f3s cinco anos, voc\u00ea ter\u00e1 mais de R$ 1.",
-            "start_time": 28.0,
+            "id": "efd950e0-6a66-45f7-a609-3848f3026273",
+            "text": "Isso pode significar mais dinheiro no seu bolso! Al\u00e9m disso, muitos cart\u00f5es oferecem descontos em compras online, como Amazon ou Mercado Livre.",
+            "start_time": 26.8,
             "end_time": 35.6,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "ef445d46-fe6e-49c7-8794-c21261f2acc4",
-            "text": "600,00.",
+            "id": "13b0a504-14f2-46d3-a667-82ed6b0fe5e6",
+            "text": "Verifique qual \u00e9 o seu cart\u00e3o de cr\u00e9dito mais ben\u00e9fico!.",
             "start_time": 35.6,
-            "end_time": 36.0,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "74409dcc-0007-4e43-902e-fcca631941e8",
-            "text": "Isso sem que voc\u00ea tenha feito mais nada! Comece a aproveitar o poder dos juros compostos agora!.",
-            "start_time": 36.0,
-            "end_time": 42.8,
+            "end_time": 39.6,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           }
         ],
-        "estimated_duration": 42.0,
-        "word_count": 105
+        "estimated_duration": 40.0,
+        "word_count": 99
       },
       "voice_model": "openai",
-      "subtitle_style": "tiktok",
-      "subtitle_position": "bottom",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
       "background_music": null,
       "effects": {
         "auto_zoom": true,
@@ -188,10 +78,179 @@
       "status": "done",
       "progress": 100,
       "error": null,
-      "output_path": "exports\\Voc\u00ea sabia que o poder dos juros compostos pode transformar .mp4",
-      "thumbnail_path": "exports\\Voc\u00ea sabia que o poder dos juros compostos pode transformar _thumb.jpg",
-      "created_at": "2026-05-26T15:26:02.978997",
-      "updated_at": "2026-05-26T15:26:27.168915"
+      "output_path": "exports\\Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena_.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena__thumb.jpg",
+      "generated_images": [
+        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_0.jpg",
+        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_1.png",
+        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_2.png",
+        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_3.png",
+        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_4.png"
+      ],
+      "created_at": "2026-05-27T17:07:48.529871",
+      "updated_at": "2026-05-27T17:11:41.935147"
+    },
+    "748cae6a-d040-4406-9ee7-16366fbf2e4f": {
+      "id": "748cae6a-d040-4406-9ee7-16366fbf2e4f",
+      "title": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento?",
+      "prompt": "a\u00e7\u00f5es",
+      "style": "finance",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento?",
+        "body": "Isso \u00e9 verdade! As a\u00e7\u00f5es representam uma fra\u00e7\u00e3o de uma empresa e permitem que os investidores compartilhem do lucro e do crescimento dela. O mercado de a\u00e7\u00f5es \u00e9 vol\u00e1til, mas pode oferecer retornos altos a longo prazo. Al\u00e9m disso, as a\u00e7\u00f5es podem ser uma forma de diversificar seu portf\u00f3lio de investimentos e reduzir o risco.",
+        "cta": "Comece a investir em a\u00e7\u00f5es hoje mesmo!",
+        "full_text": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento? Isso \u00e9 verdade! As a\u00e7\u00f5es representam uma fra\u00e7\u00e3o de uma empresa e permitem que os investidores compartilhem do lucro e do crescimento dela. O mercado de a\u00e7\u00f5es \u00e9 vol\u00e1til, mas pode oferecer retornos altos a longo prazo. Al\u00e9m disso, as a\u00e7\u00f5es podem ser uma forma de diversificar seu portf\u00f3lio de investimentos e reduzir o risco. Comece a investir em a\u00e7\u00f5es hoje mesmo!",
+        "segments": [
+          {
+            "id": "66daafed-d86c-48f6-bf62-f697255da901",
+            "text": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento? Isso \u00e9 verdade! As a\u00e7\u00f5es representam uma fra\u00e7\u00e3o de uma empresa e permitem que os investidores compartilhem do lucro e do crescimento dela.",
+            "start_time": 0.0,
+            "end_time": 14.0,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "fe2b4726-bc11-49da-9adb-b9a7371ba764",
+            "text": "O mercado de a\u00e7\u00f5es \u00e9 vol\u00e1til, mas pode oferecer retornos altos a longo prazo.",
+            "start_time": 14.0,
+            "end_time": 19.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "7755f26e-e656-4778-9df9-0e7bff42508a",
+            "text": "Al\u00e9m disso, as a\u00e7\u00f5es podem ser uma forma de diversificar seu portf\u00f3lio de investimentos e reduzir o risco.",
+            "start_time": 19.6,
+            "end_time": 26.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "bd306522-ff55-488b-852e-969708e5dfec",
+            "text": "Comece a investir em a\u00e7\u00f5es hoje mesmo!.",
+            "start_time": 26.8,
+            "end_time": 29.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 30.0,
+        "word_count": 74
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimen.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimen_thumb.jpg",
+      "generated_images": [
+        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_0.jpg",
+        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_1.png",
+        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_2.png",
+        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_3.png",
+        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_4.png"
+      ],
+      "created_at": "2026-05-27T17:12:04.147438",
+      "updated_at": "2026-05-27T17:12:21.068343"
+    },
+    "b171423d-662b-44ec-a22f-0529c38ec2b2": {
+      "id": "b171423d-662b-44ec-a22f-0529c38ec2b2",
+      "title": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3",
+      "prompt": "fundos de investimento",
+      "style": "finance",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3o sabem nem o retorno?",
+        "body": "Um fundo de investimento \u00e9 uma carteira diversificada de ativos que pode ser investida em bolsa, t\u00edtulos e outros investimentos. A diversifica\u00e7\u00e3o ajuda a reduzir riscos e aumentar retornos. Al\u00e9m disso, os fundos de investimento permitem que o investidor n\u00e3o precise ter conhecimento especializado em investimentos para gerenciar sua carteira.",
+        "cta": "Comece a investir agora e descubra a pot\u00eancia dos fundos de investimento!",
+        "full_text": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3o sabem nem o retorno? Um fundo de investimento \u00e9 uma carteira diversificada de ativos que pode ser investida em bolsa, t\u00edtulos e outros investimentos. A diversifica\u00e7\u00e3o ajuda a reduzir riscos e aumentar retornos. Al\u00e9m disso, os fundos de investimento permitem que o investidor n\u00e3o precise ter conhecimento especializado em investimentos para gerenciar sua carteira. Comece a investir agora e descubra a pot\u00eancia dos fundos de investimento!",
+        "segments": [
+          {
+            "id": "85590dc2-16fe-4fd4-9125-7ec2468eb850",
+            "text": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3o sabem nem o retorno? Um fundo de investimento \u00e9 uma carteira diversificada de ativos que pode ser investida em bolsa, t\u00edtulos e outros investimentos.",
+            "start_time": 0.0,
+            "end_time": 16.0,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "54425272-6a1e-4ef9-9418-715809bb624a",
+            "text": "A diversifica\u00e7\u00e3o ajuda a reduzir riscos e aumentar retornos.",
+            "start_time": 16.0,
+            "end_time": 19.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "ccffeacf-2330-4dd7-8731-b8e053a81397",
+            "text": "Al\u00e9m disso, os fundos de investimento permitem que o investidor n\u00e3o precise ter conhecimento especializado em investimentos para gerenciar sua carteira.",
+            "start_time": 19.6,
+            "end_time": 28.0,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "0c8d00ef-8941-469b-be03-84da1be6ba72",
+            "text": "Comece a investir agora e descubra a pot\u00eancia dos fundos de investimento!.",
+            "start_time": 28.0,
+            "end_time": 32.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 33.0,
+        "word_count": 82
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea sabia que 85_ das pessoas empatam R_ 100 mil em fundos .mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabia que 85_ das pessoas empatam R_ 100 mil em fundos _thumb.jpg",
+      "generated_images": [
+        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_0.jpg",
+        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_1.png",
+        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_2.png",
+        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_3.png",
+        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_4.png"
+      ],
+      "created_at": "2026-05-27T17:16:58.002513",
+      "updated_at": "2026-05-27T17:17:18.989195"
     }
   },
   "jobs": {
@@ -363,6 +422,76 @@
       "current_step": "Done!",
       "started_at": "2026-05-26T15:26:04.315859",
       "completed_at": "2026-05-26T15:26:27.169920",
+      "error": null
+    },
+    "004e1f83-b2d3-4ca6-8e3e-1fb8210534b5": {
+      "job_id": "004e1f83-b2d3-4ca6-8e3e-1fb8210534b5",
+      "project_id": "567b9565-80e1-4c95-a9b3-688062fe5e93",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T16:29:14.374643",
+      "completed_at": "2026-05-27T16:29:34.667638",
+      "error": null
+    },
+    "feafeaff-0ffe-40b3-b931-7e32c5b11fcd": {
+      "job_id": "feafeaff-0ffe-40b3-b931-7e32c5b11fcd",
+      "project_id": "aca8d730-6f0d-4a62-94c4-021202ec9bbf",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T16:39:06.239077",
+      "completed_at": "2026-05-27T16:39:30.920117",
+      "error": null
+    },
+    "5b18f757-6b67-4777-887f-ea4cd0121249": {
+      "job_id": "5b18f757-6b67-4777-887f-ea4cd0121249",
+      "project_id": "8965eb8b-df8d-4eee-93fa-d5a45be98efd",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:02:43.448203",
+      "completed_at": "2026-05-27T17:03:02.540145",
+      "error": null
+    },
+    "432658cb-5588-4555-8154-f2e93f04dcd3": {
+      "job_id": "432658cb-5588-4555-8154-f2e93f04dcd3",
+      "project_id": "d12c0992-0b93-4b8a-be89-c243ff76411b",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:07:50.003713",
+      "completed_at": "2026-05-27T17:08:12.523702",
+      "error": null
+    },
+    "76e08342-00c0-4a81-9a0f-e42beec27a71": {
+      "job_id": "76e08342-00c0-4a81-9a0f-e42beec27a71",
+      "project_id": "d12c0992-0b93-4b8a-be89-c243ff76411b",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:11:23.170969",
+      "completed_at": "2026-05-27T17:11:41.936652",
+      "error": null
+    },
+    "cc7269c7-d55d-4f47-a8f1-a5179f20f92e": {
+      "job_id": "cc7269c7-d55d-4f47-a8f1-a5179f20f92e",
+      "project_id": "748cae6a-d040-4406-9ee7-16366fbf2e4f",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:12:05.496650",
+      "completed_at": "2026-05-27T17:12:21.069343",
+      "error": null
+    },
+    "53223e91-9acd-452f-9beb-d19f0d969886": {
+      "job_id": "53223e91-9acd-452f-9beb-d19f0d969886",
+      "project_id": "b171423d-662b-44ec-a22f-0529c38ec2b2",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:16:59.461377",
+      "completed_at": "2026-05-27T17:17:18.990193",
       "error": null
     }
   }
