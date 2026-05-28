@@ -40,14 +40,16 @@ async def get_thumbnail(project_id: str) -> FileResponse:
 @router.get("/images/{project_id}/{filename}")
 async def get_generated_image(project_id: str, filename: str) -> FileResponse:
     """Serve a generated scene image for a project."""
-    # Sanitize filename — only allow safe filenames (no path traversal)
     safe_name = Path(filename).name
-    if not safe_name.endswith(".png") or "/" in filename or "\\" in filename:
+    if "/" in filename or "\\" in filename:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    if not safe_name.lower().endswith((".jpg", ".jpeg", ".png")):
         raise HTTPException(status_code=400, detail="Invalid filename")
 
     path = Path(settings.exports_dir) / project_id / "images" / safe_name
     if not path.exists():
         raise HTTPException(status_code=404, detail="Image not found")
 
-    return FileResponse(path=str(path), media_type="image/png")
+    media_type = "image/jpeg" if safe_name.lower().endswith((".jpg", ".jpeg")) else "image/png"
+    return FileResponse(path=str(path), media_type=media_type)
 

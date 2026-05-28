@@ -1,11 +1,12 @@
 """
 Image Service — generates 5 scene images via Pollinations.ai (primary, free),
-DALL-E 3, Pexels static images, or FFmpeg gradient placeholders as fallbacks.
+DALL-E 3, or Pillow-based scene cards (offline fallback).
 """
 from __future__ import annotations
 import asyncio
 import os
 import subprocess
+import textwrap
 from pathlib import Path
 from typing import List, TYPE_CHECKING
 
@@ -56,16 +57,41 @@ class ImageService:
         project_id: str,
         script: "GeneratedScript",
         style: str,
+        count: int = 3,
     ) -> None:
-        """Generate images from script and persist paths to the project store."""
-        from app.models.schemas import RenderStatus
+        """Generate images strictly one-by-one and persist each completed image."""
         output_dir = Path(settings.exports_dir) / project_id / "images"
         try:
-            paths = await self.generate_from_script(script, style, output_dir)
-            store.update_project(project_id, generated_images=paths)
+            output_dir.mkdir(parents=True, exist_ok=True)
+            prompts = self._prompts_from_script(script, style, count)
+            paths: List[str] = []
+
+            # Clear previous list first so UI starts from a clean state
+            store.update_project(project_id, generated_images=[])
+
+            for i, prompt in enumerate(prompts[:count]):
+                path = await self._generate_single_image(prompt, output_dir, i, count, style)
+                if path:
+                    paths.append(path)
+                    # Persist after each image so frontend can show progress immediately
+                    store.update_project(project_id, generated_images=list(paths))
+
             logger.success(f"[{project_id}] {len(paths)} scene images saved")
         except Exception as exc:
             logger.error(f"[{project_id}] Image generation failed: {exc}")
+
+    async def _generate_single_image(
+        self,
+        prompt: str,
+        output_dir: Path,
+        index: int,
+        total: int,
+        style: str,
+    ) -> str | None:
+        """Generate one image slot using local Pillow only (fast + reliable)."""
+        out_jpg = output_dir / f"img_{index}.jpg"
+        self._draw_scene_card(prompt, out_jpg, index, total, style)
+        return str(out_jpg)
 
     async def generate_from_script(
         self,
@@ -77,7 +103,7 @@ class ImageService:
         """Generate images using the script structure (hook / body / cta)."""
         output_dir.mkdir(parents=True, exist_ok=True)
         prompts = self._prompts_from_script(script, style, count)
-        return await self._run_pipeline(prompts, output_dir, count)
+        return await self._run_pipeline(prompts, output_dir, count, style)
 
     async def generate(
         self,
@@ -89,45 +115,48 @@ class ImageService:
         """Generate images from raw script text (used as legacy fallback)."""
         output_dir.mkdir(parents=True, exist_ok=True)
         prompts = self._build_prompts(script, style, count)
-        return await self._run_pipeline(prompts, output_dir, count)
+        return await self._run_pipeline(prompts, output_dir, count, style)
 
     async def _run_pipeline(
-        self, prompts: List[str], output_dir: Path, count: int
+        self, prompts: List[str], output_dir: Path, count: int, style: str = ""
     ) -> List[str]:
-        """Try each provider and merge results — FFmpeg fills only the gaps."""
-        # indexed dict so we can track which slots are filled
+        """Generate scene cards with Pillow first (always works), then try to
+        upgrade individual slots with Pollinations/DALL-E if available."""
         results: dict[int, str] = {}
 
-        # 1. Pollinations.ai — sequential to respect rate limits
+        # 1. Pillow scene cards — instant, fully offline, always succeeds
+        for i, prompt in enumerate(prompts[:count]):
+            try:
+                out = output_dir / f"img_{i}.jpg"
+                self._draw_scene_card(prompt, out, i, count, style)
+                results[i] = str(out)
+            except Exception as exc:
+                logger.warning(f"Pillow card {i} failed: {exc}")
+
+        logger.info(f"Pillow: {len(results)}/{count} scene cards generated")
+
+        # 2. Pollinations upgrade — replace slots with real AI images when it works
         for i, prompt in enumerate(prompts[:count]):
             try:
                 p = await self._pollinations_one(prompt, output_dir / f"img_{i}.jpg", i)
-                results[i] = str(p)
-                await asyncio.sleep(0.5)   # avoid 429 / rate-limit
-            except Exception as exc:
-                logger.warning(f"Pollinations image {i} failed: {exc}")
+                if p.stat().st_size > 1024:
+                    results[i] = str(p)
+                else:
+                    p.unlink(missing_ok=True)
+            except Exception:
+                pass  # silently keep the Pillow card
+            await asyncio.sleep(0.3)
 
-        logger.info(f"Pollinations: {len(results)}/{count} images generated")
-
-        # 2. DALL-E 3 for slots still missing
-        if settings.openai_api_key and len(results) < count:
+        # 3. DALL-E upgrade for any slot that still has only a Pillow card
+        if settings.openai_api_key:
             from openai import AsyncOpenAI
             client = AsyncOpenAI(api_key=settings.openai_api_key)
-            for i in [j for j in range(count) if j not in results]:
+            for i in range(count):
                 try:
                     p = await self._dalle_one(client, prompts[i], output_dir / f"img_{i}.png", i)
                     results[i] = str(p)
-                except Exception as exc:
-                    logger.warning(f"DALL-E image {i} failed: {exc}")
-
-        # 3. FFmpeg only for remaining gaps
-        if len(results) < count:
-            placeholder_dir = output_dir
-            ffmpeg_all = self._ffmpeg_placeholders(placeholder_dir, count)
-            for i, fp in enumerate(ffmpeg_all):
-                if i not in results:
-                    results[i] = fp
-                    logger.info(f"Gap {i} filled with FFmpeg placeholder")
+                except Exception:
+                    pass
 
         return [results[i] for i in range(count) if i in results]
 
@@ -203,6 +232,108 @@ class ImageService:
         logger.info(f"[Pexels image {index}] saved → {output_path.name}")
         return output_path
 
+    # ── Pillow scene cards (offline) ─────────
+    _CARD_PALETTE: dict[str, tuple] = {
+        "hormozi":           ((15, 15, 15),   (160, 15, 15)),
+        "tiktok_story":      ((180, 0, 100),  (60, 0, 120)),
+        "finance":           ((10, 35, 80),   (0, 110, 100)),
+        "motivation":        ((60, 0, 120),   (15, 15, 40)),
+        "gaming":            ((5, 0, 40),     (0, 180, 220)),
+        "luxury":            ((18, 18, 18),   (130, 95, 10)),
+        "documentary":       ((20, 30, 55),   (50, 100, 150)),
+    }
+
+    def _draw_scene_card(
+        self,
+        prompt: str,
+        output_path: Path,
+        index: int,
+        total: int,
+        style: str,
+    ) -> None:
+        """Draw a 1080×1920 scene card with gradient + script text via Pillow."""
+        from PIL import Image, ImageDraw, ImageFont
+
+        # Extract readable text from the prompt string
+        text = prompt
+        if "Depicted moment:" in text:
+            text = text.split("Depicted moment:")[1].split(". Visual style")[0].strip()
+        text = text.rstrip(".")[:220]
+
+        # Pick gradient colors
+        c0, c1 = self._CARD_PALETTE.get(style, ((20, 20, 50), (5, 5, 20)))
+
+        W, H = 1080, 1920
+        img = Image.new("RGB", (W, H))
+        draw = ImageDraw.Draw(img)
+
+        # Vertical gradient
+        for y in range(H):
+            t = y / H
+            draw.line(
+                [(0, y), (W, y)],
+                fill=(
+                    int(c0[0] + (c1[0] - c0[0]) * t),
+                    int(c0[1] + (c1[1] - c0[1]) * t),
+                    int(c0[2] + (c1[2] - c0[2]) * t),
+                ),
+            )
+
+        # Subtle vignette overlay
+        for r in range(min(W, H) // 2, 0, -8):
+            alpha = int(80 * (1 - r / (min(W, H) / 2)))
+            draw.ellipse(
+                [(W // 2 - r, H // 2 - r), (W // 2 + r, H // 2 + r)],
+                outline=(0, 0, 0, alpha),
+            )
+
+        # Fonts — try Windows system fonts, fall back gracefully
+        def _font(name: str, size: int):
+            candidates = [
+                f"C:/Windows/Fonts/{name}",
+                f"/usr/share/fonts/truetype/dejavu/{name}",
+            ]
+            for path in candidates:
+                try:
+                    return ImageFont.truetype(path, size)
+                except Exception:
+                    pass
+            return ImageFont.load_default()
+
+        font_body = _font("arialbd.ttf", 62)
+        font_label = _font("arial.ttf", 44)
+
+        # Wrap and draw body text (centered)
+        lines = textwrap.wrap(text, width=20)
+        line_h = 82
+        block_h = len(lines) * line_h
+        y_pos = (H - block_h) // 2 - 60
+
+        for line in lines:
+            bbox = draw.textbbox((0, 0), line, font=font_body)
+            tw = bbox[2] - bbox[0]
+            x = (W - tw) // 2
+            # drop shadow
+            draw.text((x + 4, y_pos + 4), line, fill=(0, 0, 0), font=font_body)
+            draw.text((x, y_pos), line, fill=(255, 255, 255), font=font_body)
+            y_pos += line_h
+
+        # Scene indicator badge (bottom center)
+        badge = f"{index + 1} / {total}"
+        bbox = draw.textbbox((0, 0), badge, font=font_label)
+        bw = bbox[2] - bbox[0]
+        bx = (W - bw) // 2
+        draw.rounded_rectangle(
+            [(bx - 24, H - 130), (bx + bw + 24, H - 60)],
+            radius=30,
+            fill=(255, 255, 255, 40),
+        )
+        draw.text((bx + 2, H - 128), badge, fill=(0, 0, 0), font=font_label)
+        draw.text((bx, H - 130), badge, fill=(255, 255, 255), font=font_label)
+
+        img.save(str(output_path), "JPEG", quality=92)
+        logger.info(f"[Pillow {index}] scene card saved → {output_path.name}")
+
     # ── FFmpeg final fallback ─────────────────
     def _ffmpeg_placeholders(self, output_dir: Path, count: int) -> List[str]:
         ffmpeg = os.getenv("FFMPEG_PATH", settings.ffmpeg_path)
@@ -245,43 +376,32 @@ class ImageService:
 
     # ── Prompt builders ───────────────────────
     def _prompts_from_script(
-        self, script: "GeneratedScript", style: str, count: int = 5
+        self, script: "GeneratedScript", style: str, count: int = 3
     ) -> List[str]:
-        """Build visual prompts using the script structure: hook / body points / cta."""
+        """Build visual prompts: hook (início) / body segments / cta (fim)."""
         suffix = STYLE_SUFFIX.get(style, "cinematic, high quality")
 
-        # Collect sections: hook → body segments → cta
         sections: List[str] = []
 
-        # 1. Hook — opening visual
+        # Sempre começa com o hook
         if script.hook:
             sections.append(script.hook.strip())
 
-        # 2. Body — extract key sentences (split on ". " or use segments)
-        body_text = script.body or script.full_text
-        if script.segments and len(script.segments) >= 3:
-            # Use the actual AI-generated segments (sorted by time)
-            sorted_segs = sorted(script.segments, key=lambda s: s.start_time)
-            body_segs = [s.text for s in sorted_segs if not s.is_hook]
-            chunk = max(1, len(body_segs) // (count - 2))
-            for i in range(count - 2):
-                group = body_segs[i * chunk: (i + 1) * chunk]
-                if group:
-                    sections.append(" ".join(group))
-        else:
-            # Fallback: split body text into equal parts
-            sentences = [s.strip() for s in body_text.replace(".", ". ").split(". ") if s.strip()]
-            chunk = max(1, len(sentences) // (count - 2))
-            for i in range(count - 2):
+        # Corpo dividido em (count - 2) partes, mínimo 1
+        body_parts = count - 2
+        if body_parts > 0:
+            body_text = script.body or script.full_text
+            sentences = [s.strip() for s in body_text.replace(". ", ".|").split("|") if s.strip()]
+            chunk = max(1, len(sentences) // body_parts)
+            for i in range(body_parts):
                 group = sentences[i * chunk: (i + 1) * chunk]
-                if group:
-                    sections.append(" ".join(group))
+                sections.append(" ".join(group) if group else body_text[:150])
 
-        # 3. CTA — closing visual
+        # Sempre termina com o CTA
         if script.cta:
             sections.append(script.cta.strip())
 
-        # Ensure exactly `count` prompts
+        # Garante exatamente `count` seções
         while len(sections) < count:
             sections.append(script.full_text[:150])
         sections = sections[:count]

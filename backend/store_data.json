@@ -1,146 +1,65 @@
 {
   "projects": {
-    "d12c0992-0b93-4b8a-be89-c243ff76411b": {
-      "id": "d12c0992-0b93-4b8a-be89-c243ff76411b",
-      "title": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena?",
-      "prompt": "cart\u00e3o de credito, milhas, cashback",
+    "f142651a-7e7d-499b-81f5-2c9d662f8e07": {
+      "id": "f142651a-7e7d-499b-81f5-2c9d662f8e07",
+      "title": "Voc\u00ea sabia que 90% dos brasileiros n\u00e3o sabem o que \u00e9 um fundo imobili\u00e1rio?",
+      "prompt": "Fundos imobiliarios ",
       "style": "finance",
       "platform": "tiktok",
       "script": {
-        "hook": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena?",
-        "body": "Muitos cart\u00f5es de cr\u00e9dito oferecem milhas que podem ser trocadas por passagens a\u00e9reas, hot\u00e9is, ou outros presentes. Al\u00e9m disso, alguns cart\u00f5es oferecem cashback, ou seja, voc\u00ea recebe dinheiro de volta no final de cada m\u00eas. Por exemplo, o cart\u00e3o de cr\u00e9dito de uma das maiores redes oferece at\u00e9 30% de cashback em determinados produtos e servi\u00e7os. Isso pode significar mais dinheiro no seu bolso! Al\u00e9m disso, muitos cart\u00f5es oferecem descontos em compras online, como Amazon ou Mercado Livre.",
-        "cta": "Verifique qual \u00e9 o seu cart\u00e3o de cr\u00e9dito mais ben\u00e9fico! ",
-        "full_text": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena? Muitos cart\u00f5es de cr\u00e9dito oferecem milhas que podem ser trocadas por passagens a\u00e9reas, hot\u00e9is, ou outros presentes. Al\u00e9m disso, alguns cart\u00f5es oferecem cashback, ou seja, voc\u00ea recebe dinheiro de volta no final de cada m\u00eas. Por exemplo, o cart\u00e3o de cr\u00e9dito de uma das maiores redes oferece at\u00e9 30% de cashback em determinados produtos e servi\u00e7os. Isso pode significar mais dinheiro no seu bolso! Al\u00e9m disso, muitos cart\u00f5es oferecem descontos em compras online, como Amazon ou Mercado Livre. Verifique qual \u00e9 o seu cart\u00e3o de cr\u00e9dito mais ben\u00e9fico!",
+        "hook": "Voc\u00ea sabia que 90% dos brasileiros n\u00e3o sabem o que \u00e9 um fundo imobili\u00e1rio?",
+        "body": "Um fundo imobili\u00e1rio \u00e9 uma carteira de investimentos que comprou im\u00f3veis para voc\u00ea. Voc\u00ea paga uma taxa de administra\u00e7\u00e3o, mas n\u00e3o precisa cuidar de nada. Alguns fundos oferecem retorno mensal, enquanto outros, anual. \u00c9 um jeito f\u00e1cil de investir em im\u00f3veis sem precisar ser um empres\u00e1rio.",
+        "cta": "Descubra os benef\u00edcios de investir em fundos imobili\u00e1rios e comece a construir sua fortuna agora!",
+        "full_text": "Voc\u00ea sabia que 90% dos brasileiros n\u00e3o sabem o que \u00e9 um fundo imobili\u00e1rio? Um fundo imobili\u00e1rio \u00e9 uma carteira de investimentos que comprou im\u00f3veis para voc\u00ea. Voc\u00ea paga uma taxa de administra\u00e7\u00e3o, mas n\u00e3o precisa cuidar de nada. Alguns fundos oferecem retorno mensal, enquanto outros, anual. \u00c9 um jeito f\u00e1cil de investir em im\u00f3veis sem precisar ser um empres\u00e1rio. Descubra os benef\u00edcios de investir em fundos imobili\u00e1rios e comece a construir sua fortuna agora!",
         "segments": [
           {
-            "id": "5e884dce-b397-439e-b432-86045cf78006",
-            "text": "Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena? Muitos cart\u00f5es de cr\u00e9dito oferecem milhas que podem ser trocadas por passagens a\u00e9reas, hot\u00e9is, ou outros presentes.",
+            "id": "6dbf8adf-f7fe-4bd2-a922-b6a941f1bc1e",
+            "text": "Voc\u00ea sabia que 90% dos brasileiros n\u00e3o sabem o que \u00e9 um fundo imobili\u00e1rio? Um fundo imobili\u00e1rio \u00e9 uma carteira de investimentos que comprou im\u00f3veis para voc\u00ea.",
             "start_time": 0.0,
-            "end_time": 11.2,
+            "end_time": 10.8,
             "is_bold": false,
             "is_hook": true,
             "emoji": null
           },
           {
-            "id": "fd75f5d2-d5eb-45ec-a29f-c2b4643389e3",
-            "text": "Al\u00e9m disso, alguns cart\u00f5es oferecem cashback, ou seja, voc\u00ea recebe dinheiro de volta no final de cada m\u00eas.",
-            "start_time": 11.2,
-            "end_time": 18.4,
+            "id": "c7973626-b4b5-4679-b72a-af7a8a708197",
+            "text": "Voc\u00ea paga uma taxa de administra\u00e7\u00e3o, mas n\u00e3o precisa cuidar de nada.",
+            "start_time": 10.8,
+            "end_time": 15.6,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "559f7dab-c818-457b-9f6f-399b1899ac7f",
-            "text": "Por exemplo, o cart\u00e3o de cr\u00e9dito de uma das maiores redes oferece at\u00e9 30% de cashback em determinados produtos e servi\u00e7os.",
-            "start_time": 18.4,
-            "end_time": 26.8,
+            "id": "2f190cf4-11b6-4770-85ff-0b3851a9285d",
+            "text": "Alguns fundos oferecem retorno mensal, enquanto outros, anual.",
+            "start_time": 15.6,
+            "end_time": 18.8,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "efd950e0-6a66-45f7-a609-3848f3026273",
-            "text": "Isso pode significar mais dinheiro no seu bolso! Al\u00e9m disso, muitos cart\u00f5es oferecem descontos em compras online, como Amazon ou Mercado Livre.",
-            "start_time": 26.8,
-            "end_time": 35.6,
+            "id": "608360bf-6331-4470-88ec-45c3faf79dcf",
+            "text": "\u00c9 um jeito f\u00e1cil de investir em im\u00f3veis sem precisar ser um empres\u00e1rio.",
+            "start_time": 18.8,
+            "end_time": 24.0,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "13b0a504-14f2-46d3-a667-82ed6b0fe5e6",
-            "text": "Verifique qual \u00e9 o seu cart\u00e3o de cr\u00e9dito mais ben\u00e9fico!.",
-            "start_time": 35.6,
-            "end_time": 39.6,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          }
-        ],
-        "estimated_duration": 40.0,
-        "word_count": 99
-      },
-      "voice_model": "openai",
-      "subtitle_style": "hormozi",
-      "subtitle_position": "center",
-      "background_music": null,
-      "effects": {
-        "auto_zoom": true,
-        "punch_in_out": true,
-        "cinematic_transitions": true,
-        "sound_effects": true,
-        "background_blur": false,
-        "beat_sync": true,
-        "motion_graphics": false
-      },
-      "language": "pt",
-      "status": "done",
-      "progress": 100,
-      "error": null,
-      "output_path": "exports\\Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena_.mp4",
-      "thumbnail_path": "exports\\Voc\u00ea acha que seu cart\u00e3o de cr\u00e9dito n\u00e3o vale a pena__thumb.jpg",
-      "generated_images": [
-        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_0.jpg",
-        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_1.png",
-        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_2.png",
-        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_3.png",
-        "exports\\d12c0992-0b93-4b8a-be89-c243ff76411b\\images\\img_4.png"
-      ],
-      "created_at": "2026-05-27T17:07:48.529871",
-      "updated_at": "2026-05-27T17:11:41.935147"
-    },
-    "748cae6a-d040-4406-9ee7-16366fbf2e4f": {
-      "id": "748cae6a-d040-4406-9ee7-16366fbf2e4f",
-      "title": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento?",
-      "prompt": "a\u00e7\u00f5es",
-      "style": "finance",
-      "platform": "tiktok",
-      "script": {
-        "hook": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento?",
-        "body": "Isso \u00e9 verdade! As a\u00e7\u00f5es representam uma fra\u00e7\u00e3o de uma empresa e permitem que os investidores compartilhem do lucro e do crescimento dela. O mercado de a\u00e7\u00f5es \u00e9 vol\u00e1til, mas pode oferecer retornos altos a longo prazo. Al\u00e9m disso, as a\u00e7\u00f5es podem ser uma forma de diversificar seu portf\u00f3lio de investimentos e reduzir o risco.",
-        "cta": "Comece a investir em a\u00e7\u00f5es hoje mesmo!",
-        "full_text": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento? Isso \u00e9 verdade! As a\u00e7\u00f5es representam uma fra\u00e7\u00e3o de uma empresa e permitem que os investidores compartilhem do lucro e do crescimento dela. O mercado de a\u00e7\u00f5es \u00e9 vol\u00e1til, mas pode oferecer retornos altos a longo prazo. Al\u00e9m disso, as a\u00e7\u00f5es podem ser uma forma de diversificar seu portf\u00f3lio de investimentos e reduzir o risco. Comece a investir em a\u00e7\u00f5es hoje mesmo!",
-        "segments": [
-          {
-            "id": "66daafed-d86c-48f6-bf62-f697255da901",
-            "text": "Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimento? Isso \u00e9 verdade! As a\u00e7\u00f5es representam uma fra\u00e7\u00e3o de uma empresa e permitem que os investidores compartilhem do lucro e do crescimento dela.",
-            "start_time": 0.0,
-            "end_time": 14.0,
-            "is_bold": false,
-            "is_hook": true,
-            "emoji": null
-          },
-          {
-            "id": "fe2b4726-bc11-49da-9adb-b9a7371ba764",
-            "text": "O mercado de a\u00e7\u00f5es \u00e9 vol\u00e1til, mas pode oferecer retornos altos a longo prazo.",
-            "start_time": 14.0,
-            "end_time": 19.6,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "7755f26e-e656-4778-9df9-0e7bff42508a",
-            "text": "Al\u00e9m disso, as a\u00e7\u00f5es podem ser uma forma de diversificar seu portf\u00f3lio de investimentos e reduzir o risco.",
-            "start_time": 19.6,
-            "end_time": 26.8,
-            "is_bold": false,
-            "is_hook": false,
-            "emoji": null
-          },
-          {
-            "id": "bd306522-ff55-488b-852e-969708e5dfec",
-            "text": "Comece a investir em a\u00e7\u00f5es hoje mesmo!.",
-            "start_time": 26.8,
-            "end_time": 29.6,
+            "id": "e4b42d36-55ee-4edd-a2c2-87c3691d41a3",
+            "text": "Descubra os benef\u00edcios de investir em fundos imobili\u00e1rios e comece a construir sua fortuna agora!.",
+            "start_time": 24.0,
+            "end_time": 30.0,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           }
         ],
         "estimated_duration": 30.0,
-        "word_count": 74
+        "word_count": 75
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
@@ -159,69 +78,76 @@
       "status": "done",
       "progress": 100,
       "error": null,
-      "output_path": "exports\\Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimen.mp4",
-      "thumbnail_path": "exports\\Voc\u00ea sabia que as a\u00e7\u00f5es s\u00e3o a forma mais comum de investimen_thumb.jpg",
+      "output_path": "exports\\Voc\u00ea sabia que 90_ dos brasileiros n\u00e3o sabem o que \u00e9 um fund.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabia que 90_ dos brasileiros n\u00e3o sabem o que \u00e9 um fund_thumb.jpg",
       "generated_images": [
-        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_0.jpg",
-        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_1.png",
-        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_2.png",
-        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_3.png",
-        "exports\\748cae6a-d040-4406-9ee7-16366fbf2e4f\\images\\img_4.png"
+        "exports\\f142651a-7e7d-499b-81f5-2c9d662f8e07\\images\\img_0.jpg",
+        "exports\\f142651a-7e7d-499b-81f5-2c9d662f8e07\\images\\img_1.jpg",
+        "exports\\f142651a-7e7d-499b-81f5-2c9d662f8e07\\images\\img_2.jpg"
       ],
-      "created_at": "2026-05-27T17:12:04.147438",
-      "updated_at": "2026-05-27T17:12:21.068343"
+      "created_at": "2026-05-27T17:52:45.700294",
+      "updated_at": "2026-05-27T17:53:04.463510"
     },
-    "b171423d-662b-44ec-a22f-0529c38ec2b2": {
-      "id": "b171423d-662b-44ec-a22f-0529c38ec2b2",
-      "title": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3",
-      "prompt": "fundos de investimento",
+    "d62a05cd-eead-48ce-860a-cca1737c7869": {
+      "id": "d62a05cd-eead-48ce-860a-cca1737c7869",
+      "title": "Voc\u00ea sabia que o mercado de a\u00e7\u00f5es americano \u00e9 maior que todo o PIB do Brasil?",
+      "prompt": "a\u00e7\u00f5es americanas",
       "style": "finance",
       "platform": "tiktok",
       "script": {
-        "hook": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3o sabem nem o retorno?",
-        "body": "Um fundo de investimento \u00e9 uma carteira diversificada de ativos que pode ser investida em bolsa, t\u00edtulos e outros investimentos. A diversifica\u00e7\u00e3o ajuda a reduzir riscos e aumentar retornos. Al\u00e9m disso, os fundos de investimento permitem que o investidor n\u00e3o precise ter conhecimento especializado em investimentos para gerenciar sua carteira.",
-        "cta": "Comece a investir agora e descubra a pot\u00eancia dos fundos de investimento!",
-        "full_text": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3o sabem nem o retorno? Um fundo de investimento \u00e9 uma carteira diversificada de ativos que pode ser investida em bolsa, t\u00edtulos e outros investimentos. A diversifica\u00e7\u00e3o ajuda a reduzir riscos e aumentar retornos. Al\u00e9m disso, os fundos de investimento permitem que o investidor n\u00e3o precise ter conhecimento especializado em investimentos para gerenciar sua carteira. Comece a investir agora e descubra a pot\u00eancia dos fundos de investimento!",
+        "hook": "Voc\u00ea sabia que o mercado de a\u00e7\u00f5es americano \u00e9 maior que todo o PIB do Brasil?",
+        "body": "O mercado de a\u00e7\u00f5es americano \u00e9 um dos maiores e mais l\u00edquidos do mundo, com mais de 22 milh\u00f5es de acionistas individuais e institucionais investindo em empresas como Apple, Microsoft e Amazon. A bolsa de valores de Nova York (NYSE) \u00e9 considerada uma das mais importantes do mundo, com mais de 2.400 a\u00e7\u00f5es listadas. Al\u00e9m disso, as a\u00e7\u00f5es americanas s\u00e3o muito populares entre os investidores, pois oferecem oportunidades de crescimento e divisas",
+        "cta": "Descubra como investir em a\u00e7\u00f5es americanas de forma f\u00e1cil e segura agora!",
+        "full_text": "Voc\u00ea sabia que o mercado de a\u00e7\u00f5es americano \u00e9 maior que todo o PIB do Brasil? O mercado de a\u00e7\u00f5es americano \u00e9 um dos maiores e mais l\u00edquidos do mundo, com mais de 22 milh\u00f5es de acionistas individuais e institucionais investindo em empresas como Apple, Microsoft e Amazon. A bolsa de valores de Nova York (NYSE) \u00e9 considerada uma das mais importantes do mundo, com mais de 2.400 a\u00e7\u00f5es listadas. Al\u00e9m disso, as a\u00e7\u00f5es americanas s\u00e3o muito populares entre os investidores, pois oferecem oportunidades de crescimento e divisas. Descubra como investir em a\u00e7\u00f5es americanas de forma f\u00e1cil e segura agora!",
         "segments": [
           {
-            "id": "85590dc2-16fe-4fd4-9125-7ec2468eb850",
-            "text": "Voc\u00ea sabia que 85% das pessoas empatam R$ 100 mil em fundos de investimento e n\u00e3o sabem nem o retorno? Um fundo de investimento \u00e9 uma carteira diversificada de ativos que pode ser investida em bolsa, t\u00edtulos e outros investimentos.",
+            "id": "ec84429b-c38f-4c26-821c-a3a9f84b54d8",
+            "text": "Voc\u00ea sabia que o mercado de a\u00e7\u00f5es americano \u00e9 maior que todo o PIB do Brasil? O mercado de a\u00e7\u00f5es americano \u00e9 um dos maiores e mais l\u00edquidos do mundo, com mais de 22 milh\u00f5es de acionistas individuais e institucionais investindo em empresas como Apple, Microsoft e Amazon.",
             "start_time": 0.0,
-            "end_time": 16.0,
+            "end_time": 19.2,
             "is_bold": false,
             "is_hook": true,
             "emoji": null
           },
           {
-            "id": "54425272-6a1e-4ef9-9418-715809bb624a",
-            "text": "A diversifica\u00e7\u00e3o ajuda a reduzir riscos e aumentar retornos.",
-            "start_time": 16.0,
-            "end_time": 19.6,
+            "id": "e0146f43-9a5a-493b-82d9-e57b33e5f06a",
+            "text": "A bolsa de valores de Nova York (NYSE) \u00e9 considerada uma das mais importantes do mundo, com mais de 2.",
+            "start_time": 19.2,
+            "end_time": 27.2,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "ccffeacf-2330-4dd7-8731-b8e053a81397",
-            "text": "Al\u00e9m disso, os fundos de investimento permitem que o investidor n\u00e3o precise ter conhecimento especializado em investimentos para gerenciar sua carteira.",
-            "start_time": 19.6,
-            "end_time": 28.0,
+            "id": "55c151fe-c16f-4538-9f71-7a2aaa0906a1",
+            "text": "400 a\u00e7\u00f5es listadas.",
+            "start_time": 27.2,
+            "end_time": 28.4,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           },
           {
-            "id": "0c8d00ef-8941-469b-be03-84da1be6ba72",
-            "text": "Comece a investir agora e descubra a pot\u00eancia dos fundos de investimento!.",
-            "start_time": 28.0,
-            "end_time": 32.8,
+            "id": "7b57e5a4-da73-4d7e-8e44-ad7c83ed9862",
+            "text": "Al\u00e9m disso, as a\u00e7\u00f5es americanas s\u00e3o muito populares entre os investidores, pois oferecem oportunidades de crescimento e divisas.",
+            "start_time": 28.4,
+            "end_time": 35.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "e881d9bc-d5d6-448e-974f-6a57416a29fc",
+            "text": "Descubra como investir em a\u00e7\u00f5es americanas de forma f\u00e1cil e segura agora!.",
+            "start_time": 35.6,
+            "end_time": 40.4,
             "is_bold": false,
             "is_hook": false,
             "emoji": null
           }
         ],
-        "estimated_duration": 33.0,
-        "word_count": 82
+        "estimated_duration": 40.0,
+        "word_count": 100
       },
       "voice_model": "openai",
       "subtitle_style": "hormozi",
@@ -240,17 +166,261 @@
       "status": "done",
       "progress": 100,
       "error": null,
-      "output_path": "exports\\Voc\u00ea sabia que 85_ das pessoas empatam R_ 100 mil em fundos .mp4",
-      "thumbnail_path": "exports\\Voc\u00ea sabia que 85_ das pessoas empatam R_ 100 mil em fundos _thumb.jpg",
+      "output_path": "exports\\Voc\u00ea sabia que o mercado de a\u00e7\u00f5es americano \u00e9 maior que todo.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabia que o mercado de a\u00e7\u00f5es americano \u00e9 maior que todo_thumb.jpg",
       "generated_images": [
-        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_0.jpg",
-        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_1.png",
-        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_2.png",
-        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_3.png",
-        "exports\\b171423d-662b-44ec-a22f-0529c38ec2b2\\images\\img_4.png"
+        "exports\\d62a05cd-eead-48ce-860a-cca1737c7869\\images\\img_0.jpg",
+        "exports\\d62a05cd-eead-48ce-860a-cca1737c7869\\images\\img_1.jpg",
+        "exports\\d62a05cd-eead-48ce-860a-cca1737c7869\\images\\img_2.jpg"
       ],
-      "created_at": "2026-05-27T17:16:58.002513",
-      "updated_at": "2026-05-27T17:17:18.989195"
+      "created_at": "2026-05-27T18:07:40.127585",
+      "updated_at": "2026-05-27T18:08:22.287846"
+    },
+    "e05ab7a9-163d-4add-9889-7a2add378722": {
+      "id": "e05ab7a9-163d-4add-9889-7a2add378722",
+      "title": "Voc\u00ea sabia que as a\u00e7\u00f5es brasileiras t\u00eam um hist\u00f3rico de crescimento de 30% em 20",
+      "prompt": "a\u00e7\u00f5es brasileiras",
+      "style": "finance",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Voc\u00ea sabia que as a\u00e7\u00f5es brasileiras t\u00eam um hist\u00f3rico de crescimento de 30% em 2022?",
+        "body": "As a\u00e7\u00f5es brasileiras t\u00eam sido uma das melhores op\u00e7\u00f5es para investidores em busca de bons retornos. Al\u00e9m disso, o \u00edndice de a\u00e7\u00f5es brasileiras (Ibovespa) tem um crescimento de 30% em 2022, superando o mercado de a\u00e7\u00f5es global. Isso se deve \u00e0 melhoria da economia brasileira, aumento da confian\u00e7a dos investidores e pol\u00edticas fiscais favor\u00e1veis.",
+        "cta": "Compre a\u00e7\u00f5es brasileiras agora e seja um investidor s\u00eanior em 5 anos!",
+        "full_text": "Voc\u00ea sabia que as a\u00e7\u00f5es brasileiras t\u00eam um hist\u00f3rico de crescimento de 30% em 2022? As a\u00e7\u00f5es brasileiras t\u00eam sido uma das melhores op\u00e7\u00f5es para investidores em busca de bons retornos. Al\u00e9m disso, o \u00edndice de a\u00e7\u00f5es brasileiras (Ibovespa) tem um crescimento de 30% em 2022, superando o mercado de a\u00e7\u00f5es global. Isso se deve \u00e0 melhoria da economia brasileira, aumento da confian\u00e7a dos investidores e pol\u00edticas fiscais favor\u00e1veis. Compre a\u00e7\u00f5es brasileiras agora e seja um investidor s\u00eanior em 5 anos!",
+        "segments": [
+          {
+            "id": "4a3a3628-590b-475c-9efd-cd1adb3380af",
+            "text": "Voc\u00ea sabia que as a\u00e7\u00f5es brasileiras t\u00eam um hist\u00f3rico de crescimento de 30% em 2022? As a\u00e7\u00f5es brasileiras t\u00eam sido uma das melhores op\u00e7\u00f5es para investidores em busca de bons retornos.",
+            "start_time": 0.0,
+            "end_time": 12.4,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "9b853a15-2cec-4856-a693-d417a1f2f3e6",
+            "text": "Al\u00e9m disso, o \u00edndice de a\u00e7\u00f5es brasileiras (Ibovespa) tem um crescimento de 30% em 2022, superando o mercado de a\u00e7\u00f5es global.",
+            "start_time": 12.4,
+            "end_time": 20.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "95d11bca-6431-4ba4-9631-932b39c27e6f",
+            "text": "Isso se deve \u00e0 melhoria da economia brasileira, aumento da confian\u00e7a dos investidores e pol\u00edticas fiscais favor\u00e1veis.",
+            "start_time": 20.8,
+            "end_time": 27.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "9d9731c8-96fe-429e-9822-105ce7ad2a98",
+            "text": "Compre a\u00e7\u00f5es brasileiras agora e seja um investidor s\u00eanior em 5 anos!.",
+            "start_time": 27.6,
+            "end_time": 32.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 32.0,
+        "word_count": 81
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Voc\u00ea sabia que as a\u00e7\u00f5es brasileiras t\u00eam um hist\u00f3rico de cres.mp4",
+      "thumbnail_path": "exports\\Voc\u00ea sabia que as a\u00e7\u00f5es brasileiras t\u00eam um hist\u00f3rico de cres_thumb.jpg",
+      "generated_images": [
+        "exports\\e05ab7a9-163d-4add-9889-7a2add378722\\images\\img_0.jpg",
+        "exports\\e05ab7a9-163d-4add-9889-7a2add378722\\images\\img_1.jpg",
+        "exports\\e05ab7a9-163d-4add-9889-7a2add378722\\images\\img_2.jpg"
+      ],
+      "created_at": "2026-05-27T18:11:15.917202",
+      "updated_at": "2026-05-27T18:11:42.808746"
+    },
+    "0eac27f8-b83c-44b7-94d2-5c0d522788db": {
+      "id": "0eac27f8-b83c-44b7-94d2-5c0d522788db",
+      "title": "Aprenda a economizar dinheiro com a manuten\u00e7\u00e3o correta da sua moto",
+      "prompt": "manuten\u00e7\u00e3o de moto",
+      "style": "documentary",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Aprenda a economizar dinheiro com a manuten\u00e7\u00e3o correta da sua moto",
+        "body": "A manuten\u00e7\u00e3o de moto \u00e9 fundamental para garantir a seguran\u00e7a e a efici\u00eancia do ve\u00edculo. Isso inclui a troca de \u00f3leo, filtros de ar e l\u00edquido de freio, al\u00e9m de verificar a press\u00e3o dos pneus e o estado dos far\u00f3is. Al\u00e9m disso, \u00e9 importante realizar checks regulares para detectar problemas antes que eles se tornem graves. Isso pode ajudar a evitar acidentes e economizar dinheiro em reparos caros.",
+        "cta": "Fa\u00e7a a manuten\u00e7\u00e3o da sua moto hoje mesmo!",
+        "full_text": "Aprenda a economizar dinheiro com a manuten\u00e7\u00e3o correta da sua moto. A manuten\u00e7\u00e3o de moto \u00e9 fundamental para garantir a seguran\u00e7a e a efici\u00eancia do ve\u00edculo. Isso inclui a troca de \u00f3leo, filtros de ar e l\u00edquido de freio, al\u00e9m de verificar a press\u00e3o dos pneus e o estado dos far\u00f3is. Al\u00e9m disso, \u00e9 importante realizar checks regulares para detectar problemas antes que eles se tornem graves. Isso pode ajudar a evitar acidentes e economizar dinheiro em reparos caros. Fa\u00e7a a manuten\u00e7\u00e3o da sua moto hoje mesmo!",
+        "segments": [
+          {
+            "id": "d22eba17-bae2-4c69-9bcb-835974120d8c",
+            "text": "Aprenda a economizar dinheiro com a manuten\u00e7\u00e3o correta da sua moto.",
+            "start_time": 0.0,
+            "end_time": 4.4,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "b77c8a90-99ed-4f91-b4f0-cf44fbc3a89f",
+            "text": "A manuten\u00e7\u00e3o de moto \u00e9 fundamental para garantir a seguran\u00e7a e a efici\u00eancia do ve\u00edculo.",
+            "start_time": 4.4,
+            "end_time": 10.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "b68c6324-4b72-46cc-9566-a1bd78cfd9ae",
+            "text": "Isso inclui a troca de \u00f3leo, filtros de ar e l\u00edquido de freio, al\u00e9m de verificar a press\u00e3o dos pneus e o estado dos far\u00f3is.",
+            "start_time": 10.4,
+            "end_time": 20.4,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "7a214c64-f924-4f77-9433-27f51d5192ad",
+            "text": "Al\u00e9m disso, \u00e9 importante realizar checks regulares para detectar problemas antes que eles se tornem graves.",
+            "start_time": 20.4,
+            "end_time": 26.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "bcf2ce70-22bb-492e-bbb7-ef257ef413e0",
+            "text": "Isso pode ajudar a evitar acidentes e economizar dinheiro em reparos caros.",
+            "start_time": 26.8,
+            "end_time": 31.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "690fdc7e-31c7-431b-9b8e-080975775a34",
+            "text": "Fa\u00e7a a manuten\u00e7\u00e3o da sua moto hoje mesmo!.",
+            "start_time": 31.6,
+            "end_time": 34.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 35.0,
+        "word_count": 87
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "done",
+      "progress": 100,
+      "error": null,
+      "output_path": "exports\\Aprenda a economizar dinheiro com a manuten\u00e7\u00e3o correta da su.mp4",
+      "thumbnail_path": "exports\\Aprenda a economizar dinheiro com a manuten\u00e7\u00e3o correta da su_thumb.jpg",
+      "generated_images": [
+        "exports\\0eac27f8-b83c-44b7-94d2-5c0d522788db\\images\\img_0.jpg",
+        "exports\\0eac27f8-b83c-44b7-94d2-5c0d522788db\\images\\img_1.jpg",
+        "exports\\0eac27f8-b83c-44b7-94d2-5c0d522788db\\images\\img_2.jpg"
+      ],
+      "created_at": "2026-05-27T18:16:26.135265",
+      "updated_at": "2026-05-27T18:16:46.383833"
+    },
+    "d4078d8b-65d2-4e15-b67c-a889a7b529ef": {
+      "id": "d4078d8b-65d2-4e15-b67c-a889a7b529ef",
+      "title": "Sua manuten\u00e7\u00e3o de carro est\u00e1 em dia?",
+      "prompt": "manuten\u00e7\u00e3o de carro",
+      "style": "motivation",
+      "platform": "tiktok",
+      "script": {
+        "hook": "Sua manuten\u00e7\u00e3o de carro est\u00e1 em dia?",
+        "body": "Manter seu carro em boas condi\u00e7\u00f5es n\u00e3o \u00e9 apenas uma necessidade, \u00e9 um direito! \u00c9 preciso fazer revis\u00f5es regulares, trocar \u00f3leo, freios e outros componentes para evitar problemas inesperados. Al\u00e9m disso, uma boa manuten\u00e7\u00e3o pode aumentar a vida \u00fatil do ve\u00edculo e evitar gastos desnecess\u00e1rios com reparos. Conhe\u00e7a os principais servi\u00e7os de manuten\u00e7\u00e3o para garantir a seguran\u00e7a e efici\u00eancia de seu ve\u00edculo!",
+        "cta": "Fa\u00e7a sua pr\u00f3xima revis\u00e3o de manuten\u00e7\u00e3o agora mesmo!",
+        "full_text": "Sua manuten\u00e7\u00e3o de carro est\u00e1 em dia? Manter seu carro em boas condi\u00e7\u00f5es n\u00e3o \u00e9 apenas uma necessidade, \u00e9 um direito! \u00c9 preciso fazer revis\u00f5es regulares, trocar \u00f3leo, freios e outros componentes para evitar problemas inesperados. Al\u00e9m disso, uma boa manuten\u00e7\u00e3o pode aumentar a vida \u00fatil do ve\u00edculo e evitar gastos desnecess\u00e1rios com reparos. Conhe\u00e7a os principais servi\u00e7os de manuten\u00e7\u00e3o para garantir a seguran\u00e7a e efici\u00eancia de seu ve\u00edculo! Fa\u00e7a sua pr\u00f3xima revis\u00e3o de manuten\u00e7\u00e3o agora mesmo!",
+        "segments": [
+          {
+            "id": "f86f12b8-a8c9-4935-b8c3-49efdefb7990",
+            "text": "Sua manuten\u00e7\u00e3o de carro est\u00e1 em dia? Manter seu carro em boas condi\u00e7\u00f5es n\u00e3o \u00e9 apenas uma necessidade, \u00e9 um direito! \u00c9 preciso fazer revis\u00f5es regulares, trocar \u00f3leo, freios e outros componentes para evitar problemas inesperados.",
+            "start_time": 0.0,
+            "end_time": 14.4,
+            "is_bold": false,
+            "is_hook": true,
+            "emoji": null
+          },
+          {
+            "id": "4f997755-2dac-417f-a56b-c63c6d0d9639",
+            "text": "Al\u00e9m disso, uma boa manuten\u00e7\u00e3o pode aumentar a vida \u00fatil do ve\u00edculo e evitar gastos desnecess\u00e1rios com reparos.",
+            "start_time": 14.4,
+            "end_time": 21.6,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          },
+          {
+            "id": "19ff2b6a-778e-4cdc-9fa3-01d2604457bf",
+            "text": "Conhe\u00e7a os principais servi\u00e7os de manuten\u00e7\u00e3o para garantir a seguran\u00e7a e efici\u00eancia de seu ve\u00edculo! Fa\u00e7a sua pr\u00f3xima revis\u00e3o de manuten\u00e7\u00e3o agora mesmo!.",
+            "start_time": 21.6,
+            "end_time": 30.8,
+            "is_bold": false,
+            "is_hook": false,
+            "emoji": null
+          }
+        ],
+        "estimated_duration": 31.0,
+        "word_count": 77
+      },
+      "voice_model": "openai",
+      "subtitle_style": "hormozi",
+      "subtitle_position": "center",
+      "background_music": null,
+      "effects": {
+        "auto_zoom": true,
+        "punch_in_out": true,
+        "cinematic_transitions": true,
+        "sound_effects": true,
+        "background_blur": false,
+        "beat_sync": true,
+        "motion_graphics": false
+      },
+      "language": "pt",
+      "status": "error",
+      "progress": 45,
+      "error": "Video composite failed",
+      "output_path": null,
+      "thumbnail_path": null,
+      "generated_images": [
+        "exports\\d4078d8b-65d2-4e15-b67c-a889a7b529ef\\images\\img_0.jpg",
+        "exports\\d4078d8b-65d2-4e15-b67c-a889a7b529ef\\images\\img_1.jpg",
+        "exports\\d4078d8b-65d2-4e15-b67c-a889a7b529ef\\images\\img_2.jpg"
+      ],
+      "created_at": "2026-05-27T18:25:06.912833",
+      "updated_at": "2026-05-27T18:25:06.912833"
     }
   },
   "jobs": {
@@ -493,6 +663,96 @@
       "started_at": "2026-05-27T17:16:59.461377",
       "completed_at": "2026-05-27T17:17:18.990193",
       "error": null
+    },
+    "be04bc7c-0edd-4aae-bd65-d6ba42636a82": {
+      "job_id": "be04bc7c-0edd-4aae-bd65-d6ba42636a82",
+      "project_id": "4433c8e9-6194-4dc0-8acd-ff297369a67a",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:26:49.029658",
+      "completed_at": "2026-05-27T17:27:04.283594",
+      "error": null
+    },
+    "db0bc463-81b5-4b35-b7ee-53fb82db5370": {
+      "job_id": "db0bc463-81b5-4b35-b7ee-53fb82db5370",
+      "project_id": "216e68a4-466d-4e8d-927e-7cf4451b0fa0",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:31:49.243290",
+      "completed_at": "2026-05-27T17:32:03.864323",
+      "error": null
+    },
+    "1f9aa60a-f9e8-4bb8-a7c0-f9762063f1a8": {
+      "job_id": "1f9aa60a-f9e8-4bb8-a7c0-f9762063f1a8",
+      "project_id": "4f8241d9-22ba-40ef-9d68-b52593977740",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:35:46.984923",
+      "completed_at": "2026-05-27T17:36:10.587857",
+      "error": null
+    },
+    "b1ce6604-7b51-483f-8853-f693b587cc29": {
+      "job_id": "b1ce6604-7b51-483f-8853-f693b587cc29",
+      "project_id": "033c0699-63e2-4c19-b245-14bf49ede4cd",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:48:21.098262",
+      "completed_at": "2026-05-27T17:48:46.969522",
+      "error": null
+    },
+    "3a13a00f-c155-48c9-a824-66088c31fc72": {
+      "job_id": "3a13a00f-c155-48c9-a824-66088c31fc72",
+      "project_id": "f142651a-7e7d-499b-81f5-2c9d662f8e07",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T17:52:47.319403",
+      "completed_at": "2026-05-27T17:53:04.464892",
+      "error": null
+    },
+    "639b53b9-bac2-4c48-9c10-e3be06dc3fe3": {
+      "job_id": "639b53b9-bac2-4c48-9c10-e3be06dc3fe3",
+      "project_id": "d62a05cd-eead-48ce-860a-cca1737c7869",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T18:07:59.099992",
+      "completed_at": "2026-05-27T18:08:22.289458",
+      "error": null
+    },
+    "fab11684-a10b-468d-bf34-40d9d1c6a6d8": {
+      "job_id": "fab11684-a10b-468d-bf34-40d9d1c6a6d8",
+      "project_id": "e05ab7a9-163d-4add-9889-7a2add378722",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T18:11:17.676175",
+      "completed_at": "2026-05-27T18:11:42.809745",
+      "error": null
+    },
+    "0947e641-68dd-4b72-b50f-e2006c458a70": {
+      "job_id": "0947e641-68dd-4b72-b50f-e2006c458a70",
+      "project_id": "0eac27f8-b83c-44b7-94d2-5c0d522788db",
+      "status": "done",
+      "progress": 100,
+      "current_step": "Done!",
+      "started_at": "2026-05-27T18:16:27.151094",
+      "completed_at": "2026-05-27T18:16:46.384941",
+      "error": null
+    },
+    "8145d26a-be22-488c-b7bc-456030542672": {
+      "job_id": "8145d26a-be22-488c-b7bc-456030542672",
+      "project_id": "d4078d8b-65d2-4e15-b67c-a889a7b529ef",
+      "status": "error",
+      "progress": 45,
+      "current_step": "Compositing video\u2026",
+      "started_at": "2026-05-27T18:25:08.081957",
+      "completed_at": "2026-05-27T18:25:16.710097",
+      "error": "Video composite failed"
     }
   }
 }

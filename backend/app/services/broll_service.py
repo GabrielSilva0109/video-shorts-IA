@@ -4,6 +4,7 @@ and Pixabay (fallback).
 """
 from __future__ import annotations
 import asyncio
+import subprocess
 from pathlib import Path
 from typing import List
 import httpx
@@ -14,6 +15,62 @@ from app.config import settings
 class BRollService:
     PEXELS_VIDEO_URL = "https://api.pexels.com/videos/search"
     PIXABAY_VIDEO_URL = "https://pixabay.com/api/videos/"
+
+    async def from_generated_images(
+        self,
+        project_id: str,
+        image_paths: List[str],
+        output_dir: Path,
+        seconds_per_image: float = 3.5,
+    ) -> List[Path]:
+        """Build short mp4 clips from generated scene images for rendering."""
+        if not image_paths:
+            return []
+
+        clips: List[Path] = []
+        for i, raw in enumerate(image_paths):
+            src = Path(raw)
+            if not src.exists():
+                # Fallback to deterministic path when store has relative strings
+                src = Path(settings.exports_dir) / project_id / "images" / src.name
+            if not src.exists():
+                logger.warning(f"Generated image not found for slot {i}: {raw}")
+                continue
+
+            dest = output_dir / f"scene_{i}.mp4"
+            cmd = [
+                settings.ffmpeg_path, "-y",
+                "-loop", "1",
+                "-i", str(src),
+                "-t", f"{seconds_per_image:.2f}",
+                "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30",
+                "-c:v", "libx264",
+                "-preset", "fast",
+                "-pix_fmt", "yuv420p",
+                str(dest),
+            ]
+
+            try:
+                result = await asyncio.to_thread(
+                    subprocess.run,
+                    cmd,
+                    capture_output=True,
+                    text=True,
+                    timeout=45,
+                )
+                if result.returncode == 0 and dest.exists():
+                    clips.append(dest)
+                else:
+                    logger.warning(
+                        f"Failed to build clip from generated image {src.name}: "
+                        f"{(result.stderr or '').strip()[-180:]}"
+                    )
+            except Exception as exc:
+                logger.warning(f"Failed to build clip from generated image {src.name}: {exc}")
+
+        if clips:
+            logger.info(f"Using {len(clips)} generated-image clips for video")
+        return clips
 
     async def fetch(
         self,
@@ -121,14 +178,17 @@ class BRollService:
                 str(dest),
             ]
             try:
-                proc = await asyncio.create_subprocess_exec(
-                    *cmd,
-                    stdout=asyncio.subprocess.DEVNULL,
-                    stderr=asyncio.subprocess.DEVNULL,
+                result = await asyncio.to_thread(
+                    subprocess.run,
+                    cmd,
+                    capture_output=True,
+                    text=True,
+                    timeout=30,
                 )
-                await asyncio.wait_for(proc.wait(), timeout=30)
-                if dest.exists():
+                if result.returncode == 0 and dest.exists():
                     paths.append(dest)
+                else:
+                    logger.warning(f"FFmpeg background generation failed: {(result.stderr or '').strip()[-180:]}")
             except Exception as exc:
                 logger.warning(f"FFmpeg background generation failed: {exc}")
         return paths

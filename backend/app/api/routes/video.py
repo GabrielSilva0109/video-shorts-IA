@@ -55,12 +55,13 @@ async def create_project(
         )
         saved = store.save_project(project)
 
-        # Generate 5 scene images in background (non-blocking)
+        # Generate 3 scene images (início / meio / fim do script) em background
         background_tasks.add_task(
             image_service.generate_and_save,
             project_id=saved.id,
             script=script,
             style=req.style.value,
+            count=3,
         )
 
         return saved
@@ -97,6 +98,17 @@ async def start_render(
     )
     store.save_job(job)
     store.update_project(project_id, status=RenderStatus.queued, progress=0)
+
+    # Safety fallback: if images were not generated at project creation time,
+    # trigger generation now so the UI still gets scene images.
+    if not project.generated_images:
+        background_tasks.add_task(
+            image_service.generate_and_save,
+            project_id=project_id,
+            script=project.script,
+            style=project.style.value,
+            count=3,
+        )
 
     background_tasks.add_task(video_service.render_project, project, job.job_id)
     return job

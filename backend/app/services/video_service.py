@@ -48,11 +48,17 @@ class VideoService:
 
             # 2. B-roll footage
             step(RenderStatus.fetching_broll, 25, "Fetching B-roll footage…")
-            broll_clips = await self.broll.fetch(
-                keywords=self._extract_keywords(project.prompt, project.script),
-                count=5,
+            broll_clips = await self.broll.from_generated_images(
+                project_id=project.id,
+                image_paths=project.generated_images,
                 output_dir=tmp,
             )
+            if not broll_clips:
+                broll_clips = await self.broll.fetch(
+                    keywords=self._extract_keywords(project.prompt, project.script),
+                    count=5,
+                    output_dir=tmp,
+                )
 
             # 3. Composite video
             step(RenderStatus.compositing, 45, "Compositing video…")
