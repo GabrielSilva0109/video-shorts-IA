@@ -56,7 +56,7 @@ class ExportService:
         concat_list = output_dir / "concat.txt"
         with concat_list.open("w") as f:
             for clip in processed:
-                f.write(f"file '{clip.as_posix()}'\n")
+                f.write(f"file '{clip.resolve().as_posix()}'\n")
 
         cmd = [
             settings.ffmpeg_path, "-y",

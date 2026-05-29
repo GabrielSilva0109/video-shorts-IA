@@ -151,3 +151,22 @@ export interface ToastMessage {
   type: 'success' | 'error' | 'info' | 'warning';
   message: string;
 }
+
+export type ImagerModel = 'flux_schnell' | 'flux_dev';
+
+export interface ImagerGenerateRequest {
+  prompt: string;
+  model: ImagerModel;
+  width: number;
+  height: number;
+  seed?: number;
+}
+
+export interface ImagerGenerateResponse {
+  image_url: string;
+  image_path: string;
+  model: ImagerModel;
+  width: number;
+  height: number;
+  seed?: number;
+}

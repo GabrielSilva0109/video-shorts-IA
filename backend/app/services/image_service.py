@@ -52,6 +52,9 @@ _GRADIENT_COLORS = [
 
 
 class ImageService:
+    _active_projects: set[str] = set()
+    _active_lock = asyncio.Lock()
+
     async def generate_and_save(
         self,
         project_id: str,
@@ -61,6 +64,13 @@ class ImageService:
     ) -> None:
         """Generate images strictly one-by-one and persist each completed image."""
         output_dir = Path(settings.exports_dir) / project_id / "images"
+
+        async with self._active_lock:
+            if project_id in self._active_projects:
+                logger.info(f"[{project_id}] Image generation already in progress — skipping duplicate task")
+                return
+            self._active_projects.add(project_id)
+
         try:
             output_dir.mkdir(parents=True, exist_ok=True)
             prompts = self._prompts_from_script(script, style, count)
@@ -75,10 +85,15 @@ class ImageService:
                     paths.append(path)
                     # Persist after each image so frontend can show progress immediately
                     store.update_project(project_id, generated_images=list(paths))
+                # tiny pacing helps avoid provider burst/rate penalties
+                await asyncio.sleep(0.9)
 
             logger.success(f"[{project_id}] {len(paths)} scene images saved")
         except Exception as exc:
             logger.error(f"[{project_id}] Image generation failed: {exc}")
+        finally:
+            async with self._active_lock:
+                self._active_projects.discard(project_id)
 
     async def _generate_single_image(
         self,
@@ -88,8 +103,36 @@ class ImageService:
         total: int,
         style: str,
     ) -> str | None:
-        """Generate one image slot using local Pillow only (fast + reliable)."""
+        """Generate one real image per slot with fast fallback to local artwork."""
         out_jpg = output_dir / f"img_{index}.jpg"
+
+        try:
+            generated = await asyncio.wait_for(
+                self._pollinations_one(prompt, out_jpg, index),
+                timeout=18,
+            )
+            if generated.exists() and generated.stat().st_size > 10_000:
+                return str(generated)
+            generated.unlink(missing_ok=True)
+        except Exception as exc:
+            logger.warning(f"[Image {index}] Pollinations failed, using local fallback: {exc}")
+
+        if settings.openai_api_key:
+            try:
+                from openai import AsyncOpenAI
+
+                out_png = output_dir / f"img_{index}.png"
+                client = AsyncOpenAI(api_key=settings.openai_api_key)
+                generated = await asyncio.wait_for(
+                    self._dalle_one(client, prompt, out_png, index),
+                    timeout=45,
+                )
+                if generated.exists() and generated.stat().st_size > 10_000:
+                    return str(generated)
+                generated.unlink(missing_ok=True)
+            except Exception as exc:
+                logger.warning(f"[Image {index}] DALL-E failed, using local fallback: {exc}")
+
         self._draw_scene_card(prompt, out_jpg, index, total, style)
         return str(out_jpg)
 
@@ -164,17 +207,35 @@ class ImageService:
     async def _pollinations_one(self, prompt: str, output_path: Path, index: int) -> Path:
         from urllib.parse import quote
 
-        encoded = quote(prompt)
+        compact_prompt = prompt[:220]
+        encoded = quote(compact_prompt)
         url = (
             f"https://image.pollinations.ai/prompt/{encoded}"
-            f"?width=1080&height=1920&seed={index * 42}&model=flux"
+            f"?width=768&height=1365&seed={index * 42}"
         )
-        async with httpx.AsyncClient(timeout=60) as http:
-            resp = await http.get(url, follow_redirects=True)
-            resp.raise_for_status()
-            output_path.write_bytes(resp.content)
-        logger.info(f"[Pollinations {index}] saved → {output_path.name}")
-        return output_path
+
+        last_exc: Exception | None = None
+        for attempt in range(3):
+            try:
+                async with httpx.AsyncClient(timeout=20) as http:
+                    resp = await http.get(url, follow_redirects=True)
+                    resp.raise_for_status()
+                    output_path.write_bytes(resp.content)
+                logger.info(f"[Pollinations {index}] saved → {output_path.name}")
+                return output_path
+            except Exception as exc:
+                last_exc = exc
+                # If provider rejects long prompt/budget, retry with a simpler prompt.
+                if "402" in str(exc) and attempt == 0:
+                    simple_prompt = quote(compact_prompt.split(". Visual style")[0][:120])
+                    url = (
+                        f"https://image.pollinations.ai/prompt/{simple_prompt}"
+                        f"?width=768&height=1365&seed={index * 137 + 7}"
+                    )
+                await asyncio.sleep(0.8 + (attempt * 0.6))
+
+        assert last_exc is not None
+        raise last_exc
 
     # ── DALL-E 3 ──────────────────────────────
     async def _dalle_one(self, client, prompt: str, output_path: Path, index: int) -> Path:
@@ -300,21 +361,24 @@ class ImageService:
                     pass
             return ImageFont.load_default()
 
-        font_body = _font("arialbd.ttf", 62)
+        font_body = _font("arialbd.ttf", 44)
         font_label = _font("arial.ttf", 44)
 
-        # Wrap and draw body text (centered)
-        lines = textwrap.wrap(text, width=20)
-        line_h = 82
+        # Draw a short scene hint instead of a full centered caption.
+        lines = textwrap.wrap(text, width=24)[:2]
+        line_h = 60
         block_h = len(lines) * line_h
-        y_pos = (H - block_h) // 2 - 60
+        y_pos = H - 320 - block_h
 
         for line in lines:
             bbox = draw.textbbox((0, 0), line, font=font_body)
             tw = bbox[2] - bbox[0]
-            x = (W - tw) // 2
-            # drop shadow
-            draw.text((x + 4, y_pos + 4), line, fill=(0, 0, 0), font=font_body)
+            x = 70
+            draw.rounded_rectangle(
+                [(50, y_pos - 20), (min(W - 50, x + tw + 40), y_pos + 54)],
+                radius=26,
+                fill=(0, 0, 0, 120),
+            )
             draw.text((x, y_pos), line, fill=(255, 255, 255), font=font_body)
             y_pos += line_h
 

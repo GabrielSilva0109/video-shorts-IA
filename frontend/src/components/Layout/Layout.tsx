@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import {
   RiDashboard3Line,
   RiVideoLine,
+  RiImage2Line,
   RiLayoutMasonryLine,
   RiListCheck3,
   RiSettings4Line,
@@ -18,6 +19,7 @@ import clsx from 'clsx';
 const NAV_ITEMS = [
   { path: '/', label: 'Dashboard', icon: RiDashboard3Line },
   { path: '/generator', label: 'Generator', icon: RiVideoLine },
+  { path: '/imager', label: 'Imager', icon: RiImage2Line },
   { path: '/templates', label: 'Templates', icon: RiLayoutMasonryLine },
   { path: '/batch', label: 'Batch', icon: RiListCheck3 },
   { path: '/settings', label: 'Settings', icon: RiSettings4Line },

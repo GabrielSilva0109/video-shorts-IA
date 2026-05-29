@@ -7,6 +7,8 @@ import type {
   GeneratedScript,
   RenderJob,
   VideoTemplate,
+  ImagerGenerateRequest,
+  ImagerGenerateResponse,
 } from '@/types';
 
 // ── Script ──────────────────────────────────
@@ -69,6 +71,12 @@ export const getThumbnail = (projectId: string): string =>
 
 export const getGeneratedImageUrl = (projectId: string, filename: string): string =>
   `/api/export/images/${projectId}/${filename}`;
+
+// ── Imager ───────────────────────────────────
+export const generateImagerImage = (
+  req: ImagerGenerateRequest
+): Promise<ImagerGenerateResponse> =>
+  api.post('/imager/generate', req).then((r) => r.data);
 
 // ── Health ────────────────────────────────────
 export const healthCheck = (): Promise<{ status: string; version: string }> =>

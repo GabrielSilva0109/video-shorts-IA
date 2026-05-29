@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
-from app.api.routes import ai, video, audio, export, templates, health
+from app.api.routes import ai, video, audio, export, templates, health, imager
 from app.utils.logging import setup_logging
 
 setup_logging()
@@ -39,6 +39,7 @@ app.include_router(video.router, prefix="/api/video", tags=["Video"])
 app.include_router(audio.router, prefix="/api/audio", tags=["Audio"])
 app.include_router(export.router, prefix="/api/export", tags=["Export"])
 app.include_router(templates.router, prefix="/api/templates", tags=["Templates"])
+app.include_router(imager.router, prefix="/api/imager", tags=["Imager"])
 
 # ── WebSocket — render status updates ────────
 connected_clients: list[WebSocket] = []
@@ -80,6 +81,6 @@ if __name__ == "__main__":
         "main:app",
         host=settings.backend_host,
         port=settings.backend_port,
-        reload=True,
+        reload=False,
         log_level="info",
     )

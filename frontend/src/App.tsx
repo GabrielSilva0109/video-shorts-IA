@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import Layout from '@components/Layout/Layout';
 import Home from '@pages/Home';
 import Generator from '@pages/Generator';
+import Imager from '@pages/Imager';
 import Templates from '@pages/Templates';
 import BatchGenerator from '@pages/BatchGenerator';
 import Settings from '@pages/Settings';
@@ -25,6 +26,7 @@ export default function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/generator" element={<Generator />} />
+              <Route path="/imager" element={<Imager />} />
               <Route path="/templates" element={<Templates />} />
               <Route path="/batch" element={<BatchGenerator />} />
               <Route path="/settings" element={<Settings />} />

@@ -164,3 +164,25 @@ class AIDescriptionResult(BaseModel):
     description: str
     hashtags: List[str]
     keywords: List[str]
+
+
+class ImagerModel(str, Enum):
+    flux_schnell = "flux_schnell"
+    flux_dev = "flux_dev"
+
+
+class ImagerGenerateRequest(BaseModel):
+    prompt: str = Field(..., min_length=3, max_length=2000)
+    model: ImagerModel = ImagerModel.flux_schnell
+    width: int = Field(1024, ge=256, le=2048)
+    height: int = Field(1024, ge=256, le=2048)
+    seed: Optional[int] = Field(default=None, ge=0)
+
+
+class ImagerGenerateResponse(BaseModel):
+    image_url: str
+    image_path: str
+    model: ImagerModel
+    width: int
+    height: int
+    seed: Optional[int] = None
